@@ -1,0 +1,315 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56400
+Successfully changed project path to: /Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO
+/Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 48.13 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.1f1 (77a89f25062f)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO/Assets
+GfxDevice: creating device client; threaded=0
+2021-04-10 13:22:43.807 Unity[8529:83748] C27F390 preferred device: Intel HD Graphics 4000 (low power)
+2021-04-10 13:22:43.807 Unity[8529:83748] Metal devices available: 1
+2021-04-10 13:22:43.807 Unity[8529:83748] 0: Intel HD Graphics 4000 (low power)
+2021-04-10 13:22:43.809 Unity[8529:83748] Using device Intel HD Graphics 4000 (low power)
+Initializing Metal device caps: Intel HD Graphics 4000
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56529
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.001751 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 58.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.467 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001236 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.016 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1116 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.8 MB.
+System memory in use after: 120.8 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1573.
+Total: 3.577871 ms (FindLiveObjects: 0.435704 ms CreateObjectMapping: 0.182826 ms MarkObjects: 2.845110 ms  DeleteObjects: 0.110237 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Scena.unity
+  artifactKey: Guid(fe00eb167689e154a9c8198c4fea056c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Scena.unity using Guid(fe00eb167689e154a9c8198c4fea056c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7716e29033646fb5d9b01d9bb0880014') in 0.017038 seconds
+  Import took 0.020656 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34ee44853f87e411ab0f3727725b8d7f') in 0.001831 seconds
+  Import took 0.004622 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001304 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.569 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1111 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.9 MB.
+System memory in use after: 121.0 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1576.
+Total: 2.863349 ms (FindLiveObjects: 0.234929 ms CreateObjectMapping: 0.053770 ms MarkObjects: 2.547561 ms  DeleteObjects: 0.024445 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1067.595623 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-10.mat
+  artifactKey: Guid(47b7a45414f3b564e9e8349bfa18b29f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-10.mat using Guid(47b7a45414f3b564e9e8349bfa18b29f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '243587d9d854eac6fdfd3f8eb7f3475d') in 1.648982 seconds
+  Import took 1.671973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-11.mat
+  artifactKey: Guid(0657637449dfba34f84c2e4cf23683b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-11.mat using Guid(0657637449dfba34f84c2e4cf23683b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ac118232b4b47dbe5a645a76a9a95e7') in 0.749813 seconds
+  Import took 0.770225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-12.mat
+  artifactKey: Guid(356decb03293f22498cb5565d128c9da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-12.mat using Guid(356decb03293f22498cb5565d128c9da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db2bc256b6f803e9862529fdfc6b2c78') in 0.156590 seconds
+  Import took 0.170235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.562991 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-8.mat
+  artifactKey: Guid(ebc9df751692e5740abb521f3539fcd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-8.mat using Guid(ebc9df751692e5740abb521f3539fcd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0963390745383c379c6f74ef4e1b828') in 0.160655 seconds
+  Import took 0.173865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-5.mat
+  artifactKey: Guid(03389866351d19a47adc95c57d054097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-5.mat using Guid(03389866351d19a47adc95c57d054097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '846db08f0e4495fb769b52318d8cfa20') in 0.193329 seconds
+  Import took 0.206847 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000364 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-6.mat
+  artifactKey: Guid(b87cacf51931a5841b5931a664fd0730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-6.mat using Guid(b87cacf51931a5841b5931a664fd0730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9e8c8ef78c1762a43d5b87843052106') in 0.210766 seconds
+  Import took 0.227922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-2.mat
+  artifactKey: Guid(9b7ca251e8646c54db0a77ae2021bf9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-2.mat using Guid(9b7ca251e8646c54db0a77ae2021bf9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65076a18ed626064597ea2193a0b2387') in 0.160693 seconds
+  Import took 0.176344 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-1.mat
+  artifactKey: Guid(c8e304140c860744783e1aa250535791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-1.mat using Guid(c8e304140c860744783e1aa250535791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d9679f631364a57541fc6c0a4c089c') in 0.151795 seconds
+  Import took 0.164912 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000590 seconds.
+  path: Assets/Tree 2.prefab
+  artifactKey: Guid(807c0161715a34346b64affcc9870e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree 2.prefab using Guid(807c0161715a34346b64affcc9870e76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03923bd946adf89566fac649d87ad404') in 1.511999 seconds
+  Import took 1.519992 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000660 seconds.
+  path: Assets/Materials/FloorMAT.mat
+  artifactKey: Guid(5574afc6585723a4b9c5736e3abad912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/FloorMAT.mat using Guid(5574afc6585723a4b9c5736e3abad912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d0802d0235239671d59541d6579aab') in 0.015461 seconds
+  Import took 0.019072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Tree.prefab
+  artifactKey: Guid(0b07b6179f55c3442a2ec2c1b4e2e5f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree.prefab using Guid(0b07b6179f55c3442a2ec2c1b4e2e5f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c45b1b9365a2e5189ae6af082f26e23a') in 0.063782 seconds
+  Import took 0.067493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000444 seconds.
+  path: Assets/Tree 1.prefab
+  artifactKey: Guid(91de0471adfa8d84b84f1d897fbded22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tree 1.prefab using Guid(91de0471adfa8d84b84f1d897fbded22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f60587f3891f31af0c574d6eb2efacc') in 0.054586 seconds
+  Import took 0.059064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-3.mat
+  artifactKey: Guid(23002981675cee84bbbebf0794b85ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-3.mat using Guid(23002981675cee84bbbebf0794b85ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cab28010efa5dfb1b7ca7cb8bb36c0c2') in 0.217158 seconds
+  Import took 0.234587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Materials/ParcoMAT.mat
+  artifactKey: Guid(97e16f4aaa337cd4db019ded36d57dc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/ParcoMAT.mat using Guid(97e16f4aaa337cd4db019ded36d57dc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17cabc3150030dd7dfe3064c2c921b48') in 0.020878 seconds
+  Import took 0.024109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-4.mat
+  artifactKey: Guid(4e4980336892d9546bf0bf0e3f30c265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-4.mat using Guid(4e4980336892d9546bf0bf0e3f30c265) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb513b77ff866f5ef6bf20246edba972') in 0.232461 seconds
+  Import took 0.246462 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000605 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-9.mat
+  artifactKey: Guid(52d44e5692d0c134f9b2ed3abd21fb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-9.mat using Guid(52d44e5692d0c134f9b2ed3abd21fb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e812d353da86a106f924eb541cfb0e70') in 0.170045 seconds
+  Import took 0.187237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/8K Skybox Pack Free/Skyboxes/Material/sky-7.mat
+  artifactKey: Guid(5336727d7be32404c9ac396789142e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/8K Skybox Pack Free/Skyboxes/Material/sky-7.mat using Guid(5336727d7be32404c9ac396789142e1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88459bd5e9e9f3372ae2cb0a09f7bdab') in 0.162446 seconds
+  Import took 0.179511 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001559 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.427 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1111 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.2 MB.
+System memory in use after: 137.3 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1627.
+Total: 2.523467 ms (FindLiveObjects: 0.251271 ms CreateObjectMapping: 0.064226 ms MarkObjects: 2.180017 ms  DeleteObjects: 0.025252 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001213 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.160 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1111 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.4 MB.
+System memory in use after: 137.5 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1630.
+Total: 2.715800 ms (FindLiveObjects: 0.420675 ms CreateObjectMapping: 0.110868 ms MarkObjects: 2.153797 ms  DeleteObjects: 0.027652 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001169 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.078 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1111 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 137.5 MB.
+System memory in use after: 137.7 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1633.
+Total: 8.840583 ms (FindLiveObjects: 1.066492 ms CreateObjectMapping: 0.093310 ms MarkObjects: 7.389099 ms  DeleteObjects: 0.288620 ms)
+
