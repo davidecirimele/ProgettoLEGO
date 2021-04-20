@@ -29,7 +29,7 @@ public class WanderingAI : MonoBehaviour
             RaycastHit hit;
             if(Physics.SphereCast(ray, 0.75f, out hit)){
                 if(hit.distance < obstacleRange){
-                    float angle = Random.Range(1, 199);
+                    float angle = Random.Range(90, 199);
                     transform.Rotate(0, angle, 0);
                 }
             }
