@@ -6,46 +6,49 @@ Using pre-set license
 -batchMode
 -noUpm
 -name
-AssetImportWorker0
+AssetImportWorker1
 -projectPath
 /Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO
 -logFile
-Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1.log
 -srvPort
 51498
 Successfully changed project path to: /Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO
 /Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 541.57 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 770.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /Users/davidecirimele/Documents/GitHub/ProgettoLEGO/ProgettoLEGO/Assets
 GfxDevice: creating device client; threaded=0
-2021-04-20 12:20:53.727 Unity[4662:39368] C27F390 preferred device: Intel HD Graphics 4000 (low power)
-2021-04-20 12:20:53.727 Unity[4662:39368] Metal devices available: 1
-2021-04-20 12:20:53.728 Unity[4662:39368] 0: Intel HD Graphics 4000 (low power)
-2021-04-20 12:20:53.732 Unity[4662:39368] Using device Intel HD Graphics 4000 (low power)
+2021-04-20 12:21:23.924 Unity[4683:39642] C27F390 preferred device: Intel HD Graphics 4000 (low power)
+2021-04-20 12:21:23.924 Unity[4683:39642] Metal devices available: 1
+2021-04-20 12:21:23.924 Unity[4683:39642] 0: Intel HD Graphics 4000 (low power)
+2021-04-20 12:21:23.926 Unity[4683:39642] Using device Intel HD Graphics 4000 (low power)
 Initializing Metal device caps: Intel HD Graphics 4000
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56662
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56683
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2020.3.1f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.005047 seconds.
+Registered in 0.004935 seconds.
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 384.96 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 671.61 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in 17.952 seconds
+- Completed reload, in 13.397 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005285 seconds.
+Registered in 0.004144 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 724.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.

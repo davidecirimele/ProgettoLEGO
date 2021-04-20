@@ -318,7 +318,10 @@
             "m_Id": "1d578f6557a74f0181b53f304070fd29"
         },
         {
-            "m_Id": "b93f0194b71f4001a1fd187bd4ab41e3"
+            "m_Id": "354edcac9a0f43c388e61aef9eabe7d9"
+        },
+        {
+            "m_Id": "e665f10eb9934dbfab2f1f4d7af54311"
         }
     ]
 }
@@ -857,6 +860,20 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
+    "m_ObjectId": "354edcac9a0f43c388e61aef9eabe7d9",
+    "m_ActiveSubTarget": {
+        "m_Id": "8ab0989261c148cdbe7d80621539cf89"
+    },
+    "m_SurfaceType": 0,
+    "m_AlphaMode": 0,
+    "m_TwoSided": false,
+    "m_AlphaClip": false,
+    "m_CustomEditorGUI": ""
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "389022d2f64a4d779f3b3955e0f052f8",
     "m_Id": 0,
@@ -1209,15 +1226,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalLitSubTarget",
-    "m_ObjectId": "752d92c819a14ff0a1c080a4403c1652",
-    "m_WorkflowMode": 1,
-    "m_NormalDropOffSpace": 0,
-    "m_ClearCoat": false
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "7844d77a1b044b56a02cbb037190be9c",
     "m_Group": {
@@ -1462,6 +1470,15 @@
     "m_Value": 0.5,
     "m_DefaultValue": 0.5,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalLitSubTarget",
+    "m_ObjectId": "8ab0989261c148cdbe7d80621539cf89",
+    "m_WorkflowMode": 1,
+    "m_NormalDropOffSpace": 0,
+    "m_ClearCoat": false
 }
 
 {
@@ -1777,20 +1794,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
-    "m_ObjectId": "b93f0194b71f4001a1fd187bd4ab41e3",
-    "m_ActiveSubTarget": {
-        "m_Id": "752d92c819a14ff0a1c080a4403c1652"
-    },
-    "m_SurfaceType": 1,
-    "m_AlphaMode": 0,
-    "m_TwoSided": false,
-    "m_AlphaClip": false,
-    "m_CustomEditorGUI": ""
 }
 
 {
@@ -2162,6 +2165,14 @@
         "w": 0.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.VFXTarget",
+    "m_ObjectId": "e665f10eb9934dbfab2f1f4d7af54311",
+    "m_Lit": false,
+    "m_AlphaTest": false
 }
 
 {
