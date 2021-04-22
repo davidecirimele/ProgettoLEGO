@@ -5,8 +5,8 @@ using UnityEngine;
 [AddComponentMenu("Control Script/AlienScript")]
 public class WanderingAI : MonoBehaviour
 {
-    [SerializeField] private GameObject fireballPrefab;
-    private GameObject _fireball;
+    [SerializeField] private GameObject laserPrefab;
+    private GameObject _laser;
 
     public float speed = 3.0f;
     public float obstacleRange = 5.0f;
@@ -34,15 +34,15 @@ public class WanderingAI : MonoBehaviour
                 }
             }
 
-            /*if(Physics.SphereCast(ray, 0.75f, out hit)){
+            if(Physics.SphereCast(ray, 0.75f, out hit)){
 
                 GameObject hitObject = hit.transform.gameObject;
                 if(hitObject.GetComponent<PlayerCharacter>()) {
 
-                    if(_fireball == null){
-                        _fireball = Instantiate(fireballPrefab) as GameObject;
-                        _fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-                        _fireball.transform.rotation = transform.rotation;
+                    if(_laser == null){
+                        _laser = Instantiate(laserPrefab) as GameObject;
+                        _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                        _laser.transform.rotation = transform.rotation;
                     }
                 }
 
@@ -50,7 +50,7 @@ public class WanderingAI : MonoBehaviour
                     float angle = Random.Range(-110, 110);
                     transform.Rotate(0, angle, 0);
                 }
-            }*/
+            }
         }
        
     }
