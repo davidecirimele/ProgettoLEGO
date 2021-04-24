@@ -10,7 +10,7 @@ public class Laser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    	
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class Laser : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         PlayerCharacter player = other.GetComponent<PlayerCharacter>();
         if(player != null){
-           //player.Hurt(damage);
+           player.Hurt(damage);
         }
 
         Destroy(this.gameObject);
