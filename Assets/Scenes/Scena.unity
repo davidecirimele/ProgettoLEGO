@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00683944, g: 0.042790134, b: 0.3806467, a: 1}
+  m_IndirectSpecularColor: {r: 0.006923941, g: 0.04284867, b: 0.38080263, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4716931}
   - component: {fileID: 4716930}
   - component: {fileID: 4716929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,6 +320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1135587450}
+  - {fileID: 1059759708}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -335,8 +336,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b9e8ca63743d64aad2f431b16d7c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  gravity: -9.8
+  speed: 10
+  gravity: -15
+  jumpHeight: 5
+  groundCheck: {fileID: 1059759708}
+  gorundDistance: 0.4
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &10218649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +406,7 @@ GameObject:
   - component: {fileID: 35226898}
   - component: {fileID: 35226897}
   - component: {fileID: 35226896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +501,7 @@ GameObject:
   - component: {fileID: 47409472}
   - component: {fileID: 47409471}
   - component: {fileID: 47409470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +597,7 @@ GameObject:
   - component: {fileID: 54276045}
   - component: {fileID: 54276044}
   - component: {fileID: 54276043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +698,7 @@ GameObject:
   - component: {fileID: 55886883}
   - component: {fileID: 55886882}
   - component: {fileID: 55886881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,7 +793,7 @@ GameObject:
   - component: {fileID: 80860646}
   - component: {fileID: 80860645}
   - component: {fileID: 80860644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +889,7 @@ GameObject:
   - component: {fileID: 87080842}
   - component: {fileID: 87080841}
   - component: {fileID: 87080840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,7 +984,7 @@ GameObject:
   - component: {fileID: 88056177}
   - component: {fileID: 88056176}
   - component: {fileID: 88056175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1082,7 @@ GameObject:
   - component: {fileID: 89670691}
   - component: {fileID: 89670692}
   - component: {fileID: 89670693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1231,7 @@ GameObject:
   - component: {fileID: 101953455}
   - component: {fileID: 101953454}
   - component: {fileID: 101953453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1329,7 @@ GameObject:
   - component: {fileID: 103048765}
   - component: {fileID: 103048764}
   - component: {fileID: 103048769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1471,7 +1478,7 @@ GameObject:
   - component: {fileID: 105388101}
   - component: {fileID: 105388100}
   - component: {fileID: 105388099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1566,7 +1573,7 @@ GameObject:
   - component: {fileID: 108844662}
   - component: {fileID: 108844661}
   - component: {fileID: 108844660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1668,7 @@ GameObject:
   - component: {fileID: 126501066}
   - component: {fileID: 126501065}
   - component: {fileID: 126501064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1757,7 +1764,7 @@ GameObject:
   - component: {fileID: 129617593}
   - component: {fileID: 129617592}
   - component: {fileID: 129617591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,7 +1860,7 @@ GameObject:
   - component: {fileID: 138272326}
   - component: {fileID: 138272325}
   - component: {fileID: 138272324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1949,7 +1956,7 @@ GameObject:
   - component: {fileID: 142073594}
   - component: {fileID: 142073593}
   - component: {fileID: 142073592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2053,7 +2060,7 @@ GameObject:
   - component: {fileID: 147516821}
   - component: {fileID: 147516822}
   - component: {fileID: 147516823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,7 +2211,7 @@ GameObject:
   - component: {fileID: 150683028}
   - component: {fileID: 150683027}
   - component: {fileID: 150683026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2330,7 +2337,7 @@ GameObject:
   - component: {fileID: 151070428}
   - component: {fileID: 151070427}
   - component: {fileID: 151070426}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2489,7 +2496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 168183113}
   - component: {fileID: 168183114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2584,7 +2591,7 @@ GameObject:
   - component: {fileID: 196009107}
   - component: {fileID: 196009106}
   - component: {fileID: 196009105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2686,7 @@ GameObject:
   - component: {fileID: 203409445}
   - component: {fileID: 203409444}
   - component: {fileID: 203409443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2774,7 +2781,7 @@ GameObject:
   - component: {fileID: 205777539}
   - component: {fileID: 205777538}
   - component: {fileID: 205777537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2867,7 +2874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207121620}
   - component: {fileID: 207121621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2960,7 +2967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214065446}
   - component: {fileID: 214065447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3055,7 +3062,7 @@ GameObject:
   - component: {fileID: 226431911}
   - component: {fileID: 226431910}
   - component: {fileID: 226431909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3150,7 +3157,7 @@ GameObject:
   - component: {fileID: 233576398}
   - component: {fileID: 233576397}
   - component: {fileID: 233576396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3245,7 +3252,7 @@ GameObject:
   - component: {fileID: 233583081}
   - component: {fileID: 233583080}
   - component: {fileID: 233583079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3337,7 +3344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251569526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3374,7 +3381,7 @@ GameObject:
   - component: {fileID: 258797139}
   - component: {fileID: 258797138}
   - component: {fileID: 258797137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3469,7 +3476,7 @@ GameObject:
   - component: {fileID: 272542316}
   - component: {fileID: 272542315}
   - component: {fileID: 272542314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3565,7 +3572,7 @@ GameObject:
   - component: {fileID: 282971386}
   - component: {fileID: 282971385}
   - component: {fileID: 282971384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3662,7 +3669,7 @@ GameObject:
   - component: {fileID: 288022914}
   - component: {fileID: 288022913}
   - component: {fileID: 288022912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3843,6 +3850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 8909986596271476207, guid: 2bcdda11244984bc296bccf7beb322c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcdda11244984bc296bccf7beb322c4, type: 3}
 --- !u!1 &317947209
@@ -3854,7 +3866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317947210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3897,7 +3909,7 @@ GameObject:
   - component: {fileID: 428105740}
   - component: {fileID: 428105739}
   - component: {fileID: 428105738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4048,6 +4060,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptimizedTree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4776691698727033967, guid: 807c0161715a34346b64affcc9870e76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807c0161715a34346b64affcc9870e76, type: 3}
 --- !u!1 &433145388
@@ -4065,7 +4082,7 @@ GameObject:
   - component: {fileID: 433145393}
   - component: {fileID: 433145394}
   - component: {fileID: 433145395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4214,7 +4231,7 @@ GameObject:
   - component: {fileID: 439338958}
   - component: {fileID: 439338957}
   - component: {fileID: 439338956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4309,7 +4326,7 @@ GameObject:
   - component: {fileID: 445315028}
   - component: {fileID: 445315027}
   - component: {fileID: 445315026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4573,7 +4590,7 @@ GameObject:
   - component: {fileID: 481461173}
   - component: {fileID: 481461172}
   - component: {fileID: 481461171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4666,7 +4683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493498690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4706,7 +4723,7 @@ GameObject:
   - component: {fileID: 500118692}
   - component: {fileID: 500118691}
   - component: {fileID: 500118696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,7 +4872,7 @@ GameObject:
   - component: {fileID: 509540264}
   - component: {fileID: 509540263}
   - component: {fileID: 509540262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4953,7 +4970,7 @@ GameObject:
   - component: {fileID: 525741703}
   - component: {fileID: 525741704}
   - component: {fileID: 525741705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5102,7 +5119,7 @@ GameObject:
   - component: {fileID: 551566823}
   - component: {fileID: 551566822}
   - component: {fileID: 551566821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5275,7 +5292,7 @@ GameObject:
   - component: {fileID: 563367148}
   - component: {fileID: 563367149}
   - component: {fileID: 563367150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5424,7 +5441,7 @@ GameObject:
   - component: {fileID: 565895295}
   - component: {fileID: 565895294}
   - component: {fileID: 565895293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5519,7 +5536,7 @@ GameObject:
   - component: {fileID: 580596925}
   - component: {fileID: 580596924}
   - component: {fileID: 580596923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5614,7 +5631,7 @@ GameObject:
   - component: {fileID: 587449244}
   - component: {fileID: 587449243}
   - component: {fileID: 587449242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5709,7 +5726,7 @@ GameObject:
   - component: {fileID: 592703451}
   - component: {fileID: 592703450}
   - component: {fileID: 592703449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5801,7 +5818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600547025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5838,7 +5855,7 @@ GameObject:
   - component: {fileID: 605721329}
   - component: {fileID: 605721328}
   - component: {fileID: 605721327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5933,7 +5950,7 @@ GameObject:
   - component: {fileID: 627045819}
   - component: {fileID: 627045818}
   - component: {fileID: 627045817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6028,7 +6045,7 @@ GameObject:
   - component: {fileID: 627195591}
   - component: {fileID: 627195590}
   - component: {fileID: 627195589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6123,6 +6140,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smog
       objectReference: {fileID: 0}
+    - target: {fileID: 3542472388095592118, guid: e4979d26f6ae349b88eb57b996e05d3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3779544173195755870, guid: e4979d26f6ae349b88eb57b996e05d3a,
         type: 3}
       propertyPath: m_RootOrder
@@ -6192,7 +6214,7 @@ GameObject:
   - component: {fileID: 648556837}
   - component: {fileID: 648556836}
   - component: {fileID: 648556835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6285,7 +6307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655849823}
   - component: {fileID: 655849824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Navmesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6347,7 +6369,7 @@ GameObject:
   - component: {fileID: 657963180}
   - component: {fileID: 657963179}
   - component: {fileID: 657963178}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6446,7 +6468,7 @@ GameObject:
   - component: {fileID: 659280923}
   - component: {fileID: 659280924}
   - component: {fileID: 659280925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6595,7 +6617,7 @@ GameObject:
   - component: {fileID: 717174853}
   - component: {fileID: 717174852}
   - component: {fileID: 717174851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6691,7 +6713,7 @@ GameObject:
   - component: {fileID: 765586419}
   - component: {fileID: 765586418}
   - component: {fileID: 765586417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6786,7 +6808,7 @@ GameObject:
   - component: {fileID: 795055047}
   - component: {fileID: 795055046}
   - component: {fileID: 795055045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6882,7 +6904,7 @@ GameObject:
   - component: {fileID: 796568639}
   - component: {fileID: 796568638}
   - component: {fileID: 796568637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6980,7 +7002,7 @@ GameObject:
   - component: {fileID: 797264492}
   - component: {fileID: 797264493}
   - component: {fileID: 797264494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7129,7 +7151,7 @@ GameObject:
   - component: {fileID: 801524740}
   - component: {fileID: 801524739}
   - component: {fileID: 801524738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7279,6 +7301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptimizedTree (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4776691698727033967, guid: 807c0161715a34346b64affcc9870e76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807c0161715a34346b64affcc9870e76, type: 3}
 --- !u!1 &810262833
@@ -7293,7 +7320,7 @@ GameObject:
   - component: {fileID: 810262837}
   - component: {fileID: 810262836}
   - component: {fileID: 810262835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7388,7 +7415,7 @@ GameObject:
   - component: {fileID: 813498583}
   - component: {fileID: 813498582}
   - component: {fileID: 813498581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7484,7 +7511,7 @@ GameObject:
   - component: {fileID: 824467277}
   - component: {fileID: 824467276}
   - component: {fileID: 824467275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7586,7 +7613,7 @@ GameObject:
   - component: {fileID: 832700787}
   - component: {fileID: 832700786}
   - component: {fileID: 832700785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7681,7 +7708,7 @@ GameObject:
   - component: {fileID: 863290915}
   - component: {fileID: 863290914}
   - component: {fileID: 863290913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7773,7 +7800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 873736054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7810,7 +7837,7 @@ GameObject:
   - component: {fileID: 896561686}
   - component: {fileID: 896561685}
   - component: {fileID: 896561684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7905,7 +7932,7 @@ GameObject:
   - component: {fileID: 898163447}
   - component: {fileID: 898163446}
   - component: {fileID: 898163445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8000,7 +8027,7 @@ GameObject:
   - component: {fileID: 920413113}
   - component: {fileID: 920413112}
   - component: {fileID: 920413111}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8095,7 +8122,7 @@ GameObject:
   - component: {fileID: 922060208}
   - component: {fileID: 922060207}
   - component: {fileID: 922060206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8190,7 +8217,7 @@ GameObject:
   - component: {fileID: 924557673}
   - component: {fileID: 924557672}
   - component: {fileID: 924557671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8285,7 +8312,7 @@ GameObject:
   - component: {fileID: 938955984}
   - component: {fileID: 938955983}
   - component: {fileID: 938955982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8386,7 +8413,7 @@ GameObject:
   - component: {fileID: 962630125}
   - component: {fileID: 962630124}
   - component: {fileID: 962630123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8481,7 +8508,7 @@ GameObject:
   - component: {fileID: 983040381}
   - component: {fileID: 983040380}
   - component: {fileID: 983040379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8574,7 +8601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984317897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vehicles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8635,7 +8662,7 @@ GameObject:
   - component: {fileID: 987207387}
   - component: {fileID: 987207386}
   - component: {fileID: 987207385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8730,7 +8757,7 @@ GameObject:
   - component: {fileID: 987321021}
   - component: {fileID: 987321020}
   - component: {fileID: 987321019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8825,7 +8852,7 @@ GameObject:
   - component: {fileID: 1012488246}
   - component: {fileID: 1012488245}
   - component: {fileID: 1012488244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8920,7 +8947,7 @@ GameObject:
   - component: {fileID: 1014235084}
   - component: {fileID: 1014235083}
   - component: {fileID: 1014235082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9015,7 +9042,7 @@ GameObject:
   - component: {fileID: 1020005071}
   - component: {fileID: 1020005070}
   - component: {fileID: 1020005069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9098,6 +9125,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020005067}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1059759707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1059759708}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1059759708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059759707}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 10218647}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066428019
 GameObject:
   m_ObjectHideFlags: 0
@@ -9113,7 +9170,7 @@ GameObject:
   - component: {fileID: 1066428024}
   - component: {fileID: 1066428025}
   - component: {fileID: 1066428026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9337,7 +9394,7 @@ GameObject:
   - component: {fileID: 1076729520}
   - component: {fileID: 1076729519}
   - component: {fileID: 1076729518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9430,7 +9487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085737670}
   - component: {fileID: 1085737671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9525,7 +9582,7 @@ GameObject:
   - component: {fileID: 1089743987}
   - component: {fileID: 1089743986}
   - component: {fileID: 1089743985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9620,7 +9677,7 @@ GameObject:
   - component: {fileID: 1090335611}
   - component: {fileID: 1090335610}
   - component: {fileID: 1090335609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9719,7 +9776,7 @@ GameObject:
   - component: {fileID: 1093605724}
   - component: {fileID: 1093605725}
   - component: {fileID: 1093605726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9865,7 +9922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093739462}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9899,7 +9956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1102963748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edifici
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9959,7 +10016,7 @@ GameObject:
   - component: {fileID: 1106808946}
   - component: {fileID: 1106808945}
   - component: {fileID: 1106808944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10058,7 +10115,7 @@ GameObject:
   - component: {fileID: 1111510171}
   - component: {fileID: 1111510172}
   - component: {fileID: 1111510173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10204,7 +10261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1115203875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10241,7 +10298,7 @@ GameObject:
   - component: {fileID: 1120590963}
   - component: {fileID: 1120590962}
   - component: {fileID: 1120590961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10336,7 +10393,7 @@ GameObject:
   - component: {fileID: 1121899480}
   - component: {fileID: 1121899479}
   - component: {fileID: 1121899478}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10431,7 +10488,7 @@ GameObject:
   - component: {fileID: 1126642097}
   - component: {fileID: 1126642096}
   - component: {fileID: 1126642095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10526,7 +10583,7 @@ GameObject:
   - component: {fileID: 1128635177}
   - component: {fileID: 1128635176}
   - component: {fileID: 1128635175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10706,7 +10763,7 @@ GameObject:
   - component: {fileID: 1136885586}
   - component: {fileID: 1136885585}
   - component: {fileID: 1136885584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10801,7 +10858,7 @@ GameObject:
   - component: {fileID: 1142221032}
   - component: {fileID: 1142221031}
   - component: {fileID: 1142221030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10897,7 +10954,7 @@ GameObject:
   - component: {fileID: 1149439516}
   - component: {fileID: 1149439515}
   - component: {fileID: 1149439514}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10993,7 +11050,7 @@ GameObject:
   - component: {fileID: 1169917839}
   - component: {fileID: 1169917838}
   - component: {fileID: 1169917837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stadium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11094,7 +11151,7 @@ GameObject:
   - component: {fileID: 1196870722}
   - component: {fileID: 1196870721}
   - component: {fileID: 1196870720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bus (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11191,7 +11248,7 @@ GameObject:
   - component: {fileID: 1206836822}
   - component: {fileID: 1206836821}
   - component: {fileID: 1206836820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11341,6 +11398,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 8909986596271476207, guid: 2bcdda11244984bc296bccf7beb322c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcdda11244984bc296bccf7beb322c4, type: 3}
 --- !u!1 &1226968724
@@ -11355,7 +11417,7 @@ GameObject:
   - component: {fileID: 1226968728}
   - component: {fileID: 1226968727}
   - component: {fileID: 1226968726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11451,7 +11513,7 @@ GameObject:
   - component: {fileID: 1240514941}
   - component: {fileID: 1240514940}
   - component: {fileID: 1240514939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11546,7 +11608,7 @@ GameObject:
   - component: {fileID: 1240738526}
   - component: {fileID: 1240738525}
   - component: {fileID: 1240738524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11641,7 +11703,7 @@ GameObject:
   - component: {fileID: 1245256323}
   - component: {fileID: 1245256322}
   - component: {fileID: 1245256321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11737,7 +11799,7 @@ GameObject:
   - component: {fileID: 1261243825}
   - component: {fileID: 1261243824}
   - component: {fileID: 1261243823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11832,7 +11894,7 @@ GameObject:
   - component: {fileID: 1275020536}
   - component: {fileID: 1275020535}
   - component: {fileID: 1275020534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11927,6 +11989,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smog
       objectReference: {fileID: 0}
+    - target: {fileID: 3542472388095592118, guid: e4979d26f6ae349b88eb57b996e05d3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3779544173195755870, guid: e4979d26f6ae349b88eb57b996e05d3a,
         type: 3}
       propertyPath: m_RootOrder
@@ -11996,7 +12063,7 @@ GameObject:
   - component: {fileID: 1306923552}
   - component: {fileID: 1306923551}
   - component: {fileID: 1306923550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12088,7 +12155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307023314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12125,7 +12192,7 @@ GameObject:
   - component: {fileID: 1310502964}
   - component: {fileID: 1310502963}
   - component: {fileID: 1310502962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12220,7 +12287,7 @@ GameObject:
   - component: {fileID: 1320992448}
   - component: {fileID: 1320992447}
   - component: {fileID: 1320992446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12318,7 +12385,7 @@ GameObject:
   - component: {fileID: 1339780988}
   - component: {fileID: 1339780989}
   - component: {fileID: 1339780990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12467,7 +12534,7 @@ GameObject:
   - component: {fileID: 1345352427}
   - component: {fileID: 1345352426}
   - component: {fileID: 1345352425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12562,7 +12629,7 @@ GameObject:
   - component: {fileID: 1351783254}
   - component: {fileID: 1351783253}
   - component: {fileID: 1351783252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12664,7 +12731,7 @@ GameObject:
   - component: {fileID: 1379355277}
   - component: {fileID: 1379355276}
   - component: {fileID: 1379355275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12865,7 +12932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1469710607}
   - component: {fileID: 1469710608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12963,7 +13030,7 @@ GameObject:
   - component: {fileID: 1470926482}
   - component: {fileID: 1470926483}
   - component: {fileID: 1470926484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13112,7 +13179,7 @@ GameObject:
   - component: {fileID: 1479389941}
   - component: {fileID: 1479389940}
   - component: {fileID: 1479389939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13204,7 +13271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516507753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13241,7 +13308,7 @@ GameObject:
   - component: {fileID: 1523137329}
   - component: {fileID: 1523137328}
   - component: {fileID: 1523137327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13333,7 +13400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1531349390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13472,7 +13539,7 @@ GameObject:
   - component: {fileID: 1542149107}
   - component: {fileID: 1542149106}
   - component: {fileID: 1542149105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13596,7 +13663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1544876399}
   - component: {fileID: 1544876400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13694,7 +13761,7 @@ GameObject:
   - component: {fileID: 1555901790}
   - component: {fileID: 1555901791}
   - component: {fileID: 1555901792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13843,7 +13910,7 @@ GameObject:
   - component: {fileID: 1558944157}
   - component: {fileID: 1558944156}
   - component: {fileID: 1558944155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13939,7 +14006,7 @@ GameObject:
   - component: {fileID: 1564168302}
   - component: {fileID: 1564168301}
   - component: {fileID: 1564168300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Street (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14035,7 +14102,7 @@ GameObject:
   - component: {fileID: 1564887889}
   - component: {fileID: 1564887888}
   - component: {fileID: 1564887887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14136,7 +14203,7 @@ GameObject:
   - component: {fileID: 1577405178}
   - component: {fileID: 1577405177}
   - component: {fileID: 1577405176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14234,7 +14301,7 @@ GameObject:
   - component: {fileID: 1579346188}
   - component: {fileID: 1579346187}
   - component: {fileID: 1579346192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14438,6 +14505,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909986596271476207, guid: 2bcdda11244984bc296bccf7beb322c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcdda11244984bc296bccf7beb322c4, type: 3}
 --- !u!1 &1613198173
@@ -14454,7 +14526,7 @@ GameObject:
   - component: {fileID: 1613198177}
   - component: {fileID: 1613198176}
   - component: {fileID: 1613198175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14578,7 +14650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1613434269}
   - component: {fileID: 1613434270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14673,7 +14745,7 @@ GameObject:
   - component: {fileID: 1615092267}
   - component: {fileID: 1615092266}
   - component: {fileID: 1615092265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14765,7 +14837,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1644259243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14805,7 +14877,7 @@ GameObject:
   - component: {fileID: 1646336572}
   - component: {fileID: 1646336573}
   - component: {fileID: 1646336574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14954,7 +15026,7 @@ GameObject:
   - component: {fileID: 1660470842}
   - component: {fileID: 1660470841}
   - component: {fileID: 1660470840}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15050,7 +15122,7 @@ GameObject:
   - component: {fileID: 1678548728}
   - component: {fileID: 1678548727}
   - component: {fileID: 1678548726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15146,7 +15218,7 @@ GameObject:
   - component: {fileID: 1689635175}
   - component: {fileID: 1689635174}
   - component: {fileID: 1689635173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Parco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15243,7 +15315,7 @@ GameObject:
   - component: {fileID: 1695405921}
   - component: {fileID: 1695405920}
   - component: {fileID: 1695405919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15341,7 +15413,7 @@ GameObject:
   - component: {fileID: 1697327325}
   - component: {fileID: 1697327326}
   - component: {fileID: 1697327327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15490,7 +15562,7 @@ GameObject:
   - component: {fileID: 1697748755}
   - component: {fileID: 1697748754}
   - component: {fileID: 1697748753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15585,7 +15657,7 @@ GameObject:
   - component: {fileID: 1710827337}
   - component: {fileID: 1710827336}
   - component: {fileID: 1710827335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Street
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15681,7 +15753,7 @@ GameObject:
   - component: {fileID: 1711487605}
   - component: {fileID: 1711487604}
   - component: {fileID: 1711487603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15776,7 +15848,7 @@ GameObject:
   - component: {fileID: 1717120944}
   - component: {fileID: 1717120943}
   - component: {fileID: 1717120942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15872,7 +15944,7 @@ GameObject:
   - component: {fileID: 1720042250}
   - component: {fileID: 1720042249}
   - component: {fileID: 1720042248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15968,7 +16040,7 @@ GameObject:
   - component: {fileID: 1724030912}
   - component: {fileID: 1724030911}
   - component: {fileID: 1724030910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16064,7 +16136,7 @@ GameObject:
   - component: {fileID: 1724274550}
   - component: {fileID: 1724274549}
   - component: {fileID: 1724274548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Street (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16160,7 +16232,7 @@ GameObject:
   - component: {fileID: 1811872458}
   - component: {fileID: 1811872457}
   - component: {fileID: 1811872456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16337,7 +16409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878283028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edifici
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16383,7 +16455,7 @@ GameObject:
   - component: {fileID: 1894909755}
   - component: {fileID: 1894909754}
   - component: {fileID: 1894909753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16475,7 +16547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897254859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lampione (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16515,7 +16587,7 @@ GameObject:
   - component: {fileID: 1921407230}
   - component: {fileID: 1921407229}
   - component: {fileID: 1921407234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16670,7 +16742,7 @@ GameObject:
   - component: {fileID: 1931288882}
   - component: {fileID: 1931288881}
   - component: {fileID: 1931288880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16765,7 +16837,7 @@ GameObject:
   - component: {fileID: 1932474959}
   - component: {fileID: 1932474958}
   - component: {fileID: 1932474957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16863,7 +16935,7 @@ GameObject:
   - component: {fileID: 1946378526}
   - component: {fileID: 1946378527}
   - component: {fileID: 1946378528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17018,7 +17090,7 @@ GameObject:
   - component: {fileID: 1987727826}
   - component: {fileID: 1987727825}
   - component: {fileID: 1987727824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17112,7 +17184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1994166378}
   - component: {fileID: 1994166379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17207,7 +17279,7 @@ GameObject:
   - component: {fileID: 1997264718}
   - component: {fileID: 1997264717}
   - component: {fileID: 1997264716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17300,7 +17372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2012675544}
   - component: {fileID: 2012675545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17395,7 +17467,7 @@ GameObject:
   - component: {fileID: 2039864554}
   - component: {fileID: 2039864553}
   - component: {fileID: 2039864552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Edificio (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17490,7 +17562,7 @@ GameObject:
   - component: {fileID: 2042322683}
   - component: {fileID: 2042322682}
   - component: {fileID: 2042322681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Asta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17641,6 +17713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 8909986596271476207, guid: 2bcdda11244984bc296bccf7beb322c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcdda11244984bc296bccf7beb322c4, type: 3}
 --- !u!1 &2097865544
@@ -17655,7 +17732,7 @@ GameObject:
   - component: {fileID: 2097865548}
   - component: {fileID: 2097865547}
   - component: {fileID: 2097865546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17750,7 +17827,7 @@ GameObject:
   - component: {fileID: 2106842693}
   - component: {fileID: 2106842692}
   - component: {fileID: 2106842691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17845,7 +17922,7 @@ GameObject:
   - component: {fileID: 2108069157}
   - component: {fileID: 2108069156}
   - component: {fileID: 2108069155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17940,7 +18017,7 @@ GameObject:
   - component: {fileID: 2119450347}
   - component: {fileID: 2119450346}
   - component: {fileID: 2119450345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18035,7 +18112,7 @@ GameObject:
   - component: {fileID: 2126908868}
   - component: {fileID: 2126908867}
   - component: {fileID: 2126908866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Braccio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18129,7 +18206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2131976689}
   - component: {fileID: 2131976690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18224,7 +18301,7 @@ GameObject:
   - component: {fileID: 2134193070}
   - component: {fileID: 2134193069}
   - component: {fileID: 2134193068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18316,7 +18393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134831892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18366,7 +18443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2143579158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Staccionata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18411,7 +18488,7 @@ GameObject:
   - component: {fileID: 2146170739}
   - component: {fileID: 2146170738}
   - component: {fileID: 2146170737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bus (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18505,6 +18582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621539797569152895, guid: 6c0183b75c6352a4d8fc0464b0bb6c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8371331893888841337, guid: 6c0183b75c6352a4d8fc0464b0bb6c9d,
         type: 3}
@@ -18651,6 +18733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OptimizedTree
       objectReference: {fileID: 0}
+    - target: {fileID: 4776691698727033967, guid: 807c0161715a34346b64affcc9870e76,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807c0161715a34346b64affcc9870e76, type: 3}
 --- !u!1001 &7397053293029678745
@@ -18664,6 +18751,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Smog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542472388095592118, guid: e4979d26f6ae349b88eb57b996e05d3a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3779544173195755870, guid: e4979d26f6ae349b88eb57b996e05d3a,
         type: 3}
@@ -18788,6 +18880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909986596271476207, guid: 2bcdda11244984bc296bccf7beb322c4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcdda11244984bc296bccf7beb322c4, type: 3}
