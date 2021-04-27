@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class ReactiveTarget : MonoBehaviour
 {
+    public int hearts = 3;
+
    public void ReactToHit(){
         
+        hearts--;
+
         WanderingAI behaviour = GetComponent<WanderingAI>();
+        
+
+        if(hearts==0){
+
         if(behaviour != null){
             behaviour.setAlive(false);
         }
+
         StartCoroutine(Die());
+        }
     }
 
     private IEnumerator Die(){
