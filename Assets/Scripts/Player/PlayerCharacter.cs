@@ -1,39 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerCharacter : MonoBehaviour
 {
-    public int MouseX = 1;
 
-    public float sensitivityHor = 9.0f;
-    public float sensitivityVert = 9.0f;
+    //HEALTH SYSTEM
+    public Image [] hearts;
+    public int life;
+    private bool dead;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
-    public float minimumVert = -45.0f;
-    public float maximumVert = 45.0f;
-
-    public Health h;
-    public double health;
+    //DAMAGE IMAGE
+    [SerializeField] private Image damageImage;
+    private Color flashColor = new Color(1f, 0f, 0f, 0.1f);
+    private float flashSpeed = 5f;
+    private bool damaged;
+ 
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody body = GetComponent<Rigidbody>();
-        if(body != null)
-            body.freezeRotation = true;
-
-        h = GetComponent<Health>();
-        health = h.getHealth();
+        life = hearts.Length;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivityHor, 0); 
+    {   
+        if(dead == true){
+            Death();
+            Debug.Log("Hai perso");
+        }
+
+        if(damaged) {
+        damageImage.color = flashColor;
+        } else {
+        damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed* Time.deltaTime);
+        }
+        damaged = false;
+
     }
 
     public void Hurt(int damage){
-    	if(health>0){
-           h.updateHealth();
+        damaged = true;
+        life -= damage;
+        hearts[life].sprite = emptyHeart;
+        //Destroy(hearts[life].gameObject);
+
+        if(life < 1){
+            dead = true;
         }
+    }
+
+    public void Death (){
+        //fillImg.enabled = false;
+        //gameOver.enabled = true;
+        Time.timeScale = 0;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+        //GameEvent.isPaused = true;
     }
 }
