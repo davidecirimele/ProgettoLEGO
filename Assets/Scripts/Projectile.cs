@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Projectile : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = .1f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         DestroyAndDrop destroyable = other.GetComponent<DestroyAndDrop>();
-        
+        Debug.Log("Hello");
         destroyable.Damage();
         
         Destroy(this.gameObject);
