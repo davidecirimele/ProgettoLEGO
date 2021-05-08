@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[AddComponentMenu("Control Script/AlienScript")]
-public class WanderingAI : MonoBehaviour
+public class AlienIntelligence : MonoBehaviour
 {
     [SerializeField] private GameObject laserPrefab;
     private GameObject _laser;
