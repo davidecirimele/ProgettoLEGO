@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RayShooter : MonoBehaviour
 {
-
+    [SerializeField] private Transform target;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // lock mouse on the center 
-        Cursor.visible = false;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
