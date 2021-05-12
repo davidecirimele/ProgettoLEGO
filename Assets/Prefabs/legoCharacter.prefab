@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  layerMask: 0
 --- !u!1 &3056006911895939285
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,19 +137,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.010582417, y: -0.10868618, z: -0.036243916}
     m_Extent: {x: 0.69461596, y: 0.6790912, z: 0.8161187}
   m_DirtyAABB: 0
---- !u!65 &631489998
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5112931040904132497}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.66, y: 4.25, z: 1}
-  m_Center: {x: 0, y: 2.15, z: 0}
 --- !u!1 &6839651822152953536
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,12 +440,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c090246952449b7afa82f80664fc4d, type: 3}
---- !u!1 &5112931040904132497 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 81c090246952449b7afa82f80664fc4d,
-    type: 3}
-  m_PrefabInstance: {fileID: 3879053552276467352}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8119882830634173826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 81c090246952449b7afa82f80664fc4d,
