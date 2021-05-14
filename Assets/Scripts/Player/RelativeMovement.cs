@@ -40,10 +40,7 @@ public class RelativeMovement : MonoBehaviour {
         if(horInput != 0 || vertInput != 0){
             movement.x = horInput * moveSpeed;
             movement.z = vertInput * moveSpeed;
-            if (horInput!= 0)
-                animator.SetFloat("isMoving", Mathf.Abs(horInput));
-            if (vertInput!= 0)
-                animator.SetFloat("isMoving", Mathf.Abs(vertInput));
+            animator.SetFloat("isMoving", Mathf.Abs(vertInput) + Mathf.Abs(horInput));
             //movement = Vector3.ClampMagnitude(movement, moveSpeed);
 
             Quaternion tmp = target.rotation;
