@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 204567425073638066}
   - component: {fileID: 51271510909022527}
   - component: {fileID: 6237961246523405358}
+  - component: {fileID: 104318701}
   m_Layer: 6
   m_Name: Metal
   m_TagString: Untagged
@@ -91,9 +92,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196637543691613231}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
+  m_Radius: 1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
@@ -110,3 +111,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &104318701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196637543691613231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67320aba46652d4f98ab272c305b8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Metal
