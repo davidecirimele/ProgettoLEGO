@@ -7,14 +7,10 @@ public class DestroyAndDrop : MonoBehaviour
 	int damage;
     
     public GameObject drop;
-
-    public GameObject destroyable;
     
     // Start is called before the first frame update
     void Start()
-    {
-        destroyable = this.gameObject;
-        
+    {   
         damage=0;
     }
 
@@ -24,7 +20,7 @@ public class DestroyAndDrop : MonoBehaviour
         if(damage==4){
         	Destroy(this.gameObject);
 
-            Instantiate(drop, destroyable.transform.position, drop.transform.rotation);
+            Instantiate(drop, this.gameObject.transform.position + new Vector3(0,1,0), drop.transform.rotation);
         }
     }
 
