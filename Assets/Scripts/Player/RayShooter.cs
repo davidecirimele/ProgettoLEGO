@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RayShooter : MonoBehaviour
 {
+    public GameObject Projectile;
+
     [SerializeField] private Transform target;
     [SerializeField] private int layerMask;
     // Start is called before the first frame update
@@ -24,7 +26,9 @@ public class RayShooter : MonoBehaviour
             if(Physics.Raycast(ray, out hit, 100f, layerMask)){
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
-                if(target != null){
+                if (hit.transform.tag == "Destroyable")
+                    hit.transform.GetComponent<DestroyAndDrop>().Damage();
+                if (target != null){
                     // hit target, so sphere not have to be show
                     target.ReactToHit(); //this function is in target Script
                 }
@@ -41,7 +45,6 @@ public class RayShooter : MonoBehaviour
     private IEnumerator SphereIndicator(Vector3 pos){
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         sphere.transform.position = pos;
-
         yield return new WaitForSeconds(1);
 
         Destroy(sphere);
