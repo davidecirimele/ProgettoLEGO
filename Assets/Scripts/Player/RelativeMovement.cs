@@ -6,6 +6,7 @@ using UnityEngine;
 public class RelativeMovement : MonoBehaviour {
     
     [SerializeField] private Transform target;
+    [SerializeField] private Animator animator;
 
     public float rotSpeed = 15.0f;
 
@@ -39,6 +40,7 @@ public class RelativeMovement : MonoBehaviour {
         if(horInput != 0 || vertInput != 0){
             movement.x = horInput * moveSpeed;
             movement.z = vertInput * moveSpeed;
+            animator.SetFloat("isMoving", Mathf.Abs(vertInput) + Mathf.Abs(horInput));
             //movement = Vector3.ClampMagnitude(movement, moveSpeed);
 
             Quaternion tmp = target.rotation;
