@@ -6,11 +6,9 @@ using UnityEngine.AI;
 [AddComponentMenu("Control Script/AlienScript")]
 public class WanderingAI : MonoBehaviour
 {
-    [SerializeField]
-    float speed2 = 20;
+    [SerializeField] float speed2 = 20;
 
-    [SerializeField] List<Transform> wayPoint;
-    public GameObject WaypointParent;
+    [SerializeField] List<Transform> wayPoints;
     [SerializeField] private int waypointPosition;
     NavMeshAgent navMeshAgent;
     public int range = 1;
@@ -23,21 +21,19 @@ public class WanderingAI : MonoBehaviour
 
     private bool _alive;
 
-    void Start()
+    void Awake()
     {
+        wayPoints = new List<Transform>();
+        foreach(GameObject tmp in GameObject.FindGameObjectsWithTag("Waypoint")) { wayPoints.Add(tmp.transform); }
         _alive = true;
-        //initialise the target way point
-        for (int i = 0; i < WaypointParent.transform.childCount; i++)
-            wayPoint.Add(WaypointParent.transform.GetChild(i));
-        waypointPosition = 0;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.SetDestination(wayPoint[waypointPosition].position);
+        Move();
     }
 
     void Update()
     {
         if(_alive){  
-            if (verifyInRange(range, wayPoint[waypointPosition].position))
+            if (verifyInRange(range, wayPoints[waypointPosition].position))
                 Move();
        
             Ray ray = new Ray(transform.position, transform.forward);
@@ -86,7 +82,7 @@ public class WanderingAI : MonoBehaviour
 
     void Move()
     {
-        if (++waypointPosition >= wayPoint.Count) waypointPosition = 0;
-        navMeshAgent.SetDestination(wayPoint[waypointPosition].position);
+        waypointPosition = Random.Range(0, wayPoints.Count);
+        navMeshAgent.SetDestination(wayPoints[waypointPosition].position);
     }
 }
