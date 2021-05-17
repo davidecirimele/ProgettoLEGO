@@ -1,18 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-[AddComponentMenu("Control Script/AlienScript")]
-public class WanderingAI : MonoBehaviour
+public class AlienIntelligence : MonoBehaviour
 {
-    [SerializeField] float speed2 = 20;
-
-    [SerializeField] List<Transform> wayPoints;
-    [SerializeField] private int waypointPosition;
-    NavMeshAgent navMeshAgent;
-    public int range = 1;
-
     [SerializeField] private GameObject laserPrefab;
     private GameObject _laser;
 
@@ -21,21 +12,18 @@ public class WanderingAI : MonoBehaviour
 
     private bool _alive;
 
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        wayPoints = new List<Transform>();
-        foreach(GameObject tmp in GameObject.FindGameObjectsWithTag("Waypoint")) { wayPoints.Add(tmp.transform); }
-        _alive = true;
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        Move();
+      _alive = true;   
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if(_alive){  
-            if (verifyInRange(range, wayPoints[waypointPosition].position))
-                Move();
-       
+        if(_alive){
+            //transform.Translate(0, 0, speed * Time.deltaTime);
+
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if(Physics.SphereCast(ray, 0.75f, out hit)){
@@ -68,21 +56,5 @@ public class WanderingAI : MonoBehaviour
 
     public void setAlive(bool alive){
         _alive = alive;
-    }
-
-    bool verifyInRange(int range, Vector3 pos)
-    {
-        if (transform.position.x < pos.x + 1 && transform.position.x > pos.x - 1)
-            if (transform.position.z < pos.z + 1 && transform.position.z > pos.z - 1)
-            {
-                return true;
-            }
-        return false;
-    }
-
-    void Move()
-    {
-        waypointPosition = Random.Range(0, wayPoints.Count);
-        navMeshAgent.SetDestination(wayPoints[waypointPosition].position);
     }
 }
