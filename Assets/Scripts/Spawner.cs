@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-   //public Transform spawnPos;
    [SerializeField] private GameObject spawnee;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(1)){
-
-            Vector3 mouseScreenPosition = Input.mousePosition;
+           
+           Vector3 mouseScreenPosition = Input.mousePosition;
             Ray ray = Camera.main.ScreenPointToRay(mouseScreenPosition);
-            if (Physics.Raycast(ray, out RaycastHit hitInfo))
-            {
-                SpawnObjectAtPositon(hitInfo.point);
+            if(Physics.Raycast(ray, out RaycastHit hitInfo)){
+               SpawnObjectAtPositon(hitInfo.point);
             }
         }
     }
-    private void SpawnObjectAtPositon(Vector3 spawnPosition)
-    {
+
+    private void SpawnObjectAtPositon(Vector3 spawnPosition){
         GameObject obj = Instantiate(spawnee, spawnPosition, Quaternion.identity);
     }
 }

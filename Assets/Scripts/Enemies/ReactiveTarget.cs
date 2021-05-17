@@ -10,7 +10,7 @@ public class ReactiveTarget : MonoBehaviour
         
         hearts--;
 
-        WanderingAI behaviour = GetComponent<WanderingAI>();
+        AlienIntelligence behaviour = GetComponent<AlienIntelligence>();
         
 
         if(hearts==0){
