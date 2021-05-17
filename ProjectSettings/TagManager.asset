@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Destroyable
   - Waypoint
+  - Inventory
   layers:
   - Default
   - TransparentFX

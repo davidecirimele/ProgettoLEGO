@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour, IGameManager
 {
@@ -16,12 +17,16 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
     private void DisplayItems()
     {
-        string itemDisplay = "List of Items: ";
-        foreach(KeyValuePair<string, int> item in _items)
+        
+        foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Inventory"))
         {
-            itemDisplay += item.Key + "(" + item.Value + ") ";
+            if (obj.name == "wood" && _items.ContainsKey("Wood"))
+                obj.GetComponentInChildren<Text>().text = "Legno\n" + _items["Wood"];
+            if (obj.name == "metal" && _items.ContainsKey("Metal"))
+                obj.GetComponentInChildren<Text>().text = "Metallo\n" + _items["Metal"];
+            if (obj.name == "special" && _items.ContainsKey("Cannon"))
+                obj.GetComponentInChildren<Text>().text = "Pezzi\nCannone\n" + _items["Cannon"];
         }
-        Debug.Log(itemDisplay);
     }
 
     public void AddItem(string name)

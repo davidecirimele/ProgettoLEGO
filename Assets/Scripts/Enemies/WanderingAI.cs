@@ -6,8 +6,6 @@ using UnityEngine.AI;
 [AddComponentMenu("Control Script/AlienScript")]
 public class WanderingAI : MonoBehaviour
 {
-    [SerializeField] float speed2 = 20;
-
     [SerializeField] List<Transform> wayPoints;
     [SerializeField] private int waypointPosition;
     NavMeshAgent navMeshAgent;
