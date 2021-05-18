@@ -5,10 +5,9 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     public GameObject spawnee;
+    public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
-    public int interval = 10;
-    public int numberAliens = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +16,10 @@ public class BlockSpawner : MonoBehaviour
     }
 
     public void SpawnObject(){
-        Instantiate(spawnee, transform.position, transform.rotation, transform.parent);
-        numberAliens--;
-        if(numberAliens == 0){
+      
+        Vector3 pos = new Vector3(Random.Range(-45f, 20f), 0, Random.Range(-20f, 20f)) + transform.position;
+        Instantiate(spawnee, pos, transform.rotation);
+        if(stopSpawning){
             CancelInvoke("SpawnObject");
         }
     }
