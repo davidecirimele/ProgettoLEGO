@@ -42,6 +42,8 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void Hurt(int damage){
+        
+        Debug.Log("Colpito");
         damaged = true;
         life -= damage;
         hearts[life].sprite = emptyHeart;
