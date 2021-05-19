@@ -16,13 +16,18 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          transform.Translate(0, 0, speed * Time.deltaTime);  
+        transform.Translate(0, 0, speed * Time.deltaTime);  
     }
 
     void OnTriggerEnter(Collider other) {
         PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+        BossLife boss = other.GetComponent<BossLife>();
         if(player != null){
            player.Hurt(damage);
+        }
+
+        if(boss != null){
+           boss.Hitted(damage);
         }
 
         Destroy(this.gameObject);
