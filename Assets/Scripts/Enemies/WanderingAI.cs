@@ -74,6 +74,6 @@ public class WanderingAI : MonoBehaviour
     void Move()
     {
         waypointPosition = Random.Range(0, wayPoints.Count);
-        //navMeshAgent.SetDestination(wayPoints[waypointPosition].position);
+        navMeshAgent.SetDestination(wayPoints[waypointPosition].position);
     }
 }

@@ -38,12 +38,13 @@ public class BossShooting : MonoBehaviour
 
                 GameObject hitObject = hit.transform.gameObject;
                 if(hitObject.GetComponent<PlayerCharacter>()) {
-                        Debug.Log("Shot");
-                   
-                        _laser = Instantiate(laserPrefab) as GameObject;
-                        _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-                        _laser.transform.rotation = transform.rotation;
                     
+                    StartCoroutine(spawnLaser());
+                    //if(_laser == null){
+                        //_laser = Instantiate(laserPrefab) as GameObject;
+                        //_laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                        //_laser.transform.rotation = transform.rotation;
+                    //}
                 }
 
                 //else if(hit.distance < obstacleRange){
@@ -52,5 +53,14 @@ public class BossShooting : MonoBehaviour
                 //}
             }
         //}
+    }
+
+    private IEnumerator spawnLaser(){
+
+        _laser = Instantiate(laserPrefab) as GameObject;
+        _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+        _laser.transform.rotation = transform.rotation;
+
+        yield return new WaitForSeconds(1f);
     }
 }

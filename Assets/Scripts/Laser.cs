@@ -26,10 +26,6 @@ public class Laser : MonoBehaviour
            player.Hurt(damage);
         }
 
-        if(boss != null){
-           boss.Hitted(damage);
-        }
-
         Destroy(this.gameObject);
     }
 }
