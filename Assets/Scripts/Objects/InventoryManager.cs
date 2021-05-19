@@ -7,17 +7,17 @@ public class InventoryManager : MonoBehaviour, IGameManager
 {
     public ManagerStatus status { get; private set; }
     private Dictionary<string, int> _items;
-
+    private string objectChoose;
     public void Startup()
     {
         Debug.Log("Inventory manager starting...");
         _items = new Dictionary<string, int>();
+        objectChoose = "Ladder";
         status = ManagerStatus.Started;
     }
 
     private void DisplayItems()
     {
-        
         foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Inventory"))
         {
             if (obj.name == "wood" && _items.ContainsKey("Wood"))
@@ -27,6 +27,11 @@ public class InventoryManager : MonoBehaviour, IGameManager
             if (obj.name == "special" && _items.ContainsKey("Cannon"))
                 obj.GetComponentInChildren<Text>().text = "Pezzi\nCannone\n" + _items["Cannon"];
         }
+    }
+
+    private void changeObject()
+    {
+
     }
 
     public void AddItem(string name)

@@ -24,7 +24,6 @@ public class InventoryMovement : MonoBehaviour
             else
                 isHided = true;
         }
-        Debug.Log(speed);
         if (isHided && Inventory.anchoredPosition.y > 40)
             transform.position -= new Vector3(0f, speed, 0f);
         else if (!isHided && Inventory.anchoredPosition.y < 150)
