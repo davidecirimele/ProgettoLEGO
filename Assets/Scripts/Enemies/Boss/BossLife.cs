@@ -37,7 +37,9 @@ public class BossLife : MonoBehaviour
     }
 
     public void Death (){
-         Destroy(this.gameObject);
+        
+        healthBar.enabled = false;
+        Destroy(this.gameObject);
     }
 
 }

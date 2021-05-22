@@ -35,7 +35,8 @@ public class DetectScript : MonoBehaviour
             timeToShoot -= Time.deltaTime;
 
             if(timeToShoot < 0){
-                ShootPlayer();
+                if(shootPoint != null)
+                    ShootPlayer();
                 timeToShoot = originalTime;
             }
         }
