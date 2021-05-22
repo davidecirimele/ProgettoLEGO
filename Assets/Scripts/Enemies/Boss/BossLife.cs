@@ -40,12 +40,4 @@ public class BossLife : MonoBehaviour
          Destroy(this.gameObject);
     }
 
-    void OnTriggerEnter(Collider other) {
-        //int damage = 1;
-        Debug.Log(other.gameObject.name);
-        if(other != null){
-           Hitted(1);
-        }
-
-    }
 }

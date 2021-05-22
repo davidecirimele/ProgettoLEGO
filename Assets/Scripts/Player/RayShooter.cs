@@ -30,6 +30,8 @@ public class RayShooter : MonoBehaviour
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
                 if (hit.transform.tag == "Destroyable")
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
+                if (hit.transform.tag == "Boss")
+                    hit.transform.GetComponent<BossLife>().Hitted(1);
                 StartCoroutine(SpawnBulletTrail(hit.point));
                 if (target != null)
                     target.ReactToHit(); //this function is in target Script
@@ -37,15 +39,6 @@ public class RayShooter : MonoBehaviour
         }
 
        
-    }
-
-    //COROUTINE CODE
-    private IEnumerator SphereIndicator(Vector3 pos){
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.position = pos;
-        yield return new WaitForSeconds(1);
-
-        Destroy(sphere);
     }
 
     private IEnumerator SpawnBulletTrail(Vector3 hitPoint)
