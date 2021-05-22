@@ -21,7 +21,7 @@ public class Laser : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         PlayerCharacter player = other.GetComponent<PlayerCharacter>();
-        BossLife boss = other.GetComponent<BossLife>();
+       
         if(player != null){
            player.Hurt(damage);
         }
