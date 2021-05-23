@@ -16,6 +16,15 @@ public class DetectScript : MonoBehaviour
     public float timeToShoot = 1.3f;
     float originalTime;
 
+     void Awake() {
+        
+        Messenger.AddListener(GameEvent.BOSS_ALIEN_KILLED, Stop);    
+    }
+
+    void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.BOSS_ALIEN_KILLED, Stop); 
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +36,7 @@ public class DetectScript : MonoBehaviour
     {
         if(detected){
             enemy.LookAt(target.transform);
+            Messenger.Broadcast(GameEvent.DETECTED);
         }
     }
 
@@ -54,5 +64,9 @@ public class DetectScript : MonoBehaviour
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * shootSpeed, ForceMode.VelocityChange);
+    }
+
+    private void Stop(){
+        detected = false;
     }
 }

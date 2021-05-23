@@ -38,8 +38,9 @@ public class BossLife : MonoBehaviour
 
     public void Death (){
         
-        healthBar.enabled = false;
+        //healthBar.SetActive(false);
         Destroy(this.gameObject);
+        Messenger.Broadcast(GameEvent.BOSS_ROBOT_KILLED);
     }
 
 }

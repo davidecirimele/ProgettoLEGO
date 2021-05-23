@@ -9,6 +9,7 @@ TagManager:
   - Inventory
   - Laser
   - Boss
+  - BossAlien
   layers:
   - Default
   - TransparentFX

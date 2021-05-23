@@ -32,6 +32,8 @@ public class RayShooter : MonoBehaviour
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
                 if (hit.transform.tag == "Boss")
                     hit.transform.GetComponent<BossLife>().Hitted(1);
+                if (hit.transform.tag == "BossAlien")
+                    hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
                 StartCoroutine(SpawnBulletTrail(hit.point));
                 if (target != null)
                     target.ReactToHit(); //this function is in target Script
