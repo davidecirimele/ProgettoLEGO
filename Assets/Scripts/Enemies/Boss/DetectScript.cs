@@ -11,8 +11,7 @@ public class DetectScript : MonoBehaviour
     [SerializeField] private GameObject bullet;
     private GameObject _laser;
     public Transform shootPoint;
-
-    public float shootSpeed = 10f;
+    
     public float timeToShoot = 1.3f;
     float originalTime;
 
@@ -63,7 +62,7 @@ public class DetectScript : MonoBehaviour
         
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * shootSpeed, ForceMode.VelocityChange);
+        rb.AddForce(transform.forward);
     }
 
     private void Stop(){

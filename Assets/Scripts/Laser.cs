@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = 3000.0f;
     public int damage = 1;
 
     // Start is called before the first frame update

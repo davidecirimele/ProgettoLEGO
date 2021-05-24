@@ -35,7 +35,7 @@ public class Patrolling : MonoBehaviour
     }
 
     private void Move(){
-        speed = 3;
+        speed = 15;
     }
 
     private void Stop(){
