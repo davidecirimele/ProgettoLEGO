@@ -42,6 +42,7 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void Hurt(int damage){
+        
         damaged = true;
         life -= damage;
         hearts[life].sprite = emptyHeart;

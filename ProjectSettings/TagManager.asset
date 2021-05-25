@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Destroyable
   - Waypoint
+  - Inventory
+  - Laser
+  - Boss
+  - BossAlien
   layers:
   - Default
   - TransparentFX
@@ -18,8 +22,8 @@ TagManager:
   - Metal
   - Player
   - Collectible
-  - 
-  - 
+  - Laser
+  - Robot
   - 
   - 
   - 

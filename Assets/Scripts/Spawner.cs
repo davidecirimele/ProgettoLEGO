@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
    [SerializeField] private GameObject spawnee;
+   [SerializeField] private Vector3 offsetSpawnPosition;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,6 @@ public class Spawner : MonoBehaviour
     }
 
     private void SpawnObjectAtPositon(Vector3 spawnPosition){
-        GameObject obj = Instantiate(spawnee, spawnPosition, Quaternion.identity);
+        GameObject obj = Instantiate(spawnee, spawnPosition + offsetSpawnPosition, Quaternion.identity);
     }
 }

@@ -22,7 +22,7 @@ public class AlienIntelligence : MonoBehaviour
     void Update()
     {
         if(_alive){
-            //transform.Translate(0, 0, speed * Time.deltaTime);
+            transform.Translate(0, 0, speed * Time.deltaTime);
 
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;

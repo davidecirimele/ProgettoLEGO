@@ -8,11 +8,11 @@ public class ItemRotate : MonoBehaviour
 
     private void Awake()
     {
-        rotationSpeed = 90f;
+        rotationSpeed = 45;
     }
 
     private void FixedUpdate()
     {
-        transform.Rotate(new Vector3(0f, 0f, rotationSpeed * Time.deltaTime));
+        transform.Rotate(new Vector3(0f, rotationSpeed * Time.deltaTime, 0f));
     }
 }

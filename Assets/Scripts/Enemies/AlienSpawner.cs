@@ -5,10 +5,10 @@ using UnityEngine;
 public class AlienSpawner : MonoBehaviour
 {
     public GameObject spawnee;
+    public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
-    public int interval = 10;
-    public int numberAliens = 10;
+    private int counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,15 @@ public class AlienSpawner : MonoBehaviour
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
     }
 
+    void Update(){
+        if(counter==40)
+            stopSpawning=true;
+    }
+
     public void SpawnObject(){
-        Instantiate(spawnee, transform.position, transform.rotation, transform.parent);
-        numberAliens--;
-        if(numberAliens == 0){
+        Instantiate(spawnee, transform.position, transform.rotation);
+        counter+=1;
+        if(stopSpawning){
             CancelInvoke("SpawnObject");
         }
     }

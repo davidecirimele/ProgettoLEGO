@@ -8,9 +8,10 @@ public class RayShooter : MonoBehaviour
 
     [SerializeField] private Transform target;
     [SerializeField] private int layerMask;
-    // Start is called before the first frame update
+    public float time;
     void Start()
     {
+        time = 0.05f;
         layerMask = ~ (1 << LayerMask.NameToLayer("Player"));
         target = Camera.main.transform; // The Camera utilized by the character
         Cursor.lockState = CursorLockMode.Locked; // lock mouse on the center 
@@ -23,31 +24,42 @@ public class RayShooter : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
             Ray ray = new Ray(target.position, (transform.position - target.position) * 10);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, 100f, layerMask)){
+            if (Physics.Raycast(ray, out hit, 100f, layerMask)){
+                SpawnBulletTrail(hit.point);
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
                 if (hit.transform.tag == "Destroyable")
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
-                if (target != null){
-                    // hit target, so sphere not have to be show
+                if (hit.transform.tag == "Boss")
+                    hit.transform.GetComponent<BossLife>().Hitted(1);
+                if (hit.transform.tag == "BossAlien")
+                    hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
+                StartCoroutine(SpawnBulletTrail(hit.point));
+                if (target != null)
                     target.ReactToHit(); //this function is in target Script
-                }
-                else{
-                    StartCoroutine(SphereIndicator(hit.point));
-                }
             }
         }
 
        
     }
 
-    //COROUTINE CODE
-    private IEnumerator SphereIndicator(Vector3 pos){
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.position = pos;
-        yield return new WaitForSeconds(1);
-
-        Destroy(sphere);
+    private IEnumerator SpawnBulletTrail(Vector3 hitPoint)
+    {
+        GameObject laser = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        laser.GetComponent<Renderer>().material.color = Color.red;
+        laser.GetComponent<BoxCollider>().enabled = false;
+        laser.transform.localScale = new Vector3(0.05f, 0.05f, 0.4f);
+        laser.transform.position = transform.position;
+        laser.transform.rotation = Quaternion.FromToRotation(hitPoint, transform.position - hitPoint);
+        float i = 0f;
+        float rate = 1.0f / time;
+        while (i < 1.0f)
+        {
+            i += Time.deltaTime * rate;
+            laser.transform.position = Vector3.Lerp(transform.position, hitPoint, i);
+            yield return null;
+        }
+        //Destroy(laser.gameObject);
     }
 }
 

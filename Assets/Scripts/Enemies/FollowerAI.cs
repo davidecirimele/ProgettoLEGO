@@ -6,11 +6,10 @@ using UnityEngine.AI;
 [AddComponentMenu("Control Script/AlienScript")]
 public class FollowerAI : MonoBehaviour
 {
-
-    [SerializeField] List<Transform> wayPoints;
-    [SerializeField] private int waypointPosition;
     NavMeshAgent navMeshAgent;
     public int range = 1;
+
+    public float wanderRadius;
 
     [SerializeField] private GameObject laserPrefab;
     private GameObject _laser;
@@ -24,29 +23,40 @@ public class FollowerAI : MonoBehaviour
 
     private bool followPlayer;
 
+    private bool changeDest;
+
     private int stopCount = 0;
 
     private GameObject player;
 
+    private GameObject startPoint;
+
+    private bool firstStep;
+
     void Start(){
         rb = GetComponent<Rigidbody>();
+        changeDest = true;
+        firstStep = true;
     }
 
     void Awake()
     {
-        wayPoints = new List<Transform>();
-        foreach(GameObject tmp in GameObject.FindGameObjectsWithTag("Waypoint")) { wayPoints.Add(tmp.transform); }
+        startPoint = GameObject.Find("first");
         _alive = true;
         followPlayer = false;
         navMeshAgent = GetComponent<NavMeshAgent>();
         Move();
     }
 
+    
+
     void Update()
     {
         if(_alive){  
-            
 
+        if (verifyInRange(range, startPoint.transform.position))
+            firstStep = false;
+            
             if(followPlayer){
                 
                 transform.LookAt(player.transform);
@@ -61,15 +71,13 @@ public class FollowerAI : MonoBehaviour
                         
             }
 
-            else{
-                if (verifyInRange(range, wayPoints[waypointPosition].position) && stopCount<150)
-                    Move();
-            }
+            else if((!followPlayer && stopCount<300)||(stopCount>=300 && !followPlayer && changeDest==true))
+                Move();
        
-            Ray ray1 = new Ray(transform.position, transform.forward);
+            Ray ray = new Ray(transform.position, transform.forward);
         
             RaycastHit hit;
-           if(Physics.SphereCast(ray1, 0.75f, out hit)){
+           if(Physics.SphereCast(ray, 0.75f, out hit)){
 
                 if(hit.distance <= obstacleRange){
                     GameObject hitObject = hit.transform.gameObject;
@@ -79,6 +87,8 @@ public class FollowerAI : MonoBehaviour
                     if(!followPlayer)
                         followPlayer=true;
                     }
+                    else
+                        changeDest = true;
                 }   
             }
        
@@ -103,12 +113,28 @@ public class FollowerAI : MonoBehaviour
 
     void Move()
     {
-        if(!followPlayer){
-            waypointPosition = Random.Range(0, wayPoints.Count);
-            navMeshAgent.SetDestination(wayPoints[waypointPosition].position);
+       if(firstStep){
+            navMeshAgent.SetDestination(startPoint.transform.position);
+            }
+        else if(!firstStep && !followPlayer && changeDest){
+            Vector3 newPos = RandomNavSphere(startPoint.transform.position, wanderRadius, -1);
+            navMeshAgent.SetDestination(newPos);
+            changeDest = false;
         }
-        else{
+        else if(!firstStep && followPlayer){
             navMeshAgent.SetDestination(player.transform.position);
         }
+    }
+
+    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) {
+        Vector3 randDirection = Random.insideUnitSphere * dist;
+ 
+        randDirection += origin;
+ 
+        NavMeshHit navHit;
+ 
+        NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
+ 
+        return navHit.position;
     }
 }
