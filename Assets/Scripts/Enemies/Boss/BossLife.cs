@@ -12,12 +12,22 @@ public class BossLife : MonoBehaviour
     private bool damaged;
     private int health;
 
+    void Awake() {
+        healthBar.gameObject.SetActive(false);
+        Messenger.AddListener(GameEvent.DETECTED, Life);    
+    }
+
+     void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.DETECTED, Life);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         health = 40;
         barValueDamage = healthBar.maxValue / health;
         healthBarBackground = healthBar.GetComponentInChildren <Image> ();
+        
     }
 
     // Update is called once per frame
@@ -38,9 +48,12 @@ public class BossLife : MonoBehaviour
 
     public void Death (){
         
-        //healthBar.SetActive(false);
         Destroy(this.gameObject);
         Messenger.Broadcast(GameEvent.BOSS_ROBOT_KILLED);
+    }
+
+    private void Life(){
+        healthBar.gameObject.SetActive(true);
     }
 
 }
