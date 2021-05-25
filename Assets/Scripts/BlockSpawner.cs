@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class BlockSpawner : MonoBehaviour
 {
-    public GameObject spawnee;
+    public GameObject spawnee1;
+    public GameObject spawnee2;
+    public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
-    public int interval = 10;
-    public int numberAliens = 10;
+    private int counter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+        InvokeRepeating("SpawnObject1", spawnTime, spawnDelay);
+        InvokeRepeating("SpawnObject2", spawnTime, spawnDelay);
     }
 
-    public void SpawnObject(){
-        Instantiate(spawnee, transform.position, transform.rotation, transform.parent);
-        numberAliens--;
-        if(numberAliens == 0){
-            CancelInvoke("SpawnObject");
+    void Update(){
+        if(counter==100)
+            stopSpawning=true;
+    }
+
+    public void SpawnObject1(){
+        Instantiate(spawnee1, transform.position, transform.rotation);
+        if(stopSpawning){
+            CancelInvoke("SpawnObject1");
+        }
+    }
+
+    public void SpawnObject2(){
+        Instantiate(spawnee2, transform.position, transform.rotation);
+        if(stopSpawning){
+            CancelInvoke("SpawnObject2");
         }
     }
 }
