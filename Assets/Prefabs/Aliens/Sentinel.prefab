@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: -1633423477140601102}
   m_Layer: 6
   m_Name: Sentinel
-  m_TagString: Untagged
+  m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,4 +487,5 @@ MonoBehaviour:
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 2
+  shooting: 0
   wanderRadius: 300

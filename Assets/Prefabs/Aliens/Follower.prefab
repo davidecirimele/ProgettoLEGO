@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 7103702134548513581}
   m_Layer: 6
   m_Name: Follower
-  m_TagString: Untagged
+  m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,8 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
   wanderRadius: 300
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,

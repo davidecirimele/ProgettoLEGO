@@ -10,6 +10,7 @@ TagManager:
   - Laser
   - Boss
   - BossAlien
+  - Alien
   layers:
   - Default
   - TransparentFX

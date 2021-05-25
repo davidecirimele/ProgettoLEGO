@@ -44,7 +44,7 @@ public class SentinelAI : MonoBehaviour
         Messenger.AddListener(GameEvent.PLAYER_DETECTED, Follow);
         Messenger.AddListener(GameEvent.PLAYER_LOST, Unfollow);
         wayPoints = new List<Transform>();
-        startPoint = GameObject.Find("second");
+        startPoint = GameObject.Find(RandomStart());
         _alive = true;
         navMeshAgent = GetComponent<NavMeshAgent>();
         Move();
@@ -80,7 +80,7 @@ public class SentinelAI : MonoBehaviour
                 player = other.gameObject;
         }
 
-        else{
+        else if(other.tag != "Player" && other.tag != "Alien"){
             changeDest = true;
         }
     }
@@ -154,5 +154,19 @@ public class SentinelAI : MonoBehaviour
     void OnDestroy() {
         Messenger.RemoveListener(GameEvent.PLAYER_DETECTED, Follow); 
         Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
+    }
+
+     public string RandomStart(){
+
+        System.Random r = new System.Random();
+        int n = r.Next(1,2);
+
+        switch(n){
+            case 1:
+                return "first";
+            case 2:
+                return "second";
+        }
+        return "";
     }
 }

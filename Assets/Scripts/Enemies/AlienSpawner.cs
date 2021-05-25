@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AlienSpawner : MonoBehaviour
 {
-    public GameObject spawnee;
+    public GameObject spawnee1;
+    public GameObject spawnee2;
     public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
@@ -13,7 +14,8 @@ public class AlienSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+        InvokeRepeating("SpawnSentinel", spawnTime, spawnDelay);
+        InvokeRepeating("SpawnFollower", spawnTime, spawnDelay);
     }
 
     void Update(){
@@ -21,11 +23,19 @@ public class AlienSpawner : MonoBehaviour
             stopSpawning=true;
     }
 
-    public void SpawnObject(){
-        Instantiate(spawnee, transform.position, transform.rotation);
+    public void SpawnSentinel(){
+        Instantiate(spawnee1, transform.position, transform.rotation);
         counter+=1;
         if(stopSpawning){
-            CancelInvoke("SpawnObject");
+            CancelInvoke("SpawnSentinel");
+        }
+    }
+
+    public void SpawnFollower(){
+        Instantiate(spawnee2, transform.position, transform.rotation);
+        counter+=1;
+        if(stopSpawning){
+            CancelInvoke("SpawnFollower");
         }
     }
 }

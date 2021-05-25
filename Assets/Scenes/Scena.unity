@@ -4980,9 +4980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -5724,9 +5723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -8498,9 +8496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -22447,9 +22444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -25318,9 +25314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -26447,9 +26442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -28382,9 +28376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -31672,7 +31665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632400413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.563, y: 5.033849, z: 44.0005}
+  m_LocalPosition: {x: 60.563, y: 5.033849, z: 1399.0005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 770668149}
@@ -33250,9 +33243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -38866,7 +38858,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770668147}
-  m_LocalRotation: {x: 0.19169654, y: -0.000000008443635, z: 0.0000000016492014, w: 0.98145425}
+  m_LocalRotation: {x: 0.19169629, y: -0, z: -0, w: 0.9814543}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -39921,9 +39913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -52580,9 +52571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -53985,9 +53975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -55122,9 +55111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -55275,8 +55263,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114224661}
-  m_LocalRotation: {x: 0.18168904, y: -0.000000024526456, z: 0.0000000045316115, w: 0.98335606}
-  m_LocalPosition: {x: 60.563, y: 5.033849, z: 44.0005}
+  m_LocalRotation: {x: 0.18168876, y: 0, z: 0, w: 0.9833561}
+  m_LocalPosition: {x: 60.563, y: 5.033849, z: 1399.0005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64986,9 +64974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -65838,7 +65825,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353586746}
-  m_LocalRotation: {x: 0.17381267, y: -0.000000008472239, z: 0.0000000014953436, w: 0.98477876}
+  m_LocalRotation: {x: 0.17381245, y: -1e-45, z: -0, w: 0.9847788}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -71238,9 +71225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -75118,9 +75104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -75905,6 +75890,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
+        type: 3}
+      propertyPath: spawnee1
+      value: 
+      objectReference: {fileID: 3821847288614099185, guid: 32e2db0e1ece5479b9cc77fd9e842254,
+        type: 3}
+    - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
+        type: 3}
+      propertyPath: spawnee2
+      value: 
+      objectReference: {fileID: 3821847288614099185, guid: 673d6cd4d44e4da4ca338e49c4d91132,
+        type: 3}
+    - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430a08c3b40670d4b86714fb77ae944b, type: 3}
 --- !u!1001 &1570148487
@@ -76302,9 +76304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -78884,9 +78885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -81738,9 +81738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -88952,7 +88951,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855937049}
-  m_LocalRotation: {x: 0.15591875, y: -0.000000008497973, z: 0.0000000013413988, w: 0.9877699}
+  m_LocalRotation: {x: 0.1559185, y: 1e-45, z: -0, w: 0.98776996}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -91570,9 +91569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -93083,9 +93081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
   range: 1
+  wanderRadius: 0
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
     type: 3}
   speed: 3
@@ -103502,7 +103499,7 @@ PrefabInstance:
     - target: {fileID: 8437336201203994306, guid: 9886fa50186d63447b65c8729398f610,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 52
+      value: 1407
       objectReference: {fileID: 0}
     - target: {fileID: 8437336201203994306, guid: 9886fa50186d63447b65c8729398f610,
         type: 3}
@@ -103869,6 +103866,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5282967665857306659, guid: d4362ad509c952f43a76956277e5d23c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.205
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282967665857306659, guid: d4362ad509c952f43a76956277e5d23c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282967667224535482, guid: d4362ad509c952f43a76956277e5d23c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282967667224535482, guid: d4362ad509c952f43a76956277e5d23c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4362ad509c952f43a76956277e5d23c, type: 3}
 --- !u!1001 &7397053293029678745
@@ -104047,13 +104064,25 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
         type: 3}
+      propertyPath: spawnee1
+      value: 
+      objectReference: {fileID: 3821847288614099185, guid: 32e2db0e1ece5479b9cc77fd9e842254,
+        type: 3}
+    - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
+        type: 3}
+      propertyPath: spawnee2
+      value: 
+      objectReference: {fileID: 3821847288614099185, guid: 673d6cd4d44e4da4ca338e49c4d91132,
+        type: 3}
+    - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
+        type: 3}
       propertyPath: spawnTime
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8320088989786431607, guid: 430a08c3b40670d4b86714fb77ae944b,
         type: 3}
       propertyPath: spawnDelay
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430a08c3b40670d4b86714fb77ae944b, type: 3}

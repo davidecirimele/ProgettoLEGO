@@ -41,7 +41,7 @@ public class FollowerAI : MonoBehaviour
 
     void Awake()
     {
-        startPoint = GameObject.Find("first");
+        startPoint = GameObject.Find(RandomStart());
         _alive = true;
         followPlayer = false;
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -87,7 +87,7 @@ public class FollowerAI : MonoBehaviour
                     if(!followPlayer)
                         followPlayer=true;
                     }
-                    else
+                    else if(hitObject.tag!= "Player" && hitObject.tag != "Alien")
                         changeDest = true;
                 }   
             }
@@ -136,5 +136,24 @@ public class FollowerAI : MonoBehaviour
         NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
  
         return navHit.position;
+    }
+
+    public string RandomStart(){
+
+        System.Random r = new System.Random();
+        int n = r.Next(0,3);
+
+        switch(n){
+            case 0:
+                return "second";
+            case 1:
+                return "first";
+            case 2:
+                return "second";
+            case 3:
+                return "first";
+
+        }
+        return "";
     }
 }
