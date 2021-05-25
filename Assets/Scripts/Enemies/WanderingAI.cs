@@ -25,7 +25,7 @@ public class WanderingAI : MonoBehaviour
         foreach(GameObject tmp in GameObject.FindGameObjectsWithTag("Waypoint")) { wayPoints.Add(tmp.transform); }
         _alive = true;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        Move();
+        //Move();
     }
 
     void Update()

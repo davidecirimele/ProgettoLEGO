@@ -181,7 +181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed2: 20
   wayPoints: []
-  WaypointParent: {fileID: 0}
   waypointPosition: 0
   range: 1
   laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
