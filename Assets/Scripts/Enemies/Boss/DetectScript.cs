@@ -15,7 +15,7 @@ public class DetectScript : MonoBehaviour
     public float timeToShoot = 1.3f;
     float originalTime;
 
-     void Awake() {
+    void Awake() {
         
         Messenger.AddListener(GameEvent.BOSS_ALIEN_KILLED, Stop);    
     }

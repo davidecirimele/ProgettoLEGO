@@ -40,6 +40,7 @@ public class ReactiveBoss : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
+        Messenger.Broadcast(GameEvent.WIN);
         Debug.Log("Hai vinto");
     }
 }

@@ -54,13 +54,11 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void Death (){
-        //fillImg.enabled = false;
-        //gameOver.enabled = true;
         Time.timeScale = 0;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
-        //GameEvent.isPaused = true;
+        Messenger.Broadcast(GameEvent.LOSE);
     }
 }
