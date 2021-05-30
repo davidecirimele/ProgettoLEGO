@@ -9,7 +9,7 @@ public class BossLife : MonoBehaviour
     [SerializeField] private Image fillImg;
     private float barValueDamage;
     private Image healthBarBackground;
-    private bool damaged;
+    //private bool damaged;
     private int health;
     public bool robotDied;
 
@@ -32,11 +32,11 @@ public class BossLife : MonoBehaviour
         if (health <= 0) {
         robotDied = true;
         }
-        damaged = false;
+        //damaged = false;
     }
 
     public void Hitted(int damage){
-        damaged = true;
+        //damaged = true;
         health -= damage;
         healthBar.value -= barValueDamage;
         Debug.Log("Boss Health: " + health);

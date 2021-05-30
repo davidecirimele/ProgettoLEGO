@@ -89,7 +89,7 @@ public class RelativeMovement : MonoBehaviour {
         _charController.Move(movement);
     }
 
-     void OnControllerColliderHit(ControllerColliderHit hit) {
+    void OnControllerColliderHit(ControllerColliderHit hit) {
         _contact = hit;
     }
 }
