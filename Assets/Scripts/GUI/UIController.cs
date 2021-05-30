@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-
-    [SerializeField] private StartMenu startMenu;
     [SerializeField] private GameInterface gameInterface;
-    [SerializeField] private OptionMenu optionMenu;
+    [SerializeField] private PopupMenu popupMenu;
+    
+    private bool inOption = false;
 
     void Awake() {
         Messenger.AddListener(GameEvent.WIN, Win);
-        Messenger.AddListener(GameEvent.LOSE, Lose);    
+        Messenger.AddListener(GameEvent.LOSE, Lose);
+        gameInterface.Play();
     }
 
     void OnDestroy() {
@@ -20,11 +21,7 @@ public class UIController : MonoBehaviour
         Messenger.RemoveListener(GameEvent.LOSE, Lose); 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        startMenu.Open();
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -32,27 +29,45 @@ public class UIController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
            
             if(GameEvent.isPaused == false){
-                optionMenu.OpenPause();
+                popupMenu.OpenPause();
+                gameInterface.Pause();
             } else {
-                optionMenu.ClosePause();
+                
+                if(inOption == true){
+                        popupMenu.Back();
+                        inOption = false;
+                } else {
+                    popupMenu.ClosePause();
+                    gameInterface.Play();
+                }
+               
             }
         }   
     }
 
-    public void OnPlay(){
-        startMenu.Play();
-        gameInterface.Play();
-    }
-
-    public void QuitGame(){
-        startMenu.Exit();
-    }
-
     public void Win(){
-        optionMenu.WinGame();
+        popupMenu.WinGame();
     }
 
     public void Lose(){
-        optionMenu.LoseGame();
+        popupMenu.LoseGame();
+    }
+
+    public void OnExit(){
+        popupMenu.Esc();
+    }
+
+    public void OnResume(){
+        popupMenu.ClosePause();
+        gameInterface.Play();
+    }
+
+    public void OnRestart(){
+        popupMenu.Restart();
+    }
+
+    public void OnOption(){
+        popupMenu.Option();
+        inOption = true;
     }
 }

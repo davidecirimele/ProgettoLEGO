@@ -29,7 +29,7 @@ public class PlayerCharacter : MonoBehaviour
     {   
         if(dead == true){
             Death();
-            Debug.Log("Hai perso");
+            dead = false;
         }
 
         if(damaged) {
