@@ -21,12 +21,20 @@ public class RelativeMovement : MonoBehaviour {
 
     private ControllerColliderHit _contact;
 
+    //Sound
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip footStepSound;
+    private float _footStepSoundLength;
+    private bool _step;
 
     // Start is called before the first frame update
     void Start()
     {
         _vertSpeed = minFall;
         _charController = GetComponent<CharacterController>();
+        _soundSource = GetComponent<AudioSource>();
+        _step = true;
+        _footStepSoundLength = 0.30f;
         
     }
 
@@ -36,6 +44,11 @@ public class RelativeMovement : MonoBehaviour {
         Vector3 movement = Vector3.zero;
         float horInput = Input.GetAxis("Horizontal");
         float vertInput = Input.GetAxis("Vertical");
+
+        if(_charController.velocity.magnitude > 1f && _step){
+            _soundSource.PlayOneShot(footStepSound);
+            StartCoroutine(WaitForFootSteps(_footStepSoundLength));
+        }
 
         if(horInput != 0 || vertInput != 0){
             movement.x = horInput * moveSpeed;
@@ -91,5 +104,11 @@ public class RelativeMovement : MonoBehaviour {
 
     void OnControllerColliderHit(ControllerColliderHit hit) {
         _contact = hit;
+    }
+
+    IEnumerator WaitForFootSteps(float stepsLength){
+        _step = false;
+        yield return new WaitForSeconds(stepsLength);
+        _step = true;
     }
 }

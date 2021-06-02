@@ -7,6 +7,7 @@ public class RayShooter : MonoBehaviour
 {
     public GameObject Projectile;
 
+    private AudioSource _soundSource;
     [SerializeField] private Transform target;
     [SerializeField] private int layerMask;
     public float time;
@@ -36,6 +37,7 @@ public class RayShooter : MonoBehaviour
                 if (hit.transform.tag == "BossAlien")
                     hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
                 StartCoroutine(SpawnBulletTrail(hit.point));
+               
                 if (target != null)
                     target.ReactToHit(); //this function is in target Script
             }

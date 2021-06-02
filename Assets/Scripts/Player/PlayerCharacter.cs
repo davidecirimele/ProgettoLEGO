@@ -17,11 +17,16 @@ public class PlayerCharacter : MonoBehaviour
     private Color flashColor = new Color(1f, 0f, 0f, 0.1f);
     private float flashSpeed = 5f;
     private bool damaged;
+
+    //SOUND
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip playerHurtSound;
  
     // Start is called before the first frame update
     void Start()
     {
         life = hearts.Length;
+        _soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,9 +38,10 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         if(damaged) {
-        damageImage.color = flashColor;
+            _soundSource.PlayOneShot(playerHurtSound);
+            damageImage.color = flashColor;
         } else {
-        damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed* Time.deltaTime);
+            damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed* Time.deltaTime);
         }
         damaged = false;
 
