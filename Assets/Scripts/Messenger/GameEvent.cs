@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GameEvent
 {
-    //Boss
-    public const string DETECTED = "DETECTED";
-    public const string BOSS_ROBOT_KILLED = "BOSS_ROBOT_KILLED";
-    public const string BOSS_ALIEN_KILLED = "BOSS_ALIEN_KILLED";
+    //HUD
+
+    public static bool isPaused = false;
+
+    public const string WIN = "WIN";
+
+    public const string LOSE = "LOSE";
+
+    public const string COLLECTED = "COLLECTED";
 
     //Sentinelle
     public const string PLAYER_DETECTED = "PLAYER_DETECTED";

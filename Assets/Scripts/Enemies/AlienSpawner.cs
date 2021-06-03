@@ -19,7 +19,7 @@ public class AlienSpawner : MonoBehaviour
     }
 
     void Update(){
-        if(counter==40)
+        if(counter==10)
             stopSpawning=true;
     }
 

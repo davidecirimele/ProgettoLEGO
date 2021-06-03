@@ -60,8 +60,11 @@ public class PlayerCharacter : MonoBehaviour
     public void Hurt(int damage){
         
         damaged = true;
-        life -= damage;
+
+        for(int i=0;i<damage;i++){
+        life -= 1;
         hearts[life].sprite = emptyHeart;
+        }
 
         if(life < 1){
             dead = true;
