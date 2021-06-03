@@ -14,8 +14,9 @@ public class PopupMenu : MonoBehaviour
     [SerializeField] private Button restartButton;
     [SerializeField] private Button optionButton;
     [SerializeField] private Button escButton;
+    [SerializeField] private GameObject optionMenu;
 
-     [SerializeField] private GameObject optionMenu;
+    [SerializeField] private AudioClip sound;
 
     public void OpenPause(){
         PauseGame();
@@ -27,6 +28,7 @@ public class PopupMenu : MonoBehaviour
     }
 
     public void ClosePause(){
+        Managers.Audio.PlaySound(sound); 
         UnPauseGame();
         this.gameObject.SetActive(false);
         pauseText.gameObject.SetActive(false);
@@ -55,13 +57,15 @@ public class PopupMenu : MonoBehaviour
         escButton.transform.localPosition += new Vector3(0, 35, 0);
     }
 
-    public void Restart(){ 
+    public void Restart(){
+        Managers.Audio.PlaySound(sound); 
         GameEvent.isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Scena");
     }
 
     public void Option(){
+        Managers.Audio.PlaySound(sound);
         pauseText.gameObject.SetActive(false);
         resumeButton.gameObject.SetActive(false);
         optionButton.gameObject.SetActive(false);
@@ -70,6 +74,7 @@ public class PopupMenu : MonoBehaviour
     }
 
     public void Back(){
+        Managers.Audio.PlaySound(sound);
         pauseText.gameObject.SetActive(true);
         resumeButton.gameObject.SetActive(true);
         optionButton.gameObject.SetActive(true);
@@ -78,7 +83,7 @@ public class PopupMenu : MonoBehaviour
     }
 
     public void Esc(){
-        
+        Managers.Audio.PlaySound(sound);
         SceneManager.LoadScene("Start Menu");
     }
 
@@ -94,5 +99,5 @@ public class PopupMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
-    }
+    } 
 }

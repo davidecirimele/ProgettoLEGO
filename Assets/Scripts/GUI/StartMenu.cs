@@ -9,6 +9,11 @@ public class StartMenu : MonoBehaviour
     [SerializeField] private Image wallpaper;
     [SerializeField] private Button gioca;
     [SerializeField] private Button esci;
+    [SerializeField] private AudioClip sound;
+
+    void Start() {
+        Managers.Audio.PlayIntroMusic();
+    }
 
     public void Open(){
         
@@ -16,6 +21,7 @@ public class StartMenu : MonoBehaviour
     }
 
     public void Play(){
+        Managers.Audio.PlaySound(sound);
         GameEvent.isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Scena");
@@ -23,6 +29,7 @@ public class StartMenu : MonoBehaviour
     }
 
     public void Exit(){
+        Managers.Audio.PlaySound(sound);
         Application.Quit();
     }
 

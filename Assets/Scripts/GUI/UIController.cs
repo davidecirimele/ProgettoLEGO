@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private GameInterface gameInterface;
     [SerializeField] private PopupMenu popupMenu;
+    [SerializeField] private OptionMenuScript optionMenuScript;
     
     private bool inOption = false;
 
@@ -14,6 +15,7 @@ public class UIController : MonoBehaviour
         Messenger.AddListener(GameEvent.WIN, Win);
         Messenger.AddListener(GameEvent.LOSE, Lose);
         gameInterface.Play();
+        Managers.Audio.PlayLevelMusic();
     }
 
     void OnDestroy() {
@@ -39,8 +41,7 @@ public class UIController : MonoBehaviour
                 } else {
                     popupMenu.ClosePause();
                     gameInterface.Play();
-                }
-               
+                } 
             }
         }   
     }
@@ -69,5 +70,9 @@ public class UIController : MonoBehaviour
     public void OnOption(){
         popupMenu.Option();
         inOption = true;
+    }
+
+    public void BackOption(){
+        popupMenu.Back();
     }
 }

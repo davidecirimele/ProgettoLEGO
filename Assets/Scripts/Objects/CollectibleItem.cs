@@ -12,6 +12,7 @@ public class CollectibleItem : MonoBehaviour
         {
             Debug.Log("Item collected: " + itemName);
             Managers.Inventory.AddItem(itemName);
+            Messenger.Broadcast(GameEvent.COLLECTED);
             Destroy(this.gameObject);
         }
     }

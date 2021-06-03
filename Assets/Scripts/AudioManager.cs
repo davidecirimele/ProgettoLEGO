@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour, IGameManager
         musicSource.ignoreListenerPause = true;
 
         soundVolume = 1f;
-        musicVolume = 1f;
+        musicVolume = 0.5f;
         
         status = ManagerStatus.Started;
     }

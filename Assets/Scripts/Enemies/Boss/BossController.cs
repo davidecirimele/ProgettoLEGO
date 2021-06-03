@@ -11,11 +11,15 @@ public class BossController : MonoBehaviour
     [SerializeField] private ReactiveBoss reactiveBoss;
     [SerializeField] private ShootingAlienBoss shootingAlienBoss;
 
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip explosionSound;
+    [SerializeField] private AudioClip deadSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,12 +32,15 @@ public class BossController : MonoBehaviour
 
         if(bossLife.robotDied == true){
             bossLife.Death();
+            _soundSource.PlayOneShot(explosionSound);
             shootingAlienBoss.Shoot();
         }
 
         if(reactiveBoss.alienDied == true){
+            _soundSource.PlayOneShot(deadSound);
             detectScript.Stop();
             patrolling.Stop();
+            reactiveBoss.alienDied = false;
         }
     }
 }

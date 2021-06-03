@@ -8,4 +8,7 @@ public class GameEvent
     public static bool isPaused = false;
     public const string WIN = "WIN";
     public const string LOSE = "LOSE";
+    
+    
+    public const string COLLECTED = "COLLECTED";
 }

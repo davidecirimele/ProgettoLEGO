@@ -5,6 +5,14 @@ using UnityEngine.UI;
 public class PlayerCharacter : MonoBehaviour
 {
 
+    void Awake() {
+        Messenger.AddListener(GameEvent.COLLECTED, Collect);
+    }
+
+    void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.COLLECTED, Collect);
+    }
+
     //HEALTH SYSTEM
     public Image [] hearts;
     public int life;
@@ -21,6 +29,8 @@ public class PlayerCharacter : MonoBehaviour
     //SOUND
     private AudioSource _soundSource;
     [SerializeField] private AudioClip playerHurtSound;
+    [SerializeField] private AudioClip collectedSound;
+    [SerializeField] private AudioClip deathSound;
  
     // Start is called before the first frame update
     void Start()
@@ -38,7 +48,7 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         if(damaged) {
-            _soundSource.PlayOneShot(playerHurtSound);
+            
             damageImage.color = flashColor;
         } else {
             damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed* Time.deltaTime);
@@ -52,19 +62,25 @@ public class PlayerCharacter : MonoBehaviour
         damaged = true;
         life -= damage;
         hearts[life].sprite = emptyHeart;
-        //Destroy(hearts[life].gameObject);
 
         if(life < 1){
             dead = true;
+        } else {
+            _soundSource.PlayOneShot(playerHurtSound);
         }
     }
 
     public void Death (){
+        _soundSource.PlayOneShot(deathSound);
         Time.timeScale = 0;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
         Messenger.Broadcast(GameEvent.LOSE);
+    }
+
+    private void Collect(){
+        _soundSource.PlayOneShot(collectedSound);
     }
 }
