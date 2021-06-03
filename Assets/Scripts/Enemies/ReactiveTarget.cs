@@ -6,7 +6,14 @@ public class ReactiveTarget : MonoBehaviour
 {
     public int hearts = 3;
 
-   public void ReactToHit(){
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip diedSound;
+
+    void Start(){
+        _soundSource = GetComponent<AudioSource>();
+    }
+     
+    public void ReactToHit(){
         
         hearts--;
 
@@ -26,6 +33,7 @@ public class ReactiveTarget : MonoBehaviour
     private IEnumerator Die(){
         this.transform.Rotate(-75, 0, 0);
         Debug.Log("I'm Dying");
+        _soundSource.PlayOneShot(diedSound);
         yield return new WaitForSeconds(1.5f);
 
 

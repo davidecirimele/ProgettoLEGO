@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RayShooter : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class RayShooter : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private int layerMask;
     public float time;
+    public bool isShooting;
+
     void Start()
     {
         time = 0.05f;
@@ -21,7 +24,8 @@ public class RayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()){
+
             Ray ray = new Ray(target.position, (transform.position - target.position) * 10);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100f, layerMask)){
@@ -35,6 +39,7 @@ public class RayShooter : MonoBehaviour
                 if (hit.transform.tag == "BossAlien")
                     hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
                 StartCoroutine(SpawnBulletTrail(hit.point));
+               
                 if (target != null)
                     target.ReactToHit(); //this function is in target Script
             }
@@ -45,6 +50,7 @@ public class RayShooter : MonoBehaviour
 
     private IEnumerator SpawnBulletTrail(Vector3 hitPoint)
     {
+        //isShooting = true;
         GameObject laser = GameObject.CreatePrimitive(PrimitiveType.Cube);
         laser.GetComponent<Renderer>().material.color = Color.red;
         laser.GetComponent<BoxCollider>().enabled = false;

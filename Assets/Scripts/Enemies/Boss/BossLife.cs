@@ -9,16 +9,12 @@ public class BossLife : MonoBehaviour
     [SerializeField] private Image fillImg;
     private float barValueDamage;
     private Image healthBarBackground;
-    private bool damaged;
+    //private bool damaged;
     private int health;
+    public bool robotDied;
 
     void Awake() {
         healthBar.gameObject.SetActive(false);
-        Messenger.AddListener(GameEvent.DETECTED, Life);    
-    }
-
-     void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.DETECTED, Life);
     }
 
     // Start is called before the first frame update
@@ -34,13 +30,13 @@ public class BossLife : MonoBehaviour
     void Update()
     {
         if (health <= 0) {
-        Death ();
+        robotDied = true;
         }
-        damaged = false;
+        //damaged = false;
     }
 
     public void Hitted(int damage){
-        damaged = true;
+        //damaged = true;
         health -= damage;
         healthBar.value -= barValueDamage;
         Debug.Log("Boss Health: " + health);
@@ -49,10 +45,10 @@ public class BossLife : MonoBehaviour
     public void Death (){
         
         Destroy(this.gameObject);
-        Messenger.Broadcast(GameEvent.BOSS_ROBOT_KILLED);
+        robotDied = false;
     }
 
-    private void Life(){
+    public void Life(){
         healthBar.gameObject.SetActive(true);
     }
 

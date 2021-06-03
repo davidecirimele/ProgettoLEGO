@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectScript : MonoBehaviour
 {
-    bool detected;
+    public bool detected;
     GameObject target;
     public Transform enemy;
 
@@ -14,15 +14,6 @@ public class DetectScript : MonoBehaviour
     
     public float timeToShoot = 1.3f;
     float originalTime;
-
-     void Awake() {
-        
-        Messenger.AddListener(GameEvent.BOSS_ALIEN_KILLED, Stop);    
-    }
-
-    void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.BOSS_ALIEN_KILLED, Stop); 
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +26,6 @@ public class DetectScript : MonoBehaviour
     {
         if(detected){
             enemy.LookAt(target.transform);
-            Messenger.Broadcast(GameEvent.DETECTED);
         }
     }
 
@@ -65,7 +55,7 @@ public class DetectScript : MonoBehaviour
         rb.AddForce(transform.forward);
     }
 
-    private void Stop(){
+    public void Stop(){
         detected = false;
     }
 }

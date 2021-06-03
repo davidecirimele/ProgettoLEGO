@@ -9,16 +9,6 @@ public class ShootingAlienBoss : MonoBehaviour
     private GameObject _laser;
     private bool shooting;
 
-    void Awake() {
-        
-        Messenger.AddListener(GameEvent.BOSS_ROBOT_KILLED, Shoot);    
-    }
-
-    void OnDestroy() {
-        
-        Messenger.RemoveListener(GameEvent.BOSS_ROBOT_KILLED, Shoot); 
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +36,7 @@ public class ShootingAlienBoss : MonoBehaviour
         }
     }
 
-    private void Shoot(){
+    public void Shoot(){
         shooting = true;
     }
 }

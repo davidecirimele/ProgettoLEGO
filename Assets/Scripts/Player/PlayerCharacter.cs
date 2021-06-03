@@ -5,6 +5,14 @@ using UnityEngine.UI;
 public class PlayerCharacter : MonoBehaviour
 {
 
+    void Awake() {
+        Messenger.AddListener(GameEvent.COLLECTED, Collect);
+    }
+
+    void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.COLLECTED, Collect);
+    }
+
     //HEALTH SYSTEM
     public Image [] hearts;
     public int life;
@@ -17,11 +25,18 @@ public class PlayerCharacter : MonoBehaviour
     private Color flashColor = new Color(1f, 0f, 0f, 0.1f);
     private float flashSpeed = 5f;
     private bool damaged;
+
+    //SOUND
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip playerHurtSound;
+    [SerializeField] private AudioClip collectedSound;
+    [SerializeField] private AudioClip deathSound;
  
     // Start is called before the first frame update
     void Start()
     {
         life = hearts.Length;
+        _soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,13 +44,14 @@ public class PlayerCharacter : MonoBehaviour
     {   
         if(dead == true){
             Death();
-            Debug.Log("Hai perso");
+            dead = false;
         }
 
         if(damaged) {
-        damageImage.color = flashColor;
+            
+            damageImage.color = flashColor;
         } else {
-        damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed* Time.deltaTime);
+            damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed* Time.deltaTime);
         }
         damaged = false;
 
@@ -44,27 +60,27 @@ public class PlayerCharacter : MonoBehaviour
     public void Hurt(int damage){
         
         damaged = true;
-
-        for(int i=0;i<damage;i++){
-            life -= 1;
-            hearts[life].sprite = emptyHeart;
-        }
-        //Destroy(hearts[life].gameObject);
+        life -= damage;
+        hearts[life].sprite = emptyHeart;
 
         if(life < 1){
             dead = true;
+        } else {
+            _soundSource.PlayOneShot(playerHurtSound);
         }
     }
 
     public void Death (){
-        //fillImg.enabled = false;
-        //gameOver.enabled = true;
+        _soundSource.PlayOneShot(deathSound);
         Time.timeScale = 0;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
-        //GameEvent.isPaused = true;
+        Messenger.Broadcast(GameEvent.LOSE);
     }
 
+    private void Collect(){
+        _soundSource.PlayOneShot(collectedSound);
+    }
 }

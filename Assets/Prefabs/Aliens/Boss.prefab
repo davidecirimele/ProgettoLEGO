@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   fillImg: {fileID: 0}
+  robotDied: 0
 --- !u!1 &7563985107818959439
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286a4531a55329f47b3bea629b74ab84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detected: 0
   enemy: {fileID: 7563985108103063648}
   bullet: {fileID: 2040569142992942538, guid: 0ca7f53f0af89764ab3db95185201bf7, type: 3}
   shootPoint: {fileID: 7563985108443534684}
@@ -299,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hearts: 3
+  alienDied: 0
 --- !u!114 &7563985108014083289
 MonoBehaviour:
   m_ObjectHideFlags: 0
