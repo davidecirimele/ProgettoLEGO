@@ -35,6 +35,7 @@ public class SentinelAI : MonoBehaviour
 
     void Start(){
         rb = GetComponent<Rigidbody>();
+         
         changeDest = true;
         firstStep = true;
     }
@@ -45,8 +46,8 @@ public class SentinelAI : MonoBehaviour
         Messenger.AddListener(GameEvent.PLAYER_LOST, Unfollow);
         wayPoints = new List<Transform>();
         startPoint = GameObject.Find(RandomStart());
-        _alive = true;
         navMeshAgent = GetComponent<NavMeshAgent>();
+        _alive = true;
         Move();
     }
 
@@ -60,7 +61,7 @@ public class SentinelAI : MonoBehaviour
             if(detected){
                 shooting = true;
 
-                transform.LookAt(player.transform);
+                transform.LookAt(player.transform.position + new Vector3(0,1,0));
        
             }
 

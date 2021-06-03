@@ -12,4 +12,8 @@ public class GameEvent
     //Sentinelle
     public const string PLAYER_DETECTED = "PLAYER_DETECTED";
     public const string PLAYER_LOST = "PLAYER_LOST";
+
+    //Cane
+    public const string DETECTED_DOG = "DETECTED_DOG";
+    public const string LOST_DOG = "LOST_DOG";
 }

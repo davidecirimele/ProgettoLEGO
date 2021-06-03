@@ -59,7 +59,7 @@ public class RayShooter : MonoBehaviour
             laser.transform.position = Vector3.Lerp(transform.position, hitPoint, i);
             yield return null;
         }
-        //Destroy(laser.gameObject);
+        Destroy(laser.gameObject);
     }
 }
 

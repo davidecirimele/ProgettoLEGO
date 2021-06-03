@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061884947366163559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0.3}
-  m_LocalScale: {x: 0.7, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.423, z: 0.497}
+  m_LocalScale: {x: 0.2, y: 0.1, z: 0.2}
   m_Children: []
   m_Father: {fileID: 3821847288614099190}
   m_RootOrder: 0
@@ -111,9 +111,9 @@ GameObject:
   - component: {fileID: 3821847288614099195}
   - component: {fileID: 2354716823714386797}
   - component: {fileID: 7185258602551880041}
-  - component: {fileID: 7103702134548513581}
+  - component: {fileID: 8273349165790558701}
   m_Layer: 6
-  m_Name: Alien
+  m_Name: Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc3540ce74ce441df8c468a5b21bb676, type: 2}
+  - {fileID: 2100000, guid: b970cae3f223b4fa4966933ee043b48f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,7 +206,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.50001526
-  m_Speed: 17.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -263,7 +263,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &7103702134548513581
+--- !u!114 &8273349165790558701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,13 +272,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3821847288614099185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0df9c1eaa1d48b79d44ccf591bacd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5575282fc62b44931be2bf6957794ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
-  waypointPosition: 0
-  range: 1
-  laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
+  laserPrefab: {fileID: 988515894654078807, guid: 46bc70386bdd540a38f6545db87ad364,
     type: 3}
-  speed: 3
-  obstacleRange: 5

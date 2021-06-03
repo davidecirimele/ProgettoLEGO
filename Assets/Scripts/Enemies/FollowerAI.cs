@@ -37,6 +37,7 @@ public class FollowerAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         changeDest = true;
         firstStep = true;
+        Move();
     }
 
     void Awake()
@@ -45,7 +46,7 @@ public class FollowerAI : MonoBehaviour
         _alive = true;
         followPlayer = false;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        Move();
+        
     }
 
     
@@ -59,7 +60,7 @@ public class FollowerAI : MonoBehaviour
             
             if(followPlayer){
                 
-                transform.LookAt(player.transform);
+                transform.LookAt(player.transform.position + new Vector3(0,1,0));
 
                 Move();
 
@@ -84,6 +85,7 @@ public class FollowerAI : MonoBehaviour
                     if(hitObject.GetComponent<PlayerCharacter>()) {
                     
                     player = hitObject;
+                    
                     if(!followPlayer)
                         followPlayer=true;
                     }

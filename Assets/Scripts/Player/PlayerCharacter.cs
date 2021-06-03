@@ -44,8 +44,11 @@ public class PlayerCharacter : MonoBehaviour
     public void Hurt(int damage){
         
         damaged = true;
-        life -= damage;
-        hearts[life].sprite = emptyHeart;
+
+        for(int i=0;i<damage;i++){
+            life -= 1;
+            hearts[life].sprite = emptyHeart;
+        }
         //Destroy(hearts[life].gameObject);
 
         if(life < 1){
@@ -63,4 +66,5 @@ public class PlayerCharacter : MonoBehaviour
         Time.timeScale = 0;
         //GameEvent.isPaused = true;
     }
+
 }
