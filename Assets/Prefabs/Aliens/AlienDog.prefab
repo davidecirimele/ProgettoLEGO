@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dog: {fileID: 0}
+  biteSound: {fileID: 8300000, guid: ed2ef0a082d5e15468c141ebbf998f69, type: 3}
 --- !u!114 &5530463000965259545
 MonoBehaviour:
   m_ObjectHideFlags: 0

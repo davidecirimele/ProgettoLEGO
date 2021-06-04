@@ -17,9 +17,16 @@ public class PlayerDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(detected){
-            Sniper1.GetComponent<SniperAI>().Look();
-            Sniper2.GetComponent<SniperAI>().Look();
+        if(Sniper1!= null){
+            if(detected){
+                Sniper1.GetComponent<SniperAI>().Look();
+            }
+        }
+
+        if(Sniper2!= null){
+            if(detected){
+                Sniper2.GetComponent<SniperAI>().Look();
+            }
         }
     }
     

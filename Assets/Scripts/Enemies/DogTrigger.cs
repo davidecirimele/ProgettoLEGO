@@ -31,10 +31,12 @@ public class DogTrigger : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other) {
-        if(other.tag == "Player"){
-            detected = false;
-            dog.GetComponent<AlienDogAI>().Unfollow();
-            //Messenger.Broadcast(GameEvent.LOST_DOG);
+        if(dog!=null){
+            if(other.tag == "Player"){
+                detected = false;
+                dog.GetComponent<AlienDogAI>().Unfollow();
+                //Messenger.Broadcast(GameEvent.LOST_DOG);
+            }
         }
     }
 

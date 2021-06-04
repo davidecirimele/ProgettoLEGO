@@ -33,7 +33,7 @@ public class ReactiveTarget : MonoBehaviour
     private IEnumerator Die(){
         this.transform.Rotate(-75, 0, 0);
         Debug.Log("I'm Dying");
-        //_soundSource.PlayOneShot(diedSound);
+        _soundSource.PlayOneShot(diedSound);
         yield return new WaitForSeconds(1.5f);
 
 
