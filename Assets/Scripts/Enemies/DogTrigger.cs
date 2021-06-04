@@ -16,15 +16,16 @@ public class DogTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(detected){
-            dog.GetComponent<AlienDogAI>().Follow();
-            //Messenger.Broadcast(GameEvent.DETECTED_DOG);
+        if(dog!=null){
+            if(detected){
+                dog.GetComponent<AlienDogAI>().Follow();
+                //Messenger.Broadcast(GameEvent.DETECTED_DOG);
+            }
         }
     }
     
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
-            Debug.Log("E il player");
             detected = true;
         }
     }

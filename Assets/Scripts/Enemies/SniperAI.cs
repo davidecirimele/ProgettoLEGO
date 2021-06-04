@@ -10,6 +10,7 @@ public class SniperAI : MonoBehaviour
     private bool _alive;
     private bool detected;
     private GameObject player;
+    public float obstacleRange = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -54,10 +55,24 @@ public class SniperAI : MonoBehaviour
     }
 
     void Shoot(){
-        if(_laser == null){
-            _laser = Instantiate(laserPrefab) as GameObject;
-            _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-            _laser.transform.rotation = transform.rotation;
+         Ray ray = new Ray(transform.position, transform.forward);
+        
+            RaycastHit hit;
+           if(Physics.SphereCast(ray, 0.75f, out hit)){
+
+                if(hit.distance <= obstacleRange){
+                    GameObject hitObject = hit.transform.gameObject;
+                
+                    if(!hitObject.GetComponent<PlayerCharacter>()) {
+                    
+                        if(_laser == null){
+                        _laser = Instantiate(laserPrefab) as GameObject;
+                        _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                        _laser.transform.rotation = transform.rotation;
+                        }     
+                    }
+                }
+        
+            }
         }
-    }
 }
