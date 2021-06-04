@@ -37,13 +37,17 @@ public class AlienDogAI : MonoBehaviour
     }
 
     public void Follow(){
-        detected=true;
-        dog.GetComponent<DogPatrolling>().Attack();
+        if(dog!=null){
+            detected=true;
+            dog.GetComponent<DogPatrolling>().Attack();
+        }
     }
 
     public void Unfollow(){
-        detected=false;
-        dog.GetComponent<DogPatrolling>().GoToSleep();
+        if(dog!=null){
+            detected=false;
+            dog.GetComponent<DogPatrolling>().GoToSleep();
+        }
     }
 
     void OnTriggerEnter(Collider other) {
