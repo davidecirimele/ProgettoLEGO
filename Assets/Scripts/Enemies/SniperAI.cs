@@ -37,6 +37,7 @@ public class SniperAI : MonoBehaviour
             if(detected){
                 transform.LookAt(player.transform.position + new Vector3(0,1.6f,0));
                 Shoot();
+                detected = false;
             }
 
         }
