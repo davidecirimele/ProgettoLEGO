@@ -10,7 +10,9 @@ public class RayShooter : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private int layerMask;
     public float time;
-    public bool isShooting;
+
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip shotSound;
 
     void Start()
     {
@@ -19,13 +21,15 @@ public class RayShooter : MonoBehaviour
         target = Camera.main.transform; // The Camera utilized by the character
         Cursor.lockState = CursorLockMode.Locked; // lock mouse on the center 
         Cursor.visible = true;
+
+        _soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()){
-
+            _soundSource.PlayOneShot(shotSound);
             Ray ray = new Ray(target.position, (transform.position - target.position) * 10);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100f, layerMask)){
@@ -50,7 +54,6 @@ public class RayShooter : MonoBehaviour
 
     private IEnumerator SpawnBulletTrail(Vector3 hitPoint)
     {
-        //isShooting = true;
         GameObject laser = GameObject.CreatePrimitive(PrimitiveType.Cube);
         laser.GetComponent<Renderer>().material.color = Color.red;
         laser.GetComponent<BoxCollider>().enabled = false;

@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - BossAlien
   - Alien
+  - Ladder
   layers:
   - Default
   - TransparentFX

@@ -24,8 +24,11 @@ public class RelativeMovement : MonoBehaviour {
     //Sound
     private AudioSource _soundSource;
     [SerializeField] private AudioClip footStepSound;
+    [SerializeField] private AudioClip jumpSound;
     private float _footStepSoundLength;
     private bool _step;
+    private bool jumping;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,7 @@ public class RelativeMovement : MonoBehaviour {
         _charController = GetComponent<CharacterController>();
         _soundSource = GetComponent<AudioSource>();
         _step = true;
-        _footStepSoundLength = 0.30f;
+        _footStepSoundLength = 0.20f;
         
     }
 
@@ -71,10 +74,13 @@ public class RelativeMovement : MonoBehaviour {
         if(_vertSpeed < 0 && Physics.Raycast(transform.position, Vector3.down, out hit)){
             float check = (_charController.height + _charController.radius) / 1.9f;
             hitGround = hit.distance <= check;
+            
         }
 
         if(hitGround){
             if(Input.GetButtonDown("Jump")){
+                jumping = true;
+                _soundSource.PlayOneShot(jumpSound);
                 _vertSpeed = jumpSpeed;
             } else {
                 _vertSpeed = minFall;
@@ -88,13 +94,13 @@ public class RelativeMovement : MonoBehaviour {
             if(_charController.isGrounded){
                 if(Vector3.Dot(movement, _contact.normal) < 0){
                     movement = _contact.normal * moveSpeed;
+                    
                 } else {
                     movement += _contact.normal * moveSpeed;
+                    
                 }
             }
         }
-
-       
 
         movement.y = _vertSpeed;
 
