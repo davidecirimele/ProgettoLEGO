@@ -19,7 +19,6 @@ void OnTriggerEnter(Collider col)
 {
 	if(col.gameObject.tag == "Ladder")
 	{
-        Debug.Log("Entro");
 		relativeMovement.enabled = false;
 		inside = !inside;
 	}
@@ -29,7 +28,6 @@ void OnTriggerExit(Collider col)
 {
 	if(col.gameObject.tag == "Ladder")
 	{
-         Debug.Log("Esco");
 		relativeMovement.enabled = true;
 		inside = !inside;
 	}

@@ -25,6 +25,7 @@ public class SpawnerManager : MonoBehaviour, IGameManager
 
     private void SpawnObjectAtPositon(Vector3 spawnPosition){
         GameObject obj = Instantiate(spawnee, spawnPosition + spawnee.GetComponent<Offset>().getOffset(), Quaternion.identity);
+        Debug.Log(spawnee.GetComponent<Offset>().getOffset());
     }
 
     public void Startup()
@@ -36,7 +37,7 @@ public class SpawnerManager : MonoBehaviour, IGameManager
             spawnableObjects.Add(Instantiate(obj) as GameObject);
         }
         if (spawnableObjects.Count != 0)
-            spawnee = spawnableObjects[0];
+            spawnee = spawnableObjects[2];
         Debug.Log(spawnee);
         status = ManagerStatus.Started;
     }
