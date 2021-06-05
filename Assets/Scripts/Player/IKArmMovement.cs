@@ -29,7 +29,7 @@ public class IKArmMovement : MonoBehaviour
                 // Set the look target position, if one has been assigned
                 if (lookObj != null)
                 {
-                    animator.SetLookAtWeight(1);
+                    animator.SetLookAtWeight(1, 0.5f);
                     animator.SetLookAtPosition(lookObj.position);
                 }
                 // Set the right hand target position and rotation, if one has been assigned

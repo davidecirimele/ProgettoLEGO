@@ -13,16 +13,16 @@ public class RayShooter : MonoBehaviour
     {
         time = 0.05f;
         layerMask = ~ (1 << LayerMask.NameToLayer("Player"));
-        target = Camera.main.transform; // The Camera utilized by the character
+        //target = Camera.main.transform; // The Camera utilized by the character
         Cursor.lockState = CursorLockMode.Locked; // lock mouse on the center 
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
-            Ray ray = new Ray(target.position, (transform.position - target.position) * 10);
+            if (Input.GetKeyDown(KeyCode.E)){
+            Ray ray = new Ray(target.position, (transform.position - target.position) * 100);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100f, layerMask)){
                 SpawnBulletTrail(hit.point);
@@ -50,7 +50,7 @@ public class RayShooter : MonoBehaviour
         laser.GetComponent<BoxCollider>().enabled = false;
         laser.transform.localScale = new Vector3(0.05f, 0.05f, 0.4f);
         laser.transform.position = transform.position;
-        laser.transform.rotation = Quaternion.FromToRotation(hitPoint, transform.position - hitPoint);
+        laser.transform.rotation = Quaternion.LookRotation(hitPoint - transform.position, Vector3.up);
         float i = 0f;
         float rate = 1.0f / time;
         while (i < 1.0f)
