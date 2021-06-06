@@ -29,10 +29,16 @@ public class AlienTransporterScript : MonoBehaviour
         if(player != null){
            fly = true;
            _soundSource.PlayOneShot(startSound);
-           player.transform.parent = transform;
-           //player.Move(0, 3f * Time.deltaTime, 8f * Time.deltaTime);
         }
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        CharacterController player = other.GetComponent<CharacterController>();
+        if (player != null)
+        {
+            player.Move(new Vector3(0, 3f * Time.deltaTime, 8f * Time.deltaTime));
+        }
     }
 
     private void OnTriggerExit(Collider other) {
@@ -41,7 +47,6 @@ public class AlienTransporterScript : MonoBehaviour
 
         if(player != null){
             _soundSource.mute = !_soundSource.mute;
-           player.transform.parent = null;
         }
     }
 }
