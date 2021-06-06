@@ -29,15 +29,13 @@ public class BlockDestroy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void OnTriggerEnter(Collider other) {
-        PlayerCharacter player = other.GetComponent<PlayerCharacter>();
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-       
+    private void OnCollisionEnter(Collision other) {
+        PlayerCharacter player = other.gameObject.GetComponent<PlayerCharacter>();
+
         if(player != null){
            player.Hurt(1);
-        } else {
-            rb.AddForce(transform.up * 2);
-        } 
+        }
+
         _soundSource.PlayOneShot(impactSound);
     }
 }

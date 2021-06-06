@@ -17,16 +17,18 @@ public class ReactiveTarget : MonoBehaviour
         
         hearts--;
 
-        AlienIntelligence behaviour = GetComponent<AlienIntelligence>();
+        FollowerAI behaviour = GetComponent<FollowerAI>();
         
 
-        if(hearts==0){
+        if(hearts!=0){
 
-        if(behaviour != null){
+            if(behaviour != null){
             behaviour.setAlive(false);
-        }
+            }
 
-        StartCoroutine(Die());
+            
+        } else {
+            StartCoroutine(Die());
         }
     }
 
