@@ -35,7 +35,6 @@ public class AudioManager : MonoBehaviour, IGameManager
     [SerializeField] private string levelBGMusic;
 
     [SerializeField] private AudioClip destroySound;
-    [SerializeField] private AudioClip diedSound;
     [SerializeField] private AudioClip createSound;
 
     public void PlaySound(AudioClip clip){

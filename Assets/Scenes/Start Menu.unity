@@ -320,7 +320,7 @@ MonoBehaviour:
   wallpaper: {fileID: 643839677}
   gioca: {fileID: 1635568174}
   esci: {fileID: 1175803782}
-  sound: {fileID: 8300000, guid: ca1c0b875f77bb24281104d63f089919, type: 3}
+  sound: {fileID: 8300000, guid: 871ca161c7332d5489696fbd66255a18, type: 3}
 --- !u!1 &554324921
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 868430858}
   - component: {fileID: 868430857}
   - component: {fileID: 868430856}
+  - component: {fileID: 868430859}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -578,6 +579,9 @@ MonoBehaviour:
   musicSource: {fileID: 918854889}
   introBGMusic: intro
   levelBGMusic: loop
+  destroySound: {fileID: 0}
+  diedSound: {fileID: 0}
+  createSound: {fileID: 0}
 --- !u!4 &868430855
 Transform:
   m_ObjectHideFlags: 0
@@ -629,6 +633,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f73a036c4bd54285aad799b2cb741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &868430859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868430853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b098641cc66aa89439aba3a6fc119480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnableObjects: []
+  spawnee: {fileID: 3797129947937720553, guid: 7deddee28ecfea64d8f369c1904d868c, type: 3}
 --- !u!1 &918854887
 GameObject:
   m_ObjectHideFlags: 0
