@@ -5,25 +5,43 @@ using UnityEngine;
 
 public class AlienTransporterScript : MonoBehaviour
 {
+
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip startSound;
+
     private bool fly = false;
-    //private PlayerCharacter player;
+    //private CharacterController player;
+
+    void Start(){
+        _soundSource = GetComponent<AudioSource>();
+    }
 
     void Update(){
         if(fly == true){
-            Debug.Log("Vola");
-            
-            transform.parent.Translate(0, 3f * Time.deltaTime, 8f * Time.deltaTime);
-            //player.transform.Translate(0, 3 * Time.deltaTime, 3 * Time.deltaTime);
+            transform.Translate(0, 3f * Time.deltaTime, 8f * Time.deltaTime);
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+    private void OnTriggerEnter(Collider other) {
+        CharacterController player = other.GetComponent<CharacterController>();
         
 
         if(player != null){
            fly = true;
+           _soundSource.PlayOneShot(startSound);
+           player.transform.parent = transform;
+           //player.Move(0, 3f * Time.deltaTime, 8f * Time.deltaTime);
         }
 
+    }
+
+    private void OnTriggerExit(Collider other) {
+        CharacterController player = other.GetComponent<CharacterController>();
+        
+
+        if(player != null){
+            _soundSource.mute = !_soundSource.mute;
+           player.transform.parent = null;
+        }
     }
 }

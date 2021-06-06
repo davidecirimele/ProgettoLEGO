@@ -37,7 +37,7 @@ public class SpawnerManager : MonoBehaviour, IGameManager
             spawnableObjects.Add(Instantiate(obj) as GameObject);
         }
         if (spawnableObjects.Count != 0)
-            spawnee = spawnableObjects[1];
+            spawnee = spawnableObjects[0];
         Debug.Log(spawnee);
         status = ManagerStatus.Started;
     }
