@@ -33,9 +33,10 @@ public class SentinelAI : MonoBehaviour
 
     private bool firstStep;
 
+    private Animator anim;
+
     void Start(){
         rb = GetComponent<Rigidbody>();
-         
         changeDest = true;
         firstStep = true;
     }
@@ -47,6 +48,7 @@ public class SentinelAI : MonoBehaviour
         wayPoints = new List<Transform>();
         startPoint = GameObject.Find(RandomStart());
         navMeshAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
         _alive = true;
         Move();
     }
@@ -120,6 +122,8 @@ public class SentinelAI : MonoBehaviour
         else if(!firstStep && detected){
             navMeshAgent.SetDestination(player.transform.position);
         }
+        if (anim != null)
+            anim.SetBool("isMoving", true);
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) {
