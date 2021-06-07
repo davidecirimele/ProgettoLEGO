@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - BossAlien
   - Alien
+  - Wall
   layers:
   - Default
   - TransparentFX

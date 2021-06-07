@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
 {
-    bool detected;
     [SerializeField] private GameObject Sniper1;
     [SerializeField] private GameObject Sniper2;
 
@@ -13,20 +12,11 @@ public class PlayerDetector : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(detected){
-            Sniper1.GetComponent<SniperAI>().Look();
-            Sniper2.GetComponent<SniperAI>().Look();
-        }
-    }
     
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
-            Messenger.Broadcast(GameEvent.PLAYER_LOST);
-            detected = true;
+            Sniper1.GetComponent<SniperAI>().activeScript();
+            Sniper2.GetComponent<SniperAI>().activeScript();
         }
     }
 

@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 2354716823714386797}
   - component: {fileID: 7185258602551880041}
   - component: {fileID: 8273349165790558701}
+  - component: {fileID: 7192215692135514632}
   m_Layer: 6
   m_Name: Sniper
   m_TagString: Alien
@@ -256,3 +257,16 @@ MonoBehaviour:
   laserPrefab: {fileID: 988515894654078807, guid: 46bc70386bdd540a38f6545db87ad364,
     type: 3}
   obstacleRange: 1
+--- !u!65 &7192215692135514632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3821847288614099185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.1, z: 2}
+  m_Center: {x: 0, y: 0.5, z: 1.5}

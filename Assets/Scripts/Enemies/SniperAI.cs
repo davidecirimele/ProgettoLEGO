@@ -8,26 +8,17 @@ public class SniperAI : MonoBehaviour
     private GameObject _laser;
     Rigidbody rb;
     private bool _alive;
-    private bool detected;
+    private bool _detected;
+    private bool _active;
     private GameObject player;
-    public float obstacleRange = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
          rb = GetComponent<Rigidbody>();
          _alive = true;
-    }
-
-    void Awake()
-    {
-     Messenger.AddListener(GameEvent.PLAYER_DETECTED, Look);
-     Messenger.AddListener(GameEvent.PLAYER_LOST, Unlook);
-    }
-
-    void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.PLAYER_DETECTED, Look); 
-        Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unlook);
+         _active = false;
+         _detected = false;
     }
 
     // Update is called once per frame
@@ -35,44 +26,47 @@ public class SniperAI : MonoBehaviour
     {
         if(_alive){  
 
-            if(detected){
+            if(_active){ 
                 transform.LookAt(player.transform.position + new Vector3(0,1.6f,0));
+            }
+
+            if(_detected){
                 Shoot();
             }
+            
+            
 
         }
     }
 
-    public void Look(){
-        detected = true;
-
-        if(player==null)
-            player = GameObject.Find("legoCharacter");
-    }
-
-    public void Unlook(){
-        detected = false;
-    }
 
     void Shoot(){
-         Ray ray = new Ray(transform.position, transform.forward);
-        
-            RaycastHit hit;
-           if(Physics.SphereCast(ray, 0.75f, out hit)){
-
-                if(hit.distance <= obstacleRange){
-                    GameObject hitObject = hit.transform.gameObject;
-                
-                    if(!hitObject.GetComponent<PlayerCharacter>()) {
-                    
-                        if(_laser == null){
-                        _laser = Instantiate(laserPrefab) as GameObject;
-                        _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-                        _laser.transform.rotation = transform.rotation;
-                        }     
-                    }
-                }
-        
-            }
+        if(_laser == null){
+            _laser = Instantiate(laserPrefab) as GameObject;
+            _laser.transform.position = transform.TransformPoint(Vector3.forward);
+            _laser.transform.rotation = transform.rotation;
+        }     
+    } 
+    
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "Wall"){  
+            _detected = false;
         }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if(other.tag == "Wall"){  
+            _detected = true;
+        }
+    }
+
+   public void activeScript(){
+       _active = true;
+
+       _detected = true;
+
+       if(player==null)
+            player = GameObject.Find("legoCharacter");
+   }
+
 }
