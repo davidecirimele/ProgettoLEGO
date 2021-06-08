@@ -2262,7 +2262,6 @@ GameObject:
   - component: {fileID: 3398876506452675675}
   - component: {fileID: 3398876506452675668}
   - component: {fileID: 3398876506452675671}
-  - component: {fileID: 4219718408738670529}
   - component: {fileID: 8761184979008290245}
   - component: {fileID: 6586709198487386518}
   - component: {fileID: 8319903267356807774}
@@ -2388,22 +2387,6 @@ MonoBehaviour:
   hearts: 3
   _alive: 1
   diedSound: {fileID: 8300000, guid: 6c114273024eb1b4dbd0db76c6f5c853, type: 3}
---- !u!114 &4219718408738670529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3398876506452675677}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce2da3d10384e1b4bb1c7b0e7c8daefe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 988515894654078807, guid: 4497b4275388db6429288d0633d01082,
-    type: 3}
-  speed: 3
-  obstacleRange: 5
 --- !u!54 &8761184979008290245
 Rigidbody:
   m_ObjectHideFlags: 0

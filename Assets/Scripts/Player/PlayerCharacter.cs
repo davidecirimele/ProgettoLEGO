@@ -58,13 +58,16 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void Hurt(int damage){
-        
-        if(life>0){
-        damaged = true;
 
+        damaged = true;
         for(int i=0;i<damage;i++){
-        life -= 1;
-        hearts[life].sprite = emptyHeart;
+
+            if(life>0){
+                life -= 1;
+                hearts[life].sprite = emptyHeart;
+            } 
+            else
+                break;
         }
 
         if(life < 1){
@@ -72,7 +75,7 @@ public class PlayerCharacter : MonoBehaviour
         } else {
             _soundSource.PlayOneShot(playerHurtSound);
         }
-        }
+
     }
 
     public void Death (){

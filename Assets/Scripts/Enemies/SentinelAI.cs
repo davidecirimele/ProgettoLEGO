@@ -54,7 +54,7 @@ public class SentinelAI : MonoBehaviour
                 firstStep = false;
 
             if(detected){
-                InvokeRepeating("Shoot", 0, 1);
+               
                 transform.LookAt(player.transform.position + new Vector3(0,1,0));
             }
 
@@ -70,6 +70,7 @@ public class SentinelAI : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
             detected = true;
+            InvokeRepeating("Shoot", 0, 1);
             Messenger.Broadcast(GameEvent.PLAYER_DETECTED);
             if(player==null)
                 player = other.gameObject;
