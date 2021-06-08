@@ -17,8 +17,6 @@ public class SentinelAI : MonoBehaviour
 
     Rigidbody rb;
 
-    private bool _alive;
-
     private bool changeDest;
 
     private bool detected;
@@ -45,13 +43,12 @@ public class SentinelAI : MonoBehaviour
         wayPoints = new List<Transform>();
         startPoint = GameObject.Find(RandomStart());
         navMeshAgent = GetComponent<NavMeshAgent>();
-        _alive = true;
         Move();
     }
 
     void Update()
     {
-        if(_alive){  
+        if(GetComponent<ReactiveTarget>().isAlive()){  
 
             if (verifyInRange(range, startPoint.transform.position))
                 firstStep = false;
@@ -66,6 +63,8 @@ public class SentinelAI : MonoBehaviour
 
             Move();
         }
+        else
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -85,10 +84,6 @@ public class SentinelAI : MonoBehaviour
         if(other.tag == "Player"){
             detected = false;
         }
-    }
-
-    public void setAlive(bool alive){
-        _alive = alive;
     }
 
     bool verifyInRange(int range, Vector3 pos)

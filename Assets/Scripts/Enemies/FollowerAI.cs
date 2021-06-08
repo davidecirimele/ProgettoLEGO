@@ -19,8 +19,6 @@ public class FollowerAI : MonoBehaviour
 
     Rigidbody rb;
 
-    private bool _alive;
-
     private bool followPlayer;
 
     private bool changeDest;
@@ -43,17 +41,16 @@ public class FollowerAI : MonoBehaviour
     void Awake()
     {
         startPoint = GameObject.Find(RandomStart());
-        _alive = true;
         followPlayer = false;
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        
+        navMeshAgent = GetComponent<NavMeshAgent>();     
     }
 
     
 
     void Update()
     {
-        if(_alive){  
+        if(GetComponent<ReactiveTarget>().isAlive())
+        {  
 
         if (verifyInRange(range, startPoint.transform.position) || followPlayer)
             firstStep = false;
@@ -63,9 +60,7 @@ public class FollowerAI : MonoBehaviour
                 transform.LookAt(player.transform.position + new Vector3(0,1,0));
 
                 Move();
-
-                
-                        
+      
             }
 
             else if((!followPlayer && stopCount<300)||(stopCount>=300 && !followPlayer && changeDest==true))
@@ -94,10 +89,8 @@ public class FollowerAI : MonoBehaviour
             }
        
         }
-    }
-
-    public void setAlive(bool alive){
-        _alive = alive;
+        else
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
     }
 
     bool verifyInRange(int range, Vector3 pos)

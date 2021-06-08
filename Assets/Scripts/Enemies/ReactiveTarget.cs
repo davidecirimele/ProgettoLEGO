@@ -6,6 +6,8 @@ public class ReactiveTarget : MonoBehaviour
 {
     public int hearts = 3;
 
+    public bool _alive = true;
+
     private AudioSource _soundSource;
     [SerializeField] private AudioClip diedSound;
 
@@ -14,25 +16,21 @@ public class ReactiveTarget : MonoBehaviour
     }
      
     public void ReactToHit(){
-        
         hearts--;
-
-        AlienIntelligence behaviour = GetComponent<AlienIntelligence>();
         
+        if(hearts==0)
+            StartCoroutine(Die());
+    }
 
-        if(hearts==0){
-
-        if(behaviour != null){
-            behaviour.setAlive(false);
-        }
-
-        StartCoroutine(Die());
-        }
+    public bool isAlive(){
+        return _alive;
     }
 
     private IEnumerator Die(){
+        _alive = false;
+
         this.transform.Rotate(-75, 0, 0);
-        Debug.Log("I'm Dying");
+        
         _soundSource.PlayOneShot(diedSound);
         yield return new WaitForSeconds(1.5f);
 

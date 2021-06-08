@@ -59,6 +59,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void Hurt(int damage){
         
+        if(life>0){
         damaged = true;
 
         for(int i=0;i<damage;i++){
@@ -70,6 +71,7 @@ public class PlayerCharacter : MonoBehaviour
             dead = true;
         } else {
             _soundSource.PlayOneShot(playerHurtSound);
+        }
         }
     }
 

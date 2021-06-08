@@ -7,7 +7,6 @@ public class SniperAI : MonoBehaviour
     [SerializeField] private GameObject laserPrefab;
     private GameObject _laser;
     Rigidbody rb;
-    private bool _alive;
     private bool _detected;
     private bool _active;
     private GameObject player;
@@ -16,7 +15,6 @@ public class SniperAI : MonoBehaviour
     void Start()
     {
          rb = GetComponent<Rigidbody>();
-         _alive = true;
          _active = false;
          _detected = false;
     }
@@ -24,7 +22,7 @@ public class SniperAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_alive){  
+        if(GetComponent<ReactiveTarget>().isAlive()){  
 
             if(_active){ 
                 transform.LookAt(player.transform.position + new Vector3(0,1.6f,0));
@@ -33,10 +31,9 @@ public class SniperAI : MonoBehaviour
             if(_detected){
                 Shoot();
             }
-            
-            
-
         }
+        else
+            Debug.Log("Sono Morto");
     }
 
 

@@ -7,17 +7,7 @@ public class DogPatrolling : MonoBehaviour
     public Transform[] points;
     int current;
     bool detected;
-    public float speed = 0;
-    
-    void Awake() {
-        //Messenger.AddListener(GameEvent.DETECTED_DOG, Move);
-        //Messenger.AddListener(GameEvent.LOST_DOG, Stop);    
-    }
-
-    void OnDestroy() {
-        //Messenger.RemoveListener(GameEvent.DETECTED_DOG, Move);
-        //Messenger.RemoveListener(GameEvent.LOST_DOG, Stop); 
-    }
+    public float speed = 6.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +20,9 @@ public class DogPatrolling : MonoBehaviour
     void Update()
     {
         if(!detected){
-            if(transform.position != points[current].position){
+            if(transform.position != points[current].position + new Vector3(0,0,-2)){
                 transform.LookAt(points[current].transform.position);
-                transform.position = Vector3.MoveTowards(transform.position, points[current].position, speed*Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, points[current].position + new Vector3(0,0,-2), speed*Time.deltaTime);
             } else {
                 current = (current+1) % points.Length;
             }
