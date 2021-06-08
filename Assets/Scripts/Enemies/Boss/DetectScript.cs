@@ -7,6 +7,7 @@ public class DetectScript : MonoBehaviour
     public bool detected;
     GameObject target;
     public Transform enemy;
+    public Transform ShootTower;
 
     [SerializeField] private GameObject bullet;
     private GameObject _laser;
@@ -25,7 +26,7 @@ public class DetectScript : MonoBehaviour
     void Update()
     {
         if(detected){
-            enemy.LookAt(target.transform);
+            ShootTower.LookAt(target.transform);
         }
     }
 
@@ -49,8 +50,7 @@ public class DetectScript : MonoBehaviour
     }
 
     private void ShootPlayer(){
-        
-        GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        GameObject currentBullet = Instantiate(bullet, shootPoint.position, ShootTower.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward);
     }
