@@ -5,10 +5,9 @@ using UnityEngine;
 public class AlienDogAI : MonoBehaviour
 {
     bool detected;
-    bool _alive;
     GameObject player;
     [SerializeField] private GameObject dog;
-    float speed = 4.0f;
+    float speed = 11.0f;
 
     private AudioSource _soundSource;
     [SerializeField] private AudioClip biteSound;
@@ -24,13 +23,12 @@ public class AlienDogAI : MonoBehaviour
     {
         Messenger.AddListener(GameEvent.DETECTED_DOG, Follow);
         Messenger.AddListener(GameEvent.LOST_DOG, Unfollow);
-        _alive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_alive){
+        if(GetComponent<ReactiveTarget>().isAlive()){
             if(detected){
                 if(player==null)
                     player = GameObject.Find("legoCharacter");

@@ -19,8 +19,6 @@ public class FollowerAI : MonoBehaviour
 
     Rigidbody rb;
 
-    private bool _alive;
-
     private bool followPlayer;
 
     private bool changeDest;
@@ -43,19 +41,18 @@ public class FollowerAI : MonoBehaviour
     void Awake()
     {
         startPoint = GameObject.Find(RandomStart());
-        _alive = true;
         followPlayer = false;
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        
+        navMeshAgent = GetComponent<NavMeshAgent>();     
     }
 
     
 
     void Update()
     {
-        if(_alive){  
+        if(GetComponent<ReactiveTarget>().isAlive())
+        {  
 
-        if (verifyInRange(range, startPoint.transform.position))
+        if (verifyInRange(range, startPoint.transform.position) || followPlayer)
             firstStep = false;
             
             if(followPlayer){
@@ -63,42 +60,37 @@ public class FollowerAI : MonoBehaviour
                 transform.LookAt(player.transform.position + new Vector3(0,1,0));
 
                 Move();
-
-                if(_laser == null){
-                        _laser = Instantiate(laserPrefab) as GameObject;
-                        _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-                        _laser.transform.rotation = transform.rotation;
-                    }
-                        
+      
             }
 
             else if((!followPlayer && stopCount<300)||(stopCount>=300 && !followPlayer && changeDest==true))
                 Move();
-       
-            Ray ray = new Ray(transform.position, transform.forward);
+            
+            if(!followPlayer){
+                Ray ray = new Ray(transform.position, transform.forward);
         
-            RaycastHit hit;
-           if(Physics.SphereCast(ray, 0.75f, out hit)){
+                RaycastHit hit;
+                if(Physics.SphereCast(ray, 0.75f, out hit)){
 
-                if(hit.distance <= obstacleRange){
-                    GameObject hitObject = hit.transform.gameObject;
-                    if(hitObject.GetComponent<PlayerCharacter>()) {
+                    if(hit.distance <= obstacleRange){
+                        GameObject hitObject = hit.transform.gameObject;
+                        if(hitObject.GetComponent<PlayerCharacter>()) {
                     
-                    player = hitObject;
+                        player = hitObject;
                     
-                    if(!followPlayer)
-                        followPlayer=true;
-                    }
-                    else if(hitObject.tag!= "Player" && hitObject.tag != "Alien")
-                        changeDest = true;
-                }   
+                        if(!followPlayer)
+                            followPlayer=true;
+                            InvokeRepeating("Shoot", 0, 1);
+                        }
+                        else if(hitObject.tag!= "Player" || hitObject.tag != "Alien")
+                            changeDest = true;
+                    }   
+                }
             }
        
         }
-    }
-
-    public void setAlive(bool alive){
-        _alive = alive;
+        else
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
     }
 
     bool verifyInRange(int range, Vector3 pos)
@@ -138,6 +130,26 @@ public class FollowerAI : MonoBehaviour
         NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
  
         return navHit.position;
+    }
+
+    void Shoot(){
+
+        Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+
+            if(Physics.SphereCast(ray, 0.75f, out hit)){
+
+                GameObject hitObject = hit.transform.gameObject;
+                if(hitObject.GetComponent<PlayerCharacter>()) {
+                    
+                    _laser = Instantiate(laserPrefab) as GameObject;
+                    _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                    _laser.transform.rotation = transform.rotation;
+                    
+                }
+                
+            }
+ 
     }
 
     public string RandomStart(){

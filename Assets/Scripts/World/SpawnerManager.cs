@@ -7,7 +7,6 @@ public class SpawnerManager : MonoBehaviour, IGameManager
 {
    [SerializeField] private List<GameObject> spawnableObjects;
    [SerializeField] private GameObject spawnee;
-   [SerializeField] private Transform player;
 
     public ManagerStatus status { get; private set; }
 
@@ -25,10 +24,8 @@ public class SpawnerManager : MonoBehaviour, IGameManager
     }
 
     private void SpawnObjectAtPositon(Vector3 spawnPosition){
-        if(Managers.Inventory.checkForCreation(getObjectName())){
-            Managers.Audio.CreateObject();
-            GameObject obj = Instantiate(spawnee, spawnPosition + spawnee.GetComponent<Offset>().getOffset(), player.rotation.normalized);
-        }
+        Managers.Audio.CreateObject();
+        GameObject obj = Instantiate(spawnee, spawnPosition + spawnee.GetComponent<Offset>().getOffset(), Quaternion.identity);
     }
 
     public void Startup()
@@ -40,7 +37,7 @@ public class SpawnerManager : MonoBehaviour, IGameManager
             spawnableObjects.Add(Instantiate(obj) as GameObject);
         }
         if (spawnableObjects.Count != 0)
-            spawnee = spawnableObjects[2];
+            spawnee = spawnableObjects[0];
         status = ManagerStatus.Started;
     }
 
@@ -52,11 +49,5 @@ public class SpawnerManager : MonoBehaviour, IGameManager
     public GameObject GetGameObject()
     {
         return spawnee;
-    }
-
-    public void SetSpawnee(int chObj){
-        if (spawnableObjects.Count != 0)
-            Managers.Audio.ChangeObjectSpawn();
-            spawnee = spawnableObjects[chObj];
     }
 }

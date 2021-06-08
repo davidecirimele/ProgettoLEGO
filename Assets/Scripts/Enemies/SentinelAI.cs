@@ -17,13 +17,9 @@ public class SentinelAI : MonoBehaviour
 
     Rigidbody rb;
 
-    private bool _alive;
-
     private bool changeDest;
 
     private bool detected;
-
-    public bool shooting;
 
     private GameObject player;
 
@@ -47,30 +43,28 @@ public class SentinelAI : MonoBehaviour
         wayPoints = new List<Transform>();
         startPoint = GameObject.Find(RandomStart());
         navMeshAgent = GetComponent<NavMeshAgent>();
-        _alive = true;
         Move();
     }
 
     void Update()
     {
-        if(_alive){  
+        if(GetComponent<ReactiveTarget>().isAlive()){  
 
             if (verifyInRange(range, startPoint.transform.position))
                 firstStep = false;
 
             if(detected){
-                shooting = true;
-
+                InvokeRepeating("Shoot", 0, 1);
                 transform.LookAt(player.transform.position + new Vector3(0,1,0));
-       
             }
 
-            if(shooting)
-                Shoot();
+            else if(!detected)                
+                CancelInvoke("Shoot");
 
             Move();
-       
         }
+        else
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -81,7 +75,7 @@ public class SentinelAI : MonoBehaviour
                 player = other.gameObject;
         }
 
-        else if(other.tag != "Player" && other.tag != "Alien"){
+        else if(other.tag != "Player" || other.tag != "Alien"){
             changeDest = true;
         }
     }
@@ -89,12 +83,7 @@ public class SentinelAI : MonoBehaviour
     private void OnTriggerExit(Collider other) {
         if(other.tag == "Player"){
             detected = false;
-            Messenger.Broadcast(GameEvent.PLAYER_LOST);
         }
-    }
-
-    public void setAlive(bool alive){
-        _alive = alive;
     }
 
     bool verifyInRange(int range, Vector3 pos)
@@ -109,17 +98,22 @@ public class SentinelAI : MonoBehaviour
 
     void Move()
     {
+        if(detected){
+            if(firstStep)
+                firstStep = false;
+            navMeshAgent.SetDestination(player.transform.position);
+        }
+
         if(firstStep){
             navMeshAgent.SetDestination(startPoint.transform.position);
             }
+
         else if(!firstStep && !detected && changeDest){
             Vector3 newPos = RandomNavSphere(startPoint.transform.position, wanderRadius, -1);
             navMeshAgent.SetDestination(newPos);
             changeDest = false;
         }
-        else if(!firstStep && detected){
-            navMeshAgent.SetDestination(player.transform.position);
-        }
+        
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask) {
@@ -141,15 +135,25 @@ public class SentinelAI : MonoBehaviour
     }
 
     void Unfollow(){
-        shooting = false;
+        detected = false;
     }
 
     void Shoot(){
-        if(_laser == null){
-            _laser = Instantiate(laserPrefab) as GameObject;
-            _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-            _laser.transform.rotation = transform.rotation;
-        }
+        Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+
+            if(Physics.SphereCast(ray, 0.75f, out hit)){
+
+                GameObject hitObject = hit.transform.gameObject;
+                if(hitObject.GetComponent<PlayerCharacter>()) {
+                    
+                    _laser = Instantiate(laserPrefab) as GameObject;
+                    _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                    _laser.transform.rotation = transform.rotation;
+                    
+                }
+                
+            }
     }
 
     void OnDestroy() {

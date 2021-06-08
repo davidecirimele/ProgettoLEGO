@@ -17,26 +17,25 @@ public class DogTrigger : MonoBehaviour
     void Update()
     {
         if(dog!=null){
-            if(detected){
-                dog.GetComponent<AlienDogAI>().Follow();
-                //Messenger.Broadcast(GameEvent.DETECTED_DOG);
-            }
+            if(dog.GetComponent<ReactiveTarget>().isAlive())
+                if(detected){
+                    dog.GetComponent<AlienDogAI>().Follow();
+                    //Messenger.Broadcast(GameEvent.DETECTED_DOG);
+                }
         }
     }
     
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
+        if(other.tag == "Player" && dog.GetComponent<ReactiveTarget>().isAlive()){
             detected = true;
         }
     }
 
     void OnTriggerExit(Collider other) {
-        if(dog!=null){
-            if(other.tag == "Player"){
-                detected = false;
-                dog.GetComponent<AlienDogAI>().Unfollow();
-                //Messenger.Broadcast(GameEvent.LOST_DOG);
-            }
+        if(other.tag == "Player" && dog.GetComponent<ReactiveTarget>().isAlive()){
+            detected = false;
+            dog.GetComponent<AlienDogAI>().Unfollow();
+            //Messenger.Broadcast(GameEvent.LOST_DOG);
         }
     }
 

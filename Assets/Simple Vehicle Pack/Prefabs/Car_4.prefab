@@ -414,11 +414,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4870167790249810}
-  - component: {fileID: 1918316223942641597}
-  - component: {fileID: 1276370795148654500}
+  - component: {fileID: 3520565038743282204}
   m_Layer: 0
   m_Name: Car_4
-  m_TagString: Destroyable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,20 +441,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1918316223942641597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646981259178978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c267188a707540bcb81eff8b83739c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drop: {fileID: 2000245114597939728, guid: c974a5ab2a1f1ca49a97c12242accd24, type: 3}
---- !u!65 &1276370795148654500
+--- !u!65 &3520565038743282204
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,5 +452,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 2.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 0.3, z: 2.3}
+  m_Center: {x: 0, y: 0.3, z: 0}

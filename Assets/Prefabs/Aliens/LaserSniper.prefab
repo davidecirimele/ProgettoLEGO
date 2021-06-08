@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 988515894654078806}
   - component: {fileID: 3595665696022079912}
   - component: {fileID: 3386767131670719325}
-  - component: {fileID: -5392376824817605784}
+  - component: {fileID: 9035628155794695722}
   m_Layer: 11
   m_Name: LaserSniper
   m_TagString: Untagged
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 2
---- !u!82 &-5392376824817605784
+--- !u!82 &9035628155794695722
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +138,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f2b18573e3f613b4ea961aa6e4f9730b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e779131885c9f34d8a775e3fffdea08, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.05
   m_Pitch: 1
