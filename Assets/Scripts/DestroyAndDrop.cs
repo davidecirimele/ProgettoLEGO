@@ -22,7 +22,8 @@ public class DestroyAndDrop : MonoBehaviour
             Managers.Audio.DestructionObject();
         	Destroy(this.gameObject);
 
-            Instantiate(drop, this.gameObject.transform.position + new Vector3(0,1,0), drop.transform.rotation);
+            Debug.Log(transform.position);
+            Instantiate(drop, new Vector3(transform.position.x, 0f, transform.position.z) + new Vector3(0,1f,0), drop.transform.rotation);
         }
     }
 
