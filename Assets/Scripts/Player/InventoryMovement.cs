@@ -28,5 +28,20 @@ public class InventoryMovement : MonoBehaviour
             transform.position -= new Vector3(0f, speed, 0f);
         else if (!isHided && Inventory.anchoredPosition.y < 150)
             Inventory.position += new Vector3(0f, speed, 0f);
+    
+        if(isHided == false){
+            
+            if(Input.GetKeyDown(KeyCode.Alpha1)){
+                Managers.Spawn.SetSpawnee(0);
+            }
+
+            if(Input.GetKeyDown(KeyCode.Alpha2)){
+                Managers.Spawn.SetSpawnee(1);
+            }
+
+            if(Input.GetKeyDown(KeyCode.Alpha3)){
+                Managers.Spawn.SetSpawnee(2);
+            }
+        }
     }
 }

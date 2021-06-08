@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour, IGameManager
 
     [SerializeField] private AudioClip destroySound;
     [SerializeField] private AudioClip createSound;
+    [SerializeField] private AudioClip selectSound;
 
     public void PlaySound(AudioClip clip){
         soundSource.PlayOneShot(clip);
@@ -80,12 +81,15 @@ public class AudioManager : MonoBehaviour, IGameManager
         status = ManagerStatus.Started;
     }
 
-    //quando distruggi oggetti e quando uccidi alieni
     public void DestructionObject(){
         soundSource.PlayOneShot(destroySound);
     }
 
     public void CreateObject(){
         soundSource.PlayOneShot(createSound);
+    }
+
+    public void ChangeObjectSpawn(){
+        soundSource.PlayOneShot(selectSound);
     }
 }

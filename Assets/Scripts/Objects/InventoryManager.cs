@@ -71,11 +71,31 @@ public class InventoryManager : MonoBehaviour, IGameManager
             {
                 _items.Remove(name);
             }
-        }
-        else
+        } else
         {
             Debug.Log("Cannot consume " + name);
         }
         DisplayItems();
+    }
+
+    public bool checkForCreation(string obj){
+        
+        if(obj == "AlienTranporter(Clone)" && getItemCount("Metal") >= 6){
+            consumeItem("Metal");
+            return true;
+        }
+
+        if(obj == "Bridge(Clone)" && getItemCount("Wood") >= 3 && getItemCount("Metal") >= 1){
+            consumeItem("Wood");
+            consumeItem("Metal");
+            return true;
+        }
+
+        if(obj == "Ladder(Clone)" && getItemCount("Wood") >= 1){
+            consumeItem("Wood");
+            return true;
+        }
+
+        return false;
     }
 }
