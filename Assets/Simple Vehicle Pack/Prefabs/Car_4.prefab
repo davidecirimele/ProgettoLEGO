@@ -415,9 +415,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4870167790249810}
   - component: {fileID: 3520565038743282204}
+  - component: {fileID: -4242876895210388830}
   m_Layer: 0
   m_Name: Car_4
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,3 +455,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.3, z: 2.3}
   m_Center: {x: 0, y: 0.3, z: 0}
+--- !u!114 &-4242876895210388830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646981259178978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c267188a707540bcb81eff8b83739c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 2000245114597939728, guid: c974a5ab2a1f1ca49a97c12242accd24, type: 3}

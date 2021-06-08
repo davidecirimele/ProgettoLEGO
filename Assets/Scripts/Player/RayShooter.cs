@@ -10,6 +10,7 @@ public class RayShooter : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private int layerMask;
     public float time;
+    private GameObject BossLife;
 
     private AudioSource _soundSource;
     [SerializeField] private AudioClip shotSound;
@@ -39,7 +40,12 @@ public class RayShooter : MonoBehaviour
                 if (hit.transform.tag == "Destroyable")
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
                 if (hit.transform.tag == "Boss")
-                    hit.transform.GetComponent<BossLife>().Hitted(1);
+                    if(hit.transform.GetComponent<BossLife>()!=null)
+                        hit.transform.GetComponent<BossLife>().Hitted(1);
+                        else{
+                            BossLife = GameObject.Find("TankFree_Yel");
+                            BossLife.GetComponent<BossLife>().Hitted(1);
+                        }
                 if (hit.transform.tag == "BossAlien")
                     hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
                 StartCoroutine(SpawnBulletTrail(hit.point));
