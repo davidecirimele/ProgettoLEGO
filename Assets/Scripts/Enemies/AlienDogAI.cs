@@ -9,9 +9,13 @@ public class AlienDogAI : MonoBehaviour
     [SerializeField] private GameObject dog;
     float speed = 11.0f;
 
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip biteSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        _soundSource = GetComponent<AudioSource>();
         detected = false;
     }
 
@@ -53,6 +57,7 @@ public class AlienDogAI : MonoBehaviour
             PlayerCharacter player = other.GetComponent<PlayerCharacter>();
        
             if(player != null){
+                _soundSource.PlayOneShot(biteSound);
                 player.Hurt(1);
             }
         }

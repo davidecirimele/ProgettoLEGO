@@ -5,11 +5,15 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerManager))]
 [RequireComponent (typeof(InventoryManager))]
 [RequireComponent (typeof(AudioManager))]
+[RequireComponent (typeof(SpawnerManager))]
+
 public class Managers : MonoBehaviour
 {
     public static PlayerManager Player { get; private set; }
     public static InventoryManager Inventory { get; private set; }
     public static AudioManager Audio{get; private set; }
+    public static SpawnerManager Spawn { get; private set; }
+
     private List<IGameManager> _startSequence;
 
     private void Awake()
@@ -17,11 +21,13 @@ public class Managers : MonoBehaviour
         Player = GetComponent<PlayerManager>();
         Inventory = GetComponent<InventoryManager>();
         Audio = GetComponent<AudioManager>();
+        Spawn = GetComponent<SpawnerManager>();
 
         _startSequence = new List<IGameManager>();
         _startSequence.Add(Player);
         _startSequence.Add(Inventory);
         _startSequence.Add(Audio);
+        _startSequence.Add(Spawn);
 
         StartCoroutine(StartupManagers());
     }

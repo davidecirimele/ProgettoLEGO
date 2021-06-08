@@ -7,6 +7,12 @@ public class BlockDestroy : MonoBehaviour
 
     public float lifeTime = 10f;
     
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip impactSound;
+
+    void Start() {
+        _soundSource = GetComponent<AudioSource>();    
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,10 +23,19 @@ public class BlockDestroy : MonoBehaviour
                 Destruction();
             }
         }
-
     }
 
     void Destruction(){
         Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        PlayerCharacter player = other.gameObject.GetComponent<PlayerCharacter>();
+
+        if(player != null){
+           player.Hurt(1);
+        }
+
+        _soundSource.PlayOneShot(impactSound);
     }
 }

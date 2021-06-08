@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
     {
         Debug.Log("Inventory manager starting...");
         _items = new Dictionary<string, int>();
-        objectChoose = "Ladder";
+        objectChoose = GetComponent<SpawnerManager>().getObjectName();
         status = ManagerStatus.Started;
     }
 

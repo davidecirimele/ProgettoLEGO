@@ -7,7 +7,7 @@ public class DestroyAndDrop : MonoBehaviour
 	int damage;
     
     public GameObject drop;
-    
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -18,6 +18,8 @@ public class DestroyAndDrop : MonoBehaviour
     void Update()
     {
         if(damage==4){
+
+            Managers.Audio.DestructionObject();
         	Destroy(this.gameObject);
 
             Instantiate(drop, this.gameObject.transform.position + new Vector3(0,1,0), drop.transform.rotation);

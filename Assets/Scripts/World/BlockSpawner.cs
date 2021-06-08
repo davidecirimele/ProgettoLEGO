@@ -17,10 +17,8 @@ public class BlockSpawner : MonoBehaviour
     }
 
     public void SpawnObject(){
-        Instantiate(spawnee, transform.position, transform.rotation, transform.parent);
+        Instantiate(spawnee, transform.position + new Vector3(Random.Range(-15,30),0,Random.Range(-30,30)), transform.rotation, transform.parent);
         numberAliens--;
-        if(numberAliens == 0){
-            CancelInvoke("SpawnObject");
-        }
+        
     }
 }
