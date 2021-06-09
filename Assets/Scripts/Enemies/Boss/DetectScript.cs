@@ -12,6 +12,11 @@ public class DetectScript : MonoBehaviour
     [SerializeField] private GameObject bullet;
     private GameObject _laser;
     public Transform shootPoint;
+
+    [SerializeField] private SpinWheels wheel1;
+    [SerializeField] private SpinWheels wheel2;
+    [SerializeField] private SpinWheels wheel3;
+    [SerializeField] private SpinWheels wheel4;
     
     public float timeToShoot = 1.3f;
     float originalTime;
@@ -26,8 +31,14 @@ public class DetectScript : MonoBehaviour
     void Update()
     {
         if(detected){
-            if(ShootTower != null)
+            if(ShootTower != null){
                 ShootTower.LookAt(target.transform);
+                wheel1.setStart();
+                wheel2.setStart();
+                wheel3.setStart();
+                wheel4.setStart();
+            }
+               
             else
                 enemy.LookAt(target.transform);
             
