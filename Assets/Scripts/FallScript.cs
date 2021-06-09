@@ -9,7 +9,7 @@ public class FallScript : MonoBehaviour
        
       if(player != null){
          player.Hurt(1);
-         player.transform.position = new Vector3(60, 10, 23);
+         player.transform.position += new Vector3(0, 20, 0);
       }
    }
 }

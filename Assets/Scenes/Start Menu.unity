@@ -580,8 +580,8 @@ MonoBehaviour:
   introBGMusic: intro
   levelBGMusic: loop
   destroySound: {fileID: 0}
-  diedSound: {fileID: 0}
   createSound: {fileID: 0}
+  selectSound: {fileID: 0}
 --- !u!4 &868430855
 Transform:
   m_ObjectHideFlags: 0
@@ -646,7 +646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableObjects: []
-  spawnee: {fileID: 3797129947937720553, guid: 7deddee28ecfea64d8f369c1904d868c, type: 3}
+  spawnee: {fileID: 3855346315427643321, guid: 982d40149837845c2bb75e101e0894e2, type: 3}
+  player: {fileID: 7812436077761790189, guid: 362d0093250cf4d448056aea13f4e7ca, type: 3}
 --- !u!1 &918854887
 GameObject:
   m_ObjectHideFlags: 0
