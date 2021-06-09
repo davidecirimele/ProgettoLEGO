@@ -10,7 +10,7 @@ public class AlienTransporterScript : MonoBehaviour
     [SerializeField] private AudioClip startSound;
 
     private bool fly = false;
-    //private CharacterController player;
+    
 
     void Start(){
         _soundSource = GetComponent<AudioSource>();
