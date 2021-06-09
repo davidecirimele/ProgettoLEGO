@@ -26,7 +26,11 @@ public class DetectScript : MonoBehaviour
     void Update()
     {
         if(detected){
-            ShootTower.LookAt(target.transform);
+            if(ShootTower != null)
+                ShootTower.LookAt(target.transform);
+            else
+                enemy.LookAt(target.transform);
+            
         }
     }
 
