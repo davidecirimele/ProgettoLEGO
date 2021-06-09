@@ -36,6 +36,7 @@ public class BlockDestroy : MonoBehaviour
            player.Hurt(1);
         }
 
-        _soundSource.PlayOneShot(impactSound);
+        if(_soundSource != null && impactSound!=null)
+            _soundSource.PlayOneShot(impactSound);
     }
 }
