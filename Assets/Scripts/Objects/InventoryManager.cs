@@ -67,6 +67,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
         if (_items.ContainsKey(name))
         {
             _items[name]--;
+            DisplayItems();
             if (_items[name] == 0)
             {
                 _items.Remove(name);
@@ -75,7 +76,6 @@ public class InventoryManager : MonoBehaviour, IGameManager
         {
             Debug.Log("Cannot consume " + name);
         }
-        DisplayItems();
     }
 
     public bool checkForCreation(string obj){

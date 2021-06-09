@@ -48,7 +48,7 @@ public class RelativeMovement : MonoBehaviour {
         float horInput = Input.GetAxis("Horizontal");
         float vertInput = Input.GetAxis("Vertical");
 
-        if(_charController.velocity.magnitude > 1f && _step){
+        if(_charController.velocity.magnitude > 1f && _step && _charController.isGrounded){
             _soundSource.PlayOneShot(footStepSound);
             StartCoroutine(WaitForFootSteps(_footStepSoundLength));
         }
