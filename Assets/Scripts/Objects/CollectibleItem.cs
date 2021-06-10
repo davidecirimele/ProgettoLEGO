@@ -12,7 +12,7 @@ public class CollectibleItem : MonoBehaviour
         {
             Debug.Log("Item collected: " + itemName);
             if(itemName == "Health")
-                GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>().Healing();
+                GameObject.Find("legoCharacter").GetComponent<PlayerCharacter>().Healing();
             else{
                 Managers.Inventory.AddItem(itemName);
                 Messenger.Broadcast(GameEvent.COLLECTED);
