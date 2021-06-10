@@ -17,11 +17,9 @@ public class RayShooter : MonoBehaviour
 
     void Start()
     {
-        time = 0.05f;
+        time = 0.1f;
         layerMask = ~ (1 << LayerMask.NameToLayer("Player"));
-        //target = Camera.main.transform; // The Camera utilized by the character
         Cursor.lockState = CursorLockMode.Locked; // lock mouse on the center 
-        //Cursor.visible = true;
 
         _soundSource = GetComponent<AudioSource>();
     }
@@ -29,13 +27,14 @@ public class RayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(target.position, (transform.position - target.position) * 100, Color.red, 0.1f);
-            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) {
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
             _soundSource.PlayOneShot(shotSound);
-            Ray ray = new Ray(target.position, (transform.position - target.position) * 100);
+            Ray ray = new Ray(target.position, (transform.position - target.position) * 200);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100f, layerMask)){
-                SpawnBulletTrail(hit.point);
+            if (Physics.Raycast(ray, out hit, 200f, layerMask))
+            {
+                StartCoroutine(SpawnBulletTrail(hit.point));
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
                 if (hit.transform.tag == "Destroyable")
@@ -50,13 +49,10 @@ public class RayShooter : MonoBehaviour
                     }
                 if (hit.transform.tag == "BossAlien")
                     hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
-                StartCoroutine(SpawnBulletTrail(hit.point));
                 if (target != null)
-                    target.ReactToHit(); //this function is in target Script
+                    target.ReactToHit(); 
             }
         }
-
-       
     }
 
     private IEnumerator SpawnBulletTrail(Vector3 hitPoint)

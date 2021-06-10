@@ -8,11 +8,14 @@ public class InventoryManager : MonoBehaviour, IGameManager
     public ManagerStatus status { get; private set; }
     private Dictionary<string, int> _items;
     private string objectChoose;
+    public Image objectImage;
+
     public void Startup()
     {
         Debug.Log("Inventory manager starting...");
         _items = new Dictionary<string, int>();
         objectChoose = GetComponent<SpawnerManager>().getObjectName();
+        changeObject("ladder");
         status = ManagerStatus.Started;
     }
 
@@ -29,9 +32,9 @@ public class InventoryManager : MonoBehaviour, IGameManager
         }
     }
 
-    private void changeObject()
+    public void changeObject(string image)
     {
-
+        objectImage.sprite = Resources.Load<Sprite>("Spawnable Images/" + image);
     }
 
     public void AddItem(string name)
@@ -62,11 +65,13 @@ public class InventoryManager : MonoBehaviour, IGameManager
         return 0;
     }
 
-    public void consumeItem(string name)
+    public void consumeItem(int value, string name)
     {
         if (_items.ContainsKey(name))
         {
-            _items[name]--;
+            if (_items[name] < value)
+                return;
+            _items[name] -= value;
             DisplayItems();
             if (_items[name] == 0)
             {
@@ -80,19 +85,19 @@ public class InventoryManager : MonoBehaviour, IGameManager
 
     public bool checkForCreation(string obj){
         
-        if(obj == "AlienTransporter(Clone)" && getItemCount("Metal") >= 1){
-            consumeItem("Metal");
+        if(obj == "AlienTransporter(Clone)" && getItemCount("Metal") >= 20){
+            consumeItem(20, "Metal");
             return true;
         }
 
-        if(obj == "Bridge(Clone)" && getItemCount("Wood") >= 1 && getItemCount("Metal") >= 1){
-            consumeItem("Wood");
-            consumeItem("Metal");
+        if(obj == "Bridge(Clone)" && getItemCount("Wood") >= 7 && getItemCount("Metal") >= 5){
+            consumeItem(7, "Wood");
+            consumeItem(5, "Metal");
             return true;
         }
 
-        if(obj == "Ladder(Clone)" && getItemCount("Wood") >= 1){
-            consumeItem("Wood");
+        if(obj == "Ladder(Clone)" && getItemCount("Wood") >= 5){
+            consumeItem(5, "Wood");
             return true;
         }
 
