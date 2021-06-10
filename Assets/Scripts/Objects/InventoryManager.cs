@@ -82,7 +82,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
     }
 
     public bool checkForCreation(string obj){
-        
+
         if(obj == "AlienTransporter(Clone)" && getItemCount("Metal") >= 20){
             consumeItem(20, "Metal");
             return true;
