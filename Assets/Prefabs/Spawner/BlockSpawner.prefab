@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnee: {fileID: 3797129947937720553, guid: 7deddee28ecfea64d8f369c1904d868c, type: 3}
-  stopSpawning: 0
   spawnTime: 3
   spawnDelay: 0.5
+  interval: 10
+  numberAliens: 10
+  impactSound: {fileID: 8300000, guid: 7e54bfedc674adb4db7c26107ed06c10, type: 3}
