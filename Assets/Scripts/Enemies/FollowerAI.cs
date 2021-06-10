@@ -83,8 +83,7 @@ public class FollowerAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
-            followPlayer = true;
-            InvokeRepeating("Shoot", 0, 1);
+            KillIt();
             if(player==null)
                 player = other.gameObject;
         }
@@ -94,8 +93,21 @@ public class FollowerAI : MonoBehaviour
         }
     }
 
+    public void KillIt(){
+        if(player == null){
+            player = GameObject.Find("legoCharacter");
+        }
+        followPlayer = true;
+        InvokeRepeating("Shoot", 0, 1);
+    }
+
     void Move()
     {
+        if(followPlayer){
+            if(firstStep)
+                firstStep = false;
+            navMeshAgent.SetDestination(player.transform.position);
+        }
        if(firstStep){
             navMeshAgent.SetDestination(startPoint.transform.position);
             }
@@ -103,9 +115,6 @@ public class FollowerAI : MonoBehaviour
             Vector3 newPos = RandomNavSphere(startPoint.transform.position, wanderRadius, -1);
             navMeshAgent.SetDestination(newPos);
             changeDest = false;
-        }
-        else if(!firstStep && followPlayer){
-            navMeshAgent.SetDestination(player.transform.position);
         }
     }
 

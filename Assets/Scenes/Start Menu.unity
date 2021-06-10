@@ -582,6 +582,9 @@ MonoBehaviour:
   destroySound: {fileID: 0}
   createSound: {fileID: 0}
   selectSound: {fileID: 0}
+  diedSound: {fileID: 0}
+  shootSound: {fileID: 0}
+  biteSound: {fileID: 0}
 --- !u!4 &868430855
 Transform:
   m_ObjectHideFlags: 0
@@ -621,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e544e74ea03f143ab67850c631e19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectImage: {fileID: 0}
+  objectImage: {fileID: 2049922527}
 --- !u!114 &868430858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +650,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableObjects: []
+  spawnableObjectsMockup: []
   spawnee: {fileID: 3855346315427643321, guid: 982d40149837845c2bb75e101e0894e2, type: 3}
+  spawneeMockup: {fileID: 0}
+  objectMesh: {fileID: 0}
   player: {fileID: 7812436077761790189, guid: 362d0093250cf4d448056aea13f4e7ca, type: 3}
 --- !u!1 &918854887
 GameObject:

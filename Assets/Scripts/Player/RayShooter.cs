@@ -33,6 +33,9 @@ public class RayShooter : MonoBehaviour
                 StartCoroutine(SpawnBulletTrail(hit.point));
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                if (hit.transform.tag == "Alien"){
+                    hit.transform.GetComponent<FollowerAI>().KillIt();
+                }
                 if (hit.transform.tag == "Destroyable")
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
                 if (hit.transform.tag == "Boss")

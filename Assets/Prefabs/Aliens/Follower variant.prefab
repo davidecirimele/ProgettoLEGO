@@ -2771,7 +2771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdeb0d16b0122141a9577810cd54bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts: 3
+  hearts: 5
   _alive: 1
 --- !u!54 &6985666845836918963
 Rigidbody:
@@ -2818,7 +2818,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 0.1, z: 15}
+  m_Size: {x: 20, y: 0.1, z: 20}
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &4157291227558662812
 GameObject:
