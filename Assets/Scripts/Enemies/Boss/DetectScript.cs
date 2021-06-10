@@ -58,7 +58,9 @@ public class DetectScript : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
+        PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+
+        if(player != null){
             Messenger.Broadcast(GameEvent.BOSS_FIGHT);
             detected = true;
             target = other.gameObject;
