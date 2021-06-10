@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 4870167790249810}
   - component: {fileID: 375046699442677501}
   - component: {fileID: 8929714637740933208}
+  - component: {fileID: 5539642275109970415}
   m_Layer: 0
   m_Name: Taxi
   m_TagString: Destroyable
@@ -391,6 +392,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 2000245114597939728, guid: c974a5ab2a1f1ca49a97c12242accd24, type: 3}
+--- !u!65 &5539642275109970415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646981259178978}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.3, z: 1}
+  m_Center: {x: 0, y: 0.5, z: -0.15}
 --- !u!1 &1770694637400948
 GameObject:
   m_ObjectHideFlags: 0

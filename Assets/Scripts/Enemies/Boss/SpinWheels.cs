@@ -15,7 +15,7 @@ public class SpinWheels : MonoBehaviour
     void Update()
     {
         if(start == true){
-            transform.Rotate(speed, 0, 0,Space.World);
+            transform.Rotate(speed, 0, 0,Space.Self);
         }
         
     }
@@ -26,5 +26,13 @@ public class SpinWheels : MonoBehaviour
 
     public void setStop(){
         start = false;
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        PlayerCharacter player = other.gameObject.GetComponent<PlayerCharacter>();
+       
+        if(player != null){
+           player.Hurt(1);
+        }
     }
 }

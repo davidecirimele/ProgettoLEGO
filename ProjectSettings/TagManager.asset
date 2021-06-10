@@ -12,6 +12,7 @@ TagManager:
   - BossAlien
   - Alien
   - Wall
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Collectible
   - Laser
   - Robot
-  - 
+  - Garden
   - 
   - 
   - 

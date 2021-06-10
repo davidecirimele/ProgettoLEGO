@@ -27,8 +27,6 @@ public class InventoryManager : MonoBehaviour, IGameManager
                 obj.GetComponentInChildren<Text>().text = "Legno\n" + _items["Wood"];
             if (obj.name == "metal" && _items.ContainsKey("Metal"))
                 obj.GetComponentInChildren<Text>().text = "Metallo\n" + _items["Metal"];
-            if (obj.name == "special" && _items.ContainsKey("Cannon"))
-                obj.GetComponentInChildren<Text>().text = "Pezzi\nCannone\n" + _items["Cannon"];
         }
     }
 

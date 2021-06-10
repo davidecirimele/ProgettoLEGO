@@ -24,10 +24,10 @@ public class SpawnerManager : MonoBehaviour, IGameManager
     }
 
     private void SpawnObjectAtPositon(Vector3 spawnPosition){
-        //if(Managers.Inventory.checkForCreation(getObjectName())){
+        if(Managers.Inventory.checkForCreation(getObjectName())){
             Managers.Audio.CreateObject();
             GameObject obj = Instantiate(spawnee, spawnPosition + spawnee.GetComponent<Offset>().getOffset(), new Quaternion(0f, player.transform.rotation.y, 0f, player.transform.rotation.w));
-        //}
+        }
     }
 
     public void Startup()
