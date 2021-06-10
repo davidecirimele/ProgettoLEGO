@@ -34,6 +34,7 @@ public class RayShooter : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 200f, layerMask))
             {
+                Debug.Log(hit.transform.gameObject.name);
                 StartCoroutine(SpawnBulletTrail(hit.point));
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
