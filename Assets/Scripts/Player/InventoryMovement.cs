@@ -26,21 +26,24 @@ public class InventoryMovement : MonoBehaviour
         }
         if (isHided && Inventory.anchoredPosition.y > 40)
             transform.position -= new Vector3(0f, speed, 0f);
-        else if (!isHided && Inventory.anchoredPosition.y < 150)
+        else if (!isHided && Inventory.anchoredPosition.y < 190)
             Inventory.position += new Vector3(0f, speed, 0f);
     
         if(isHided == false){
             
             if(Input.GetKeyDown(KeyCode.Alpha1)){
                 Managers.Spawn.SetSpawnee(0);
+                Managers.Inventory.changeObject("alienTransporter");
             }
 
             if(Input.GetKeyDown(KeyCode.Alpha2)){
                 Managers.Spawn.SetSpawnee(1);
+                Managers.Inventory.changeObject("bridge");
             }
 
             if(Input.GetKeyDown(KeyCode.Alpha3)){
                 Managers.Spawn.SetSpawnee(2);
+                Managers.Inventory.changeObject("ladder");
             }
         }
     }

@@ -11,7 +11,6 @@ public class SpawnerManager : MonoBehaviour, IGameManager
 
     public ManagerStatus status { get; private set; }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(1) && !EventSystem.current.IsPointerOverGameObject()){

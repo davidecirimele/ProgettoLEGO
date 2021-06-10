@@ -91,4 +91,11 @@ public class PlayerCharacter : MonoBehaviour
     private void Collect(){
         _soundSource.PlayOneShot(collectedSound);
     }
+
+    public void Healing(){
+        if(life<6){
+            hearts[life].sprite = fullHeart;
+            life+=1;
+        }
+    }
 }

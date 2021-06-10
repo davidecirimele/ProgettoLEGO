@@ -7,7 +7,7 @@ public class AlienDogAI : MonoBehaviour
     bool detected;
     GameObject player;
     [SerializeField] private GameObject dog;
-    float speed = 11.0f;
+    float speed = 10.0f;
 
     private AudioSource _soundSource;
     [SerializeField] private AudioClip biteSound;

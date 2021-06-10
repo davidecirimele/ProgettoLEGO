@@ -78,7 +78,7 @@ public class RelativeMovement : MonoBehaviour {
         }
 
         if(hitGround){
-            if(Input.GetButtonDown("Jump")){
+            if(Input.GetButtonDown("Jump") && _charController.isGrounded){
                 jumping = true;
                 _soundSource.PlayOneShot(jumpSound);
                 _vertSpeed = jumpSpeed;
@@ -99,6 +99,7 @@ public class RelativeMovement : MonoBehaviour {
                     movement += _contact.normal * moveSpeed;
                     
                 }
+                jumping = false;
             }
         }
 
