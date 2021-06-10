@@ -21,4 +21,6 @@ public class GameEvent
     //Cane
     public const string DETECTED_DOG = "DETECTED_DOG";
     public const string LOST_DOG = "LOST_DOG";
+
+    public const string BOSS_FIGHT = "BOSS_FIGHT";
 }

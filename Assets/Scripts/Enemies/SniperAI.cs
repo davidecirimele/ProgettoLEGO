@@ -21,7 +21,7 @@ public class SniperAI : MonoBehaviour
 
     void Awake()
     {
-        Messenger.AddListener(GameEvent.PLAYER_LOST, Unfollow); 
+        Messenger.AddListener(GameEvent.BOSS_FIGHT, Unfollow); 
     }
 
     // Update is called once per frame
@@ -32,10 +32,6 @@ public class SniperAI : MonoBehaviour
             if(_active){ 
                 transform.LookAt(player.transform.position + new Vector3(0,1.6f,0));
             }
-
-            if(_detected){
-                Shoot();
-            }
         }
         else
             Debug.Log("Sono Morto");
@@ -43,37 +39,39 @@ public class SniperAI : MonoBehaviour
 
 
     void Shoot(){
-        if(_laser == null){
-            _laser = Instantiate(laserPrefab) as GameObject;
-            _laser.transform.position = transform.TransformPoint(Vector3.forward);
-            _laser.transform.rotation = transform.rotation;
-        }     
+        _laser = Instantiate(laserPrefab) as GameObject;
+        _laser.transform.position = transform.TransformPoint(Vector3.forward);
+        _laser.transform.rotation = transform.rotation;
     } 
     
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Wall"){  
+            CancelInvoke("Shoot");
             _detected = false;
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if(other.tag == "Wall"){  
+        if(other.tag == "Wall"){ 
+            InvokeRepeating("Shoot", 0, 1); 
             _detected = true;
         }
     }
 
     void Unfollow(){
         _detected = false;
+        CancelInvoke("Shoot");
     }
 
     void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
+        Messenger.RemoveListener(GameEvent.BOSS_FIGHT, Unfollow); 
     }
 
    public void activeScript(){
        _active = true;
 
        _detected = true;
+       InvokeRepeating("Shoot", 0, 1);
 
        if(player==null)
             player = GameObject.Find("legoCharacter");
