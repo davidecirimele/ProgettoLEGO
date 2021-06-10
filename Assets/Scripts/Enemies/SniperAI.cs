@@ -32,6 +32,9 @@ public class SniperAI : MonoBehaviour
             if(_active){ 
                 transform.LookAt(player.transform.position + new Vector3(0,1.6f,0));
             }
+
+            if(!_detected)
+                CancelInvoke("Shoot");
         }
         else
             Debug.Log("Sono Morto");
@@ -60,7 +63,6 @@ public class SniperAI : MonoBehaviour
 
     void Unfollow(){
         _detected = false;
-        CancelInvoke("Shoot");
     }
 
     //void OnDestroy() {

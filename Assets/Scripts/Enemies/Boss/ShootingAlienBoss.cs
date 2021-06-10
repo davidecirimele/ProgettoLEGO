@@ -27,6 +27,7 @@ public class ShootingAlienBoss : MonoBehaviour
                 GameObject hitObject = hit.transform.gameObject;
                 if(hitObject.GetComponent<PlayerCharacter>()) {
                     if(_laser == null){
+                        Managers.Audio.ShootAlien();
                         _laser = Instantiate(laserPrefab) as GameObject;
                         _laser.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
                         _laser.transform.rotation = transform.rotation;
