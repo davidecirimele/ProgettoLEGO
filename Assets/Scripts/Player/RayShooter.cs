@@ -12,16 +12,11 @@ public class RayShooter : MonoBehaviour
     public float time;
     private GameObject BossLife;
 
-    private AudioSource _soundSource;
-    [SerializeField] private AudioClip shotSound;
-
     void Start()
     {
         time = 0.1f;
         layerMask = ~ (1 << LayerMask.NameToLayer("Player"));
         Cursor.lockState = CursorLockMode.Locked; // lock mouse on the center 
-
-        _soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,7 +24,7 @@ public class RayShooter : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            _soundSource.PlayOneShot(shotSound);
+            Managers.Audio.ShootAlien();
             Ray ray = new Ray(target.position, (transform.position - target.position) * 200);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 200f, layerMask))
