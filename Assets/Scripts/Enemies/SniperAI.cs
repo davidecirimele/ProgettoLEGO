@@ -19,6 +19,11 @@ public class SniperAI : MonoBehaviour
          _detected = false;
     }
 
+    void Awake()
+    {
+        Messenger.AddListener(GameEvent.PLAYER_LOST, Unfollow); 
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -55,6 +60,14 @@ public class SniperAI : MonoBehaviour
         if(other.tag == "Wall"){  
             _detected = true;
         }
+    }
+
+    void Unfollow(){
+        _detected = false;
+    }
+
+    void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
     }
 
    public void activeScript(){

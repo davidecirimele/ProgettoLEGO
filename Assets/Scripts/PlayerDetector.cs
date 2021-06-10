@@ -14,8 +14,12 @@ public class PlayerDetector : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider other) {
+         
         if(other.tag == "Player"){
+            Messenger.Broadcast(GameEvent.PLAYER_LOST);
+            if(Sniper1 != null)
             Sniper1.GetComponent<SniperAI>().activeScript();
+            if(Sniper2 != null)
             Sniper2.GetComponent<SniperAI>().activeScript();
         }
     }

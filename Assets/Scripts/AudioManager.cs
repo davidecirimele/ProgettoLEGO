@@ -37,6 +37,9 @@ public class AudioManager : MonoBehaviour, IGameManager
     [SerializeField] private AudioClip destroySound;
     [SerializeField] private AudioClip createSound;
     [SerializeField] private AudioClip selectSound;
+    [SerializeField] private AudioClip diedSound;
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip biteSound;
 
     public void PlaySound(AudioClip clip){
         soundSource.PlayOneShot(clip);
@@ -91,5 +94,17 @@ public class AudioManager : MonoBehaviour, IGameManager
 
     public void ChangeObjectSpawn(){
         soundSource.PlayOneShot(selectSound);
+    }
+
+    public void AlienDied(){
+        soundSource.PlayOneShot(diedSound);
+    }
+
+    public void ShootAlien(){
+        soundSource.PlayOneShot(shootSound);
+    }
+
+    public void BiteAlien(){
+        soundSource.PlayOneShot(biteSound);
     }
 }

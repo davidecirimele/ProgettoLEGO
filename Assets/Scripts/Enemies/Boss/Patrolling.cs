@@ -42,10 +42,12 @@ public class Patrolling : MonoBehaviour
     }
 
     private void Change(){
-        tank.LookAt(points[current].position + new Vector3(0,6,0));
-        wheel1.LookAt(points[current].position);
-        wheel2.LookAt(points[current].position);
-        wheel3.LookAt(points[current].position);
-        wheel4.LookAt(points[current].position);
+        if(tank != null){
+            tank.LookAt(points[current].position + new Vector3(0,6,0));
+            wheel1.LookAt(points[current].position);
+            wheel2.LookAt(points[current].position);
+            wheel3.LookAt(points[current].position);
+            wheel4.LookAt(points[current].position);
+        }
     }
 }
