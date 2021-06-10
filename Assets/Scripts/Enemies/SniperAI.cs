@@ -63,9 +63,9 @@ public class SniperAI : MonoBehaviour
         CancelInvoke("Shoot");
     }
 
-    void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.BOSS_FIGHT, Unfollow); 
-    }
+    //void OnDestroy() {
+    //    Messenger.RemoveListener(GameEvent.BOSS_FIGHT, Unfollow); 
+    //}
 
    public void activeScript(){
        _active = true;

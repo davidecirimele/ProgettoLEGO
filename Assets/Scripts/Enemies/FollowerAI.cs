@@ -94,6 +94,7 @@ public class FollowerAI : MonoBehaviour
     }
 
     public void KillIt(){
+        Debug.Log("Kill it");
         if(player == null){
             player = GameObject.Find("legoCharacter");
         }
@@ -134,9 +135,9 @@ public class FollowerAI : MonoBehaviour
         followPlayer = false;
     }
 
-    void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
-    }
+    //void OnDestroy() {
+    //    Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
+    //}
 
     void Shoot(){
 

@@ -69,8 +69,7 @@ public class SentinelAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
-            detected = true;
-            InvokeRepeating("Shoot", 0, 1);
+            KillIt();
             Messenger.Broadcast(GameEvent.PLAYER_DETECTED);
             if(player==null)
                 player = other.gameObject;
@@ -85,6 +84,15 @@ public class SentinelAI : MonoBehaviour
         if(other.tag == "Player"){
             detected = false;
         }
+    }
+
+    public void KillIt(){
+        Debug.Log("Kill it");
+        if(player == null){
+            player = GameObject.Find("legoCharacter");
+        }
+        detected = true;
+        InvokeRepeating("Shoot", 0, 1);
     }
 
     bool verifyInRange(int range, Vector3 pos)
@@ -157,10 +165,10 @@ public class SentinelAI : MonoBehaviour
             }
     }
 
-    void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.PLAYER_DETECTED, Follow); 
-        Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
-    }
+    //void OnDestroy() {
+    //    Messenger.RemoveListener(GameEvent.PLAYER_DETECTED, Follow); 
+    //    Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
+    //}
 
      public string RandomStart(){
 

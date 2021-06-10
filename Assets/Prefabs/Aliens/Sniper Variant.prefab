@@ -39,9 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdeb0d16b0122141a9577810cd54bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts: 3
+  hearts: 5
   _alive: 1
-  diedSound: {fileID: 0}
 --- !u!1001 &4937413459536458311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,6 +238,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b970cae3f223b4fa4966933ee043b48f, type: 2}
+    - target: {fileID: 6781069060137719373, guid: e69b3e9bf2b495344a7908853ed9f255,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6786524035070292519, guid: e69b3e9bf2b495344a7908853ed9f255,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -277,6 +281,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7048224852910222071, guid: e69b3e9bf2b495344a7908853ed9f255, type: 3}
     - {fileID: 3912736928295547170, guid: e69b3e9bf2b495344a7908853ed9f255, type: 3}
+    - {fileID: 6781069060137719373, guid: e69b3e9bf2b495344a7908853ed9f255, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e69b3e9bf2b495344a7908853ed9f255, type: 3}
 --- !u!1 &8271391645337699180 stripped
 GameObject:

@@ -34,7 +34,11 @@ public class RayShooter : MonoBehaviour
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
                 if (hit.transform.tag == "Alien"){
-                    hit.transform.GetComponent<FollowerAI>().KillIt();
+                    if(hit.transform.GetComponent<FollowerAI>() != null)
+                        hit.transform.GetComponent<FollowerAI>().KillIt();
+
+                    if(hit.transform.GetComponent<SentinelAI>() != null)
+                        hit.transform.GetComponent<SentinelAI>().KillIt();
                 }
                 if (hit.transform.tag == "Destroyable")
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
@@ -48,6 +52,7 @@ public class RayShooter : MonoBehaviour
                     }
                 if (hit.transform.tag == "BossAlien")
                     hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
+                
                 if (target != null)
                     target.ReactToHit(); 
             }
