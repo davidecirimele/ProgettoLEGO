@@ -11,8 +11,12 @@ public class CollectibleItem : MonoBehaviour
         if (other.GetComponent<CharacterController>())
         {
             Debug.Log("Item collected: " + itemName);
-            Managers.Inventory.AddItem(itemName);
-            Messenger.Broadcast(GameEvent.COLLECTED);
+            if(itemName == "Health")
+                GameObject.FindWithTag("Player").GetComponent<PlayerCharacter>().Healing();
+            else{
+                Managers.Inventory.AddItem(itemName);
+                Messenger.Broadcast(GameEvent.COLLECTED);
+            }
             Destroy(this.gameObject);
         }
     }
