@@ -10,7 +10,7 @@ public class LaserSniper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	
+    	Managers.Audio.ShootAlien();
     }
 
     // Update is called once per frame

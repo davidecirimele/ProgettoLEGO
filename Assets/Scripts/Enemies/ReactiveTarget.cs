@@ -5,14 +5,10 @@ using UnityEngine;
 public class ReactiveTarget : MonoBehaviour
 {
     public int hearts = 3;
-
     public bool _alive = true;
 
-    private AudioSource _soundSource;
-    [SerializeField] private AudioClip diedSound;
-
     void Start(){
-        _soundSource = GetComponent<AudioSource>();
+
     }
      
     public void ReactToHit(){
@@ -31,7 +27,7 @@ public class ReactiveTarget : MonoBehaviour
 
         this.transform.Rotate(-75, 0, 0);
         
-        _soundSource.PlayOneShot(diedSound);
+        Managers.Audio.AlienDied();
         yield return new WaitForSeconds(1.5f);
 
 
