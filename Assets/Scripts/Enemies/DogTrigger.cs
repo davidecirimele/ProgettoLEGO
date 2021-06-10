@@ -26,12 +26,14 @@ public class DogTrigger : MonoBehaviour
     }
     
     private void OnTriggerEnter(Collider other) {
+        if(dog!=null)
         if(other.tag == "Player" && dog.GetComponent<ReactiveTarget>().isAlive()){
             detected = true;
         }
     }
 
     void OnTriggerExit(Collider other) {
+        if(dog!=null)
         if(other.tag == "Player" && dog.GetComponent<ReactiveTarget>().isAlive()){
             detected = false;
             dog.GetComponent<AlienDogAI>().Unfollow();

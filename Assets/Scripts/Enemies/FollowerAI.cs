@@ -42,7 +42,8 @@ public class FollowerAI : MonoBehaviour
     {
         startPoint = GameObject.Find(RandomStart());
         followPlayer = false;
-        navMeshAgent = GetComponent<NavMeshAgent>();     
+        navMeshAgent = GetComponent<NavMeshAgent>();    
+        Messenger.AddListener(GameEvent.PLAYER_LOST, Unfollow); 
     }
 
     
@@ -130,6 +131,14 @@ public class FollowerAI : MonoBehaviour
         NavMesh.SamplePosition (randDirection, out navHit, dist, layermask);
  
         return navHit.position;
+    }
+
+    void Unfollow(){
+        followPlayer = false;
+    }
+
+    void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.PLAYER_LOST, Unfollow); 
     }
 
     void Shoot(){

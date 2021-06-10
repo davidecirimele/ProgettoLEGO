@@ -59,6 +59,7 @@ public class DetectScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player"){
+            Messenger.Broadcast(GameEvent.PLAYER_LOST);
             detected = true;
             target = other.gameObject;
         }
