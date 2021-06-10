@@ -2639,6 +2639,7 @@ GameObject:
   - component: {fileID: 3912736928295547169}
   - component: {fileID: 6985666845836918963}
   - component: {fileID: 7048224852910222071}
+  - component: {fileID: 6781069060137719373}
   m_Layer: 6
   m_Name: Follower variant
   m_TagString: Alien
@@ -2772,7 +2773,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hearts: 3
   _alive: 1
-  diedSound: {fileID: 8300000, guid: 6c114273024eb1b4dbd0db76c6f5c853, type: 3}
 --- !u!54 &6985666845836918963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2807,6 +2807,19 @@ MonoBehaviour:
     type: 3}
   speed: 3
   obstacleRange: 5
+--- !u!65 &6781069060137719373
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3912736928295547179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &4157291227558662812
 GameObject:
   m_ObjectHideFlags: 0
