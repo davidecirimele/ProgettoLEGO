@@ -2397,9 +2397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdeb0d16b0122141a9577810cd54bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts: 3
+  hearts: 5
   _alive: 1
-  diedSound: {fileID: 8300000, guid: 6c114273024eb1b4dbd0db76c6f5c853, type: 3}
 --- !u!54 &8761184979008290245
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2427,8 +2426,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 0.1, z: 10}
-  m_Center: {x: 0, y: 0.4, z: 4.5}
+  m_Size: {x: 15, y: 0.1, z: 15}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &8319903267356807774
 MonoBehaviour:
   m_ObjectHideFlags: 0

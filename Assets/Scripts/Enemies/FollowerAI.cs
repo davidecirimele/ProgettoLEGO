@@ -50,45 +50,20 @@ public class FollowerAI : MonoBehaviour
 
     void Update()
     {
-        if(GetComponent<ReactiveTarget>().isAlive())
-        {  
+        if(GetComponent<ReactiveTarget>().isAlive()){  
 
-        if (verifyInRange(range, startPoint.transform.position) || followPlayer)
-            firstStep = false;
-            
+            if (verifyInRange(range, startPoint.transform.position))
+                firstStep = false;
+
             if(followPlayer){
-                
+               
                 transform.LookAt(player.transform.position + new Vector3(0,1,0));
-
-                Move();
-      
             }
 
-            else if((!followPlayer && stopCount<300)||(stopCount>=300 && !followPlayer && changeDest==true))
-                Move();
-            
-            if(!followPlayer){
-                Ray ray = new Ray(transform.position, transform.forward);
-        
-                RaycastHit hit;
-                if(Physics.SphereCast(ray, 0.75f, out hit)){
+            else if(!followPlayer)                
+                CancelInvoke("Shoot");
 
-                    if(hit.distance <= obstacleRange){
-                        GameObject hitObject = hit.transform.gameObject;
-                        if(hitObject.GetComponent<PlayerCharacter>()) {
-                    
-                        player = hitObject;
-                    
-                        if(!followPlayer)
-                            followPlayer=true;
-                            InvokeRepeating("Shoot", 0, 1);
-                        }
-                        else if(hitObject.tag!= "Player" || hitObject.tag != "Alien")
-                            changeDest = true;
-                    }   
-                }
-            }
-       
+            Move();
         }
         else
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
@@ -106,8 +81,33 @@ public class FollowerAI : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "Player"){
+            KillIt();
+            if(player==null)
+                player = other.gameObject;
+        }
+
+        else if(other.tag != "Player" || other.tag != "Alien"){
+            changeDest = true;
+        }
+    }
+
+    public void KillIt(){
+        if(player == null){
+            player = GameObject.Find("legoCharacter");
+        }
+        followPlayer = true;
+        InvokeRepeating("Shoot", 0, 1);
+    }
+
     void Move()
     {
+        if(followPlayer){
+            if(firstStep)
+                firstStep = false;
+            navMeshAgent.SetDestination(player.transform.position);
+        }
        if(firstStep){
             navMeshAgent.SetDestination(startPoint.transform.position);
             }
@@ -115,9 +115,6 @@ public class FollowerAI : MonoBehaviour
             Vector3 newPos = RandomNavSphere(startPoint.transform.position, wanderRadius, -1);
             navMeshAgent.SetDestination(newPos);
             changeDest = false;
-        }
-        else if(!firstStep && followPlayer){
-            navMeshAgent.SetDestination(player.transform.position);
         }
     }
 
