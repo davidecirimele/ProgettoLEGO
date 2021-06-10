@@ -10,9 +10,13 @@ public class BlockSpawner : MonoBehaviour
     public int interval = 10;
     public int numberAliens = 10;
 
+    private AudioSource _soundSource;
+    [SerializeField] private AudioClip impactSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        _soundSource = GetComponent<AudioSource>();  
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
     }
 
@@ -20,5 +24,10 @@ public class BlockSpawner : MonoBehaviour
         Instantiate(spawnee, transform.position + new Vector3(Random.Range(-15,30),0,Random.Range(-30,30)), transform.rotation, transform.parent);
         numberAliens--;
         
+    }
+
+    public void ImpactSound(){
+        if(_soundSource != null && impactSound!=null)
+            _soundSource.PlayOneShot(impactSound);
     }
 }
