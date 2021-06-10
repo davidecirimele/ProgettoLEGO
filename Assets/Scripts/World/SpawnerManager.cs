@@ -31,15 +31,14 @@ public class SpawnerManager : MonoBehaviour, IGameManager
                     objectMesh.transform.position = hitInfo.point + objectMesh.GetComponent<Offset>().getOffset();
                     objectMesh.transform.rotation = new Quaternion(0f, player.transform.rotation.y, 0f, player.transform.rotation.w);
                 }
-            }
 
-            if (Input.GetMouseButtonUp(1)) {
-                Destroy(objectMesh);
-                Vector3 mouseScreenPosition = Input.mousePosition;
-                Ray ray = Camera.main.ScreenPointToRay(mouseScreenPosition);
-                if (Physics.Raycast(ray, out RaycastHit hitInfo))
+                if (Input.GetMouseButtonUp(1))
                 {
-                    SpawnObjectAtPositon(hitInfo.point);
+                    Destroy(objectMesh);
+                    if (Physics.Raycast(ray, out RaycastHit hitInfo2))
+                    {
+                        SpawnObjectAtPositon(hitInfo2.point);
+                    }
                 }
             }
         }
