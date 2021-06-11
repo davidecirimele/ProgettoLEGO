@@ -34,28 +34,23 @@ public class RayShooter : MonoBehaviour
                 StartCoroutine(SpawnBulletTrail(hit.point));
                 GameObject hitObject = hit.transform.gameObject;
                 ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
-                if (hit.transform.tag == "Alien"){
-                    if(hit.transform.GetComponent<FollowerAI>() != null)
-                        hit.transform.GetComponent<FollowerAI>().KillIt();
+                if (hit.transform.GetComponent<FollowerAI>() != null)
+                    hit.transform.GetComponent<FollowerAI>().KillIt();
 
-                    if(hit.transform.GetComponent<SentinelAI>() != null)
-                        hit.transform.GetComponent<SentinelAI>().KillIt();
-                }
-                if (hit.transform.tag == "Destroyable")
+                if (hit.transform.GetComponent<SentinelAI>() != null)
+                    hit.transform.GetComponent<SentinelAI>().KillIt();
+
+                if (hit.transform.GetComponent<DestroyAndDrop>() != null)
                     hit.transform.GetComponent<DestroyAndDrop>().Damage();
-                if (hit.transform.tag == "Boss")
-                    if (hit.transform.GetComponent<BossLife>() != null)
-                        hit.transform.GetComponent<BossLife>().Hitted(1);
-                    else
-                    {
-                        BossLife = GameObject.Find("TankFree_Yel");
-                        BossLife.GetComponent<BossLife>().Hitted(1);
-                    }
-                if (hit.transform.tag == "BossAlien")
+
+                if (hit.transform.GetComponent<BossLife>() != null)
+                    hit.transform.GetComponent<BossLife>().Hitted(1);
+
+                if (hit.transform.GetComponent<ReactiveBoss>() != null)
                     hit.transform.GetComponent<ReactiveBoss>().ReactToHit();
-                
+
                 if (target != null)
-                    target.ReactToHit(); 
+                    target.ReactToHit();
             }
         }
     }
