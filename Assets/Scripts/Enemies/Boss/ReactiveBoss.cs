@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class ReactiveBoss : MonoBehaviour
 {
-    public int hearts = 3;
+    public int hearts = 5;
     public bool alienDied;
+    public bool _alive = true;
 
    public void ReactToHit(){
         hearts--;
-
-        AlienIntelligence behaviour = GetComponent<AlienIntelligence>();
         
-
         if(hearts==0){
-
-            if(behaviour != null){
-                behaviour.setAlive(false);
-            }
-
+            _alive = false;
             StartCoroutine(Die());
         }
     }
