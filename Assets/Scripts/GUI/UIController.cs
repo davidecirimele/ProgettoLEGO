@@ -47,10 +47,12 @@ public class UIController : MonoBehaviour
     }
 
     public void Win(){
+        gameInterface.Pause();
         popupMenu.WinGame();
     }
 
     public void Lose(){
+        gameInterface.Pause();
         popupMenu.LoseGame();
     }
 
