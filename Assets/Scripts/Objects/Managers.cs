@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(PlayerManager))]
 [RequireComponent (typeof(InventoryManager))]
 [RequireComponent (typeof(AudioManager))]
 [RequireComponent (typeof(SpawnerManager))]
 
 public class Managers : MonoBehaviour
 {
-    public static PlayerManager Player { get; private set; }
     public static InventoryManager Inventory { get; private set; }
     public static AudioManager Audio{get; private set; }
     public static SpawnerManager Spawn { get; private set; }
@@ -18,13 +16,11 @@ public class Managers : MonoBehaviour
 
     private void Awake()
     {
-        Player = GetComponent<PlayerManager>();
         Inventory = GetComponent<InventoryManager>();
         Audio = GetComponent<AudioManager>();
         Spawn = GetComponent<SpawnerManager>();
 
         _startSequence = new List<IGameManager>();
-        _startSequence.Add(Player);
         _startSequence.Add(Inventory);
         _startSequence.Add(Audio);
         _startSequence.Add(Spawn);

@@ -8,8 +8,16 @@ public class StartMenu : MonoBehaviour
 {
     [SerializeField] private Image wallpaper;
     [SerializeField] private Button gioca;
+    [SerializeField] private Button comandi;
+    [SerializeField] private Button storia;
     [SerializeField] private Button esci;
     [SerializeField] private AudioClip sound;
+
+    public GameObject menuStart;
+    public GameObject menuCommand;
+    public GameObject menuStory;
+
+    public GameObject logo;
 
     void Start() {
         Managers.Audio.PlayIntroMusic();
@@ -25,7 +33,26 @@ public class StartMenu : MonoBehaviour
         GameEvent.isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Scena");
-        
+    }
+
+    public void goToCommand(){
+        menuStart.SetActive(false);
+        menuStory.SetActive(false);
+        menuCommand.SetActive(true);
+    }
+
+    public void goToStart(){
+        menuStart.SetActive(true);
+        menuStory.SetActive(false);
+        menuCommand.SetActive(false);
+        logo.SetActive(true);
+    }
+
+    public void goToStory(){
+        menuStart.SetActive(false);
+        menuStory.SetActive(true);
+        menuCommand.SetActive(false);
+        logo.SetActive(false);
     }
 
     public void Exit(){
