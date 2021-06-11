@@ -22,6 +22,7 @@ public class RayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(target.position, (transform.position - target.position) * 200);
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Managers.Audio.ShootAlien();
@@ -62,7 +63,7 @@ public class RayShooter : MonoBehaviour
     private IEnumerator SpawnBulletTrail(Vector3 hitPoint)
     {
         GameObject laser = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        laser.GetComponent<Renderer>().material.color = Color.red;
+        laser.GetComponent<Renderer>().material = Resources.Load("Materials/>LaserMAT") as Material;
         laser.GetComponent<BoxCollider>().enabled = false;
         laser.transform.localScale = new Vector3(0.05f, 0.05f, 0.4f);
         laser.transform.position = transform.position;
